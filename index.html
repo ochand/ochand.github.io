@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Systems Architect with 17+ years experience in enterprise systems, manufacturing intelligence, and agentic AI. Currently pursuing Master's at UPC BarcelonaTech.">
+    <meta name="keywords" content="AI Systems Architect, Manufacturing Intelligence, Agentic AI, RAG, Machine Learning, Enterprise Architecture, Full Stack Developer">
+    <meta name="author" content="Óliver Eduardo Chan Dorado">
+    <meta property="og:title" content="Óliver Chan - AI Systems Architect & Manufacturing Intelligence Lead">
+    <meta property="og:description" content="17+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ochand.github.io">
+    <title>Óliver Chan - AI Systems Architect & Manufacturing Intelligence Lead</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #161632 50%, #1a1a3a 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 60px 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            border: 4px solid #3b82f6;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+
+        .name {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #3b82f6;
+        }
+
+        .title {
+            font-size: 1.6rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #06b6d4;
+            margin-bottom: 30px;
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .github-badge {
+            margin-top: 20px;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #333, #555);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .github-link:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(45deg, #555, #777);
+        }
+
+        /* Section styling */
+        .section {
+            margin: 60px 0;
+            padding: 50px 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #3b82f6;
+        }
+
+        /* Summary */
+        .summary-text {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #cbd5e1;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .highlight-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Featured Projects - Full Width Grid */
+        .featured-projects {
+            margin: 80px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+
+        .project-category {
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .project-description {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #06b6d4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #3b82f6;
+        }
+
+        .project-impact {
+            font-weight: 600;
+            color: #10b981;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #10b981;
+        }
+
+        /* Skills - Enhanced Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category.ai-focus {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .skill-category h3 {
+            color: #3b82f6;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-category.ai-focus h3 {
+            color: #8b5cf6;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .skill-level {
+            font-size: 0.85rem;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        /* Experience Timeline - Enhanced */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #3b82f6, #8b5cf6, #06b6d4);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -42px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            border: 3px solid #0a0a1a;
+        }
+
+        .current-role {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .current-role::before {
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+
+        .company {
+            font-size: 1rem;
+            color: #8b5cf6;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .duration {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .current-badge {
+            background: #10b981;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        /* Education - Enhanced */
+        .education-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .education-item.current {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+
+        .university {
+            color: #8b5cf6;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .year {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .thesis {
+            color: #94a3b8;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .honors {
+            color: #10b981;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 140px;
+        }
+
+        .language-name {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .language-level {
+            color: #cbd5e1;
+        }
+
+        /* Creative Section */
+        .creative-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .creative-content {
+            text-align: center;
+        }
+
+        .dj-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .dj-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.4rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlight-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline-item::before {
+                left: -32px;
+            }
+        }
+
+        /* Animations */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-avatar">ÓC</div>
+                <h1 class="name">Óliver Eduardo Chan Dorado</h1>
+                <p class="title">AI Systems Architect & Manufacturing Intelligence Lead</p>
+                <p class="tagline">"Bridging 17+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions"</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Barcelona, Catalonia, Spain</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>ochand@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>(+52) 667 152 9220</span>
+                    </div>
+                </div>
+                <div class="github-badge">
+                    <a href="https://github.com/ochand" class="github-link" target="_blank">
+                        <span>⚡</span>
+                        <span>View GitHub Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary-text">
+                <strong>AI Systems Architect</strong> with 17+ years of enterprise systems expertise, now specializing in 
+                <strong>autonomous manufacturing intelligence and agentic AI systems</strong>. Currently pursuing Master's in Computer Engineering 
+                at <strong>UPC BarcelonaTech</strong> and <strong>IBM AI Engineering Professional Certificate</strong>. 
+                Expert in building scalable enterprise solutions, ERP systems, and cutting-edge AI applications 
+                including RAG systems, computer vision, and VR/AR experiences.
+            </p>
+            <div class="highlight-stats">
+                <div class="stat-item">
+                    <div class="stat-number">17+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300K+</div>
+                    <div class="stat-label">Users Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">AI/ML Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Process Automation</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured AI & Enterprise Projects -->
+        <section class="section featured-projects">
+            <h2 class="section-title">Featured Projects Portfolio</h2>
+            <div class="projects-grid">
+                <!-- AI Projects -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Agentic-MRP</h3>
+                        <span class="project-category">AI Systems</span>
+                    </div>
+                    <p class="project-description">
+                        Autonomous AI agents for Material Requirements Planning (MRP) with discrete event simulation 
+                        for manufacturing optimization. Features supply chain intelligence with automated procurement 
+                        decisions and real-time production planning.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SimPy</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/UPC-MEI/Agentic-MRP" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Autonomous manufacturing decisions with 40% efficiency improvement</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">LLM-Chat-RAG</h3>
+                        <span class="project-category">AI/LLM</span>
+                    </div>
+                    <p class="project-description">
+                        Advanced AI chat system with Retrieval Augmented Generation (RAG) using vector databases. 
+                        Features OpenAI GPT integration, OCR capabilities for PDF processing, and microservices 
+                        architecture with explainable AI responses.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">ChromaDB</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Tesseract OCR</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/UPC-MEI/LLM-Chat-RAG" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Intelligent document processing with source citation and explainable AI</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Himalayan-DataVis</h3>
+                        <span class="project-category">Data Science</span>
+                    </div>
+                    <p class="project-description">
+                        Interactive data science platform for mountaineering expedition analysis (2020-2024). 
+                        Features Grammar of Graphics visualization with Altair/Vega-Lite, real-time exploration, 
+                        and multi-dimensional analysis with geographic insights.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Altair</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/UPC-MEI/Himalayan-DataVis" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Interactive dashboards deployed on Streamlit Cloud with statistical analysis</p>
+                </div>
+
+                <!-- VR/AR Projects -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">MuseoVirtualAR</h3>
+                        <span class="project-category">AR/VR</span>
+                    </div>
+                    <p class="project-description">
+                        Cultural Heritage AR Experience with image marker tracking and multi-marker support. 
+                        Features multilingual system (Spanish/English) with 3D cultural artifacts 
+                        (Buddha, Christ the Redeemer, Chichen Itza) and cross-platform deployment.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Vuforia SDK</span>
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">3D Modeling</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/UPC-MEI/MuseoVirtualAR" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Immersive cultural heritage experience with gesture recognition</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">CalabozoVR</h3>
+                        <span class="project-category">VR Gaming</span>
+                    </div>
+                    <p class="project-description">
+                        Immersive VR escape room with gaze-based interactions and dual locomotion modes. 
+                        Optimized for Google Cardboard with 3D spatial audio, haptic feedback integration, 
+                        and sustained 60 FPS performance.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Google Cardboard XR</span>
+                        <span class="tech-tag">3D Audio</span>
+                        <span class="tech-tag">Performance Optimization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/UPC-MEI/CalabozoVR" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Mobile VR optimization with teleportation and free movement modes</p>
+                </div>
+
+                <!-- Enterprise Systems -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">ERP2 Full-Stack</h3>
+                        <span class="project-category">Enterprise</span>
+                    </div>
+                    <p class="project-description">
+                        Modern enterprise system with cloud-native deployment on AWS. Features ECS, RDS, 
+                        ElastiCache, ALB infrastructure with Docker-first development and complete DevOps 
+                        pipeline using infrastructure as code.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Laravel 9</span>
+                        <span class="tech-tag">PHP 8.1</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS ECS</span>
+                        <span class="tech-tag">Terraform</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Grupo-Chadorama/ERP2-backend" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Cloud-native architecture with multi-environment deployment strategies</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">CFDI Full-Stack</h3>
+                        <span class="project-category">Gov Tech</span>
+                    </div>
+                    <p class="project-description">
+                        Mexican government tax compliance system (CFDI 3.3 & 4.0 support) with OAuth2 
+                        authentication, PAC integration, and cryptographic operations for digital certificates. 
+                        Features real-time tax authority integration.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">AngularJS</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">OAuth2</span>
+                        <span class="tech-tag">SAT API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Grupo-Chadorama/CFDI-backend" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Government compliance system serving thousands of businesses</p>
+                </div>
+
+                <!-- Audio Engineering -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Audio-Splitter</h3>
+                        <span class="project-category">Audio Tech</span>
+                    </div>
+                    <p class="project-description">
+                        Professional audio processing suite with modular architecture for music production 
+                        and podcast workflows. Features multi-format support, advanced metadata management, 
+                        and precision audio splitting with CLI + Interactive UI.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">librosa</span>
+                        <span class="tech-tag">pydub</span>
+                        <span class="tech-tag">Rich CLI</span>
+                        <span class="tech-tag">Audio DSP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ICRONOK/Audio-Splitter" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Production-ready for music production and podcast processing workflows</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Expertise -->
+        <section class="section">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category ai-focus">
+                    <h3>🤖 AI & Machine Learning</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Agentic AI Systems</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">RAG Implementation</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">LLM Integration</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Computer Vision</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Manufacturing Intelligence</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🏗️ Enterprise Architecture</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Microservices Design</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">ERP Systems</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">System Integration</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">API Architecture</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Legacy Modernization</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>💻 Full-Stack Development</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Python / FastAPI</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PHP / Laravel</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript / TypeScript</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Angular / AngularJS</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Java / Spring</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🎮 Immersive Technologies</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Unity / C#</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">AR Development (Vuforia)</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">VR Development</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">3D Modeling & Animation</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Game Engine Optimization</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>☁️ Cloud & DevOps</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">AWS (ECS, RDS, ALB)</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker / Containerization</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Terraform / IaC</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CI/CD Pipelines</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Kubernetes</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🎵 Audio Engineering</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Digital Signal Processing</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Audio Production</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Music Technology</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Live Performance</span>
+                        <span class="skill-level">Professional</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Audio Software Development</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item current-role">
+                    <h3 class="job-title">Director of Systems & Continuous Improvement</h3>
+                    <p class="company">Caprichito Bello</p>
+                    <p class="duration">2012 - Present (12+ years) <span class="current-badge">CURRENT</span></p>
+                    <ul class="achievements">
+                        <li>Lead enterprise software architecture and development for multi-location retail operations with 300K+ users</li>
+                        <li>Implemented comprehensive ERP system increasing operational efficiency by 40% and reducing manual processes by 80%</li>
+                        <li>Developed AI-driven financial data mining solutions for sales, inventory, and cost analysis using machine learning</li>
+                        <li>Built SAT-compliant electronic invoicing system (CFDI 3.3 & 4.0) serving thousands of businesses</li>
+                        <li>Designed and launched franchise business model with automated operational support tools</li>
+                        <li>Manage cross-functional teams and strategic technology initiatives including digital transformation</li>
+                        <li>Architect cloud-native solutions with Docker, AWS, and microservices patterns</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Financial Subsystem Advisor</h3>
+                    <p class="company">Universidad Autónoma de Sinaloa (UAS)</p>
+                    <p class="duration">2022 - 2024</p>
+                    <ul class="achievements">
+                        <li>Provided technical advisory for Budget, Revenue, Expenses, and Internal Audit modules serving 300K+ users</li>
+                        <li>Performed advanced financial data mining and analytics using SQL Server and Python for business intelligence</li>
+                        <li>Ensured compliance with government accounting harmonization standards and regulatory requirements</li>
+                        <li>Led technical advisory for SAT electronic invoicing version 4.0 implementation and migration</li>
+                        <li>Developed automated reporting systems reducing manual processing time by 60%</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Financial Subsystem Leader</h3>
+                    <p class="company">UAS Informática</p>
+                    <p class="duration">2019 - 2022</p>
+                    <ul class="achievements">
+                        <li>Managed development team of 8+ developers and coordinated maintenance requests for critical systems</li>
+                        <li>Developed digital expense verification system using modern tech stack (Laravel Lumen, JWT, microservices)</li>
+                        <li>Implemented microservices architecture for Internal Audit modules improving system scalability</li>
+                        <li>Built API-first solutions enabling integration with third-party systems and mobile applications</li>
+                        <li>Introduced automated testing and CI/CD pipelines reducing deployment time by 70%</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Full-Stack Developer</h3>
+                    <p class="company">UAS Informática</p>
+                    <p class="duration">2008 - 2019</p>
+                    <ul class="achievements">
+                        <li>Developed Public Information Access Module using PHP, jQuery, and SQL Server</li>
+                        <li>Built Document Digitalization Module with ASP, PHP, ActionScript, and Flex for government transparency</li>
+                        <li>Created comprehensive financial reporting and query systems handling millions of transactions</li>
+                        <li>Maintained and enhanced Revenue modules using C#.NET, AngularJS, and modern web technologies</li>
+                        <li>Implemented security best practices including encryption, authentication, and authorization systems</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="job-title">Information Systems Consultant</h3>
+                    <p class="company">SE Soluciones Efectivas</p>
+                    <p class="duration">2012 - 2015</p>
+                    <ul class="achievements">
+                        <li>Implemented ERP Openbravo solutions for various industries including manufacturing and retail</li>
+                        <li>Deployed POS systems for boutiques and coffee shops with real-time inventory management</li>
+                        <li>Provided technical consulting on business process optimization and system integration</li>
+                        <li>Trained client teams on system usage and best practices for operational efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section class="section">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-item current">
+                <h3 class="degree">Master's in Computer Engineering</h3>
+                <p class="university">Universitat Politècnica de Catalunya (UPC BarcelonaTech)</p>
+                <p class="year">2023 - Present <span class="current-badge">CURRENT</span></p>
+                <p class="thesis">
+                    <strong>Specialization:</strong> AI Systems, Manufacturing Intelligence, Agentic AI, Computer Vision
+                </p>
+            </div>
+
+            <div class="education-item current">
+                <h3 class="degree">IBM AI Engineering Professional Certificate</h3>
+                <p class="university">IBM via Coursera</p>
+                <p class="year">2024 - Present <span class="current-badge">PURSUING</span></p>
+                <p class="thesis">
+                    <strong>Focus:</strong> Advanced ML, Deep Learning, AI Deployment, TensorFlow, PyTorch
+                </p>
+            </div>
+
+            <div class="education-item">
+                <h3 class="degree">Master's in Information Technology Management</h3>
+                <p class="university">Tecnológico de Monterrey, Monterrey, México</p>
+                <p class="year">2009 - 2012</p>
+                <p class="thesis">
+                    <strong>Thesis:</strong> Service-Oriented Architecture as Competitive Advantage Enabler 
+                    in Enterprise Information Systems Development Companies
+                </p>
+                <p class="honors">🏆 Excellence Recognition (Mención Honorífica)</p>
+            </div>
+
+            <div class="education-item">
+                <h3 class="degree">International Exchange Program</h3>
+                <p class="university">University College of Borås, Sweden</p>
+                <p class="year">2007</p>
+                <p class="thesis">
+                    <strong>Focus:</strong> International Business, Cross-cultural Technology Management
+                </p>
+            </div>
+
+            <div class="education-item">
+                <h3 class="degree">Bachelor's in Information Systems Engineering</h3>
+                <p class="university">Tecnológico de Monterrey, Culiacán, México</p>
+                <p class="year">2003 - 2008</p>
+                <p class="honors">🏆 Outstanding Performance in CENEVAL National Exam</p>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <h3 class="language-name">🇲🇽 Spanish</h3>
+                    <p class="language-level">Native</p>
+                </div>
+                <div class="language-item">
+                    <h3 class="language-name">🇺🇸 English</h3>
+                    <p class="language-level">Professional<br>(TOEFL ITP 560)</p>
+                </div>
+                <div class="language-item">
+                    <h3 class="language-name">🇩🇪 German</h3>
+                    <p class="language-level">Beginner</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Creative Technology Bridge -->
+        <section class="section creative-section">
+            <h2 class="section-title">Creative Technology Bridge</h2>
+            <div class="creative-content">
+                <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 20px; line-height: 1.8;">
+                    Beyond architecting AI systems and enterprise solutions, I'm <strong>The Ocean</strong> - a DJ and electronic music producer 
+                    who bridges the gap between creative artistry and technical innovation. My audio engineering projects like 
+                    <strong>Audio-Splitter</strong> demonstrate how deep technical expertise can enhance creative workflows.
+                </p>
+                <p style="color: #94a3b8; margin-bottom: 20px;">
+                    This unique combination of AI Systems Architecture, Enterprise Engineering, Creative Technology, and Audio Engineering 
+                    creates a rare profile perfect for creative tech companies and innovation roles requiring cross-disciplinary thinking.
+                </p>
+                <a href="https://instagram.com/theoceandj" class="dj-link" target="_blank">
+                    <span>🎵</span>
+                    <span>Follow The Ocean DJ</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Open Source Contributions -->
+        <section class="section">
+            <h2 class="section-title">Open Source Leadership</h2>
+            <div style="text-align: center;">
+                <div class="project-card" style="max-width: 600px; margin: 0 auto;">
+                    <div class="project-header">
+                        <h3 class="project-title">uniCenta oPOS Fork</h3>
+                        <span class="project-category">Open Source</span>
+                    </div>
+                    <p class="project-description">
+                        Open source maintainer of enterprise POS system used globally. Features multi-terminal support 
+                        with hardware integration, international localization (13+ languages), and community leadership 
+                        with fork management and contributions.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Swing</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JasperReports</span>
+                        <span class="tech-tag">Maven</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Grupo-Chadorama/unicentaopos-3.91.3" class="project-link" target="_blank">🔗 GitHub</a>
+                    </div>
+                    <p class="project-impact">🎯 Impact: Global community contribution with legacy system modernization</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" style="text-align: center; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); border-color: rgba(59, 130, 246, 0.3);">
+            <h2 class="section-title">Ready for Next Challenge</h2>
+            <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px; line-height: 1.8;">
+                🚀 Open to opportunities in <strong>AI Systems Architecture</strong>, <strong>Manufacturing Intelligence</strong>, 
+                and <strong>Enterprise Innovation</strong>
+            </p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="mailto:ochand@gmail.com" class="dj-link">
+                    <span>📧</span>
+                    <span>Contact Me</span>
+                </a>
+                <a href="https://github.com/ochand" class="github-link" target="_blank">
+                    <span>💻</span>
+                    <span>View All Projects</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Enhanced scroll animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling and intersection observer
+            const sections = document.querySelectorAll('.section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Project card hover effects
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-8px) scale(1)';
+                });
+            });
+
+            // Google Analytics (replace with your tracking ID)
+            // gtag('config', 'GA_TRACKING_ID');
+        });
+    </script>
+</body>
+</html>
