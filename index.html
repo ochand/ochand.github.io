@@ -12,6 +12,21 @@
     <meta property="og:url" content="https://ochand.github.io">
     <title>Oliver Eduardo Chan Dorado - AI Systems Architect in Training | Master's Student at UPC</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <script src="./js/i18n.js"></script>
+    <style>
+        /* Simple language switcher styles */
+        #simple-lang-switch {
+            font-family: inherit;
+        }
+        #lang-btn:hover {
+            background: #2563eb !important;
+            transform: scale(1.05);
+            transition: all 0.2s ease;
+        }
+        #lang-menu div:hover {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+    </style>
     <style>
         * {
             margin: 0;
@@ -723,28 +738,38 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
+            <div class="container">
+                <!-- Language Switcher -->
+                <div id="simple-lang-switch" style="position: fixed; top: 20px; right: 20px; z-index: 99999;">
+                    <button id="lang-btn" style="background: #3b82f6; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px;">
+                        LANG: EN ▼
+                    </button>
+                    <div id="lang-menu" style="position: absolute; top: 100%; right: 0; background: rgba(10, 10, 26, 0.95); border: 2px solid #3b82f6; border-radius: 8px; min-width: 150px; display: none; margin-top: 5px; backdrop-filter: blur(10px); box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);">
+                        <div id="lang-en" style="padding: 15px; color: white; cursor: pointer; font-weight: 600; border-bottom: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px 6px 0 0;">English</div>
+                        <div id="lang-es" style="padding: 15px; color: white; cursor: pointer; font-weight: 600; border-radius: 0 0 6px 6px;">Español</div>
+                    </div>
+                </div>
             <div class="profile-section">
                 <div class="profile-avatar">🎓</div>
-                <h1 class="name">Oliver Eduardo Chan Dorado</h1>
-                <p class="title">AI Systems Architect in Training</p>
-                <p class="subtitle">Master's Student at UPC BarcelonaTech</p>
-                <p class="tagline">Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship</p>
+                <h1 class="name" data-i18n="header.name">Oliver Eduardo Chan Dorado</h1>
+                <p class="title" data-i18n="header.title">AI Systems Architect in Training</p>
+                <p class="subtitle" data-i18n="header.subtitle">Master's Student at UPC BarcelonaTech</p>
+                <p class="tagline" data-i18n="header.tagline">Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship</p>
                 
                 <div class="academic-badges">
-                    <span class="academic-badge">Expected 2026:</span>
-                    <span class="academic-badge">IBM AI Engineer</span>
-                    <span class="academic-badge">MSc Informatics Engineering</span>
-                    <span class="academic-badge">VR Entrepreneur</span>
+                    <span class="academic-badge" data-i18n="header.badges.master">Expected 2026:</span>
+                    <span class="academic-badge" data-i18n="header.badges.ibm">IBM AI Engineer</span>
+                    <span class="academic-badge" data-i18n="header.badges.research">MSc Informatics Engineering</span>
                 </div>
                 
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📍</span>
-                        <span>Barcelona, Spain</span>
+                        <span data-i18n="header.contact.location">Barcelona, Spain</span>
                     </div>
                     <div class="contact-item">
                         <span>📧</span>
-                        <a href="mailto:ochand@gmail.com" style="color: #94a3b8; text-decoration: none;">ochand@gmail.com</a>
+                        <a href="mailto:ochand@gmail.com" style="color: #94a3b8; text-decoration: none;" data-i18n="header.contact.email">ochand@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <span>💬</span>
@@ -758,16 +783,17 @@
                 <div class="github-badge">
                     <a href="https://github.com/ochand" class="github-link" target="_blank">
                         <span>⚡</span>
-                        <span>View GitHub Portfolio</span>
+                        <span data-i18n="header.contact.github">View GitHub Portfolio</span>
                     </a>
                 </div>
+            </div>
             </div>
         </header>
 
         <!-- Professional Summary -->
         <section class="section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="summary-text">
+            <h2 class="section-title" data-i18n="summary.title">Professional Summary</h2>
+            <p class="summary-text" data-i18n="summary.text">
                 <strong>AI Systems Architect in Training</strong> with 16+ years of enterprise systems expertise, 
                 currently pursuing <strong>Master in Informatics Engineering at UPC BarcelonaTech</strong> (Expected 2026) and 
                 <strong>IBM AI Engineering Professional Certificate</strong>. Specializing in <strong>agentic AI systems, 
@@ -777,33 +803,33 @@
             <div class="highlight-stats">
                 <div class="stat-item academic">
                     <div class="stat-number">2026</div>
-                    <div class="stat-label">Expected Graduation</div>
+                    <div class="stat-label" data-i18n="impact.graduation.label">Expected Graduation</div>
                 </div>
                 <div class="stat-item academic">
                     <div class="stat-number">4+</div>
-                    <div class="stat-label">AI/ML Projects</div>
+                    <div class="stat-label" data-i18n="impact.academic.label">AI/ML Projects</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">16+</div>
-                    <div class="stat-label">Years Experience</div>
+                    <div class="stat-label" data-i18n="impact.experience.label">Years Experience</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">300K+</div>
-                    <div class="stat-label">Users Served</div>
+                    <div class="stat-label" data-i18n="impact.users.label">Users Served</div>
                 </div>
             </div>
         </section>
 
         <!-- Academic Projects -->
         <section class="section research-focus">
-            <h2 class="section-title">🎓 Academic Projects</h2>
+            <h2 class="section-title" data-i18n="projects.title">🎓 Academic Projects</h2>
             <div class="projects-grid">
                 <div class="project-card research-project">
                     <div class="project-header">
-                        <h3 class="project-title">Agentic-MRP <span class="status-badge thesis">Master's Thesis Project</span></h3>
-                        <span class="project-category research">AI Systems</span>
+                        <h3 class="project-title">Agentic-MRP <span class="status-badge thesis" data-i18n="projects.agenticMrp.badge">Master's Thesis Project</span></h3>
+                        <span class="project-category research" data-i18n="projects.agenticMrp.category">AI Systems</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.agenticMrp.description">
                         <strong>Research focus on Predictive AI Manufacturing System</strong> evolving into autonomous agent-based MRP with predictive analytics. 
                         Features discrete event simulation for manufacturing optimization, supply chain intelligence with automated 
                         procurement decisions, and real-time production planning with inventory optimization.
@@ -818,15 +844,15 @@
                     <div class="project-links">
                         <a href="https://github.com/UPC-MEI/Agentic-MRP" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Developing autonomous manufacturing decisions with predictive analytics for Master's thesis</p>
+                    <p class="project-impact" data-i18n="projects.agenticMrp.impact">🎯 Impact: Developing autonomous manufacturing decisions with predictive analytics for Master's thesis</p>
                 </div>
 
                 <div class="project-card research-project">
                     <div class="project-header">
                         <h3 class="project-title">LLM-Chat-RAG</h3>
-                        <span class="project-category research">AI/LLM</span>
+                        <span class="project-category research" data-i18n="projects.llmChatRag.category">AI/LLM</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.llmChatRag.description">
                         Advanced AI chat system with Retrieval Augmented Generation (RAG) using vector databases. 
                         Features OpenAI GPT integration, OCR capabilities for PDF processing, microservices architecture 
                         with explainable AI responses and source citation.
@@ -841,15 +867,15 @@
                     <div class="project-links">
                         <a href="https://github.com/UPC-MEI/LLM-Chat-RAG" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Intelligent document processing with source citation and explainable AI</p>
+                    <p class="project-impact" data-i18n="projects.llmChatRag.impact">🎯 Impact: Intelligent document processing with source citation and explainable AI</p>
                 </div>
 
                 <div class="project-card research-project">
                     <div class="project-header">
                         <h3 class="project-title">Himalayan-DataVis</h3>
-                        <span class="project-category research">Data Science</span>
+                        <span class="project-category research" data-i18n="projects.himalayanDatavis.category">Data Science</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.himalayanDatavis.description">
                         Interactive data science platform for mountaineering expedition analysis (2020-2024). 
                         Features Grammar of Graphics visualization with Altair/Vega-Lite, real-time data exploration 
                         with statistical analysis, and multi-dimensional analysis with geographic insights.
@@ -863,17 +889,17 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/UPC-MEI/Himalayan-DataVis" class="project-link" target="_blank">🔗 GitHub</a>
-                        <span>🚀 Streamlit Cloud ready</span>
+                        <span data-i18n="projects.himalayanDatavis.status">🚀 Streamlit Cloud ready</span>
                     </div>
-                    <p class="project-impact">🎯 Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities</p>
+                    <p class="project-impact" data-i18n="projects.himalayanDatavis.impact">🎯 Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities</p>
                 </div>
 
                 <div class="project-card research-project">
                     <div class="project-header">
                         <h3 class="project-title">MisVids</h3>
-                        <span class="project-category research">Enterprise Java</span>
+                        <span class="project-category research" data-i18n="projects.misVids.category">Enterprise Java</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.misVids.description">
                         Enterprise video streaming platform with microservices separation. Features AES-256 encryption 
                         for video file security, JWT authentication, HTTP Range streaming, YouTube integration with 
                         embedded video support, and production-ready deployment.
@@ -888,21 +914,21 @@
                     <div class="project-links">
                         <a href="https://github.com/UPC-MEI/MisVids" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Enterprise Java application with comprehensive security and streaming capabilities</p>
+                    <p class="project-impact" data-i18n="projects.misVids.impact">🎯 Impact: Enterprise Java application with comprehensive security and streaming capabilities</p>
                 </div>
             </div>
         </section>
 
         <!-- Creative Technology Projects -->
         <section class="section creative-focus">
-            <h2 class="section-title">🎨 Creative Technology Projects</h2>
+            <h2 class="section-title" data-i18n="creative.title">🎨 Creative Technology Projects</h2>
             <div class="projects-grid">
                 <div class="project-card creative-project">
                     <div class="project-header">
                         <h3 class="project-title">MuseoVirtualAR</h3>
-                        <span class="project-category creative">Cultural Heritage AR</span>
+                        <span class="project-category creative" data-i18n="projects.museoVirtualAr.category">Cultural Heritage AR</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.museoVirtualAr.description">
                         Augmented Reality museum experience with image marker tracking and multi-marker support. 
                         Features multilingual system (Spanish/English) with synchronized audio, 3D cultural artifacts 
                         (Buddha, Christ the Redeemer, Chichen Itza), and cross-platform deployment with gesture recognition.
@@ -917,15 +943,15 @@
                     <div class="project-links">
                         <a href="https://github.com/UPC-MEI/MuseoVirtualAR" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Immersive cultural heritage experience for educational institutions</p>
+                    <p class="project-impact" data-i18n="projects.museoVirtualAr.impact">🎯 Impact: Immersive cultural heritage experience for educational institutions</p>
                 </div>
 
                 <div class="project-card creative-project">
                     <div class="project-header">
-                        <h3 class="project-title">CalabozoVR</h3>
-                        <span class="project-category creative">VR Gaming</span>
+                        <h3 class="project-title" data-i18n="projects.calabozoVr.title">CalabozoVR</h3>
+                        <span class="project-category creative" data-i18n="projects.calabozoVr.category">VR Gaming</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.calabozoVr.description">
                         Immersive VR escape room with gaze-based interactions and dual locomotion modes. 
                         Optimized for Google Cardboard with performance optimization for sustained 60 FPS.
                     </p>
@@ -938,15 +964,15 @@
                     <div class="project-links">
                         <a href="https://github.com/UPC-MEI/CalabozoVR" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Mobile VR optimization with dual locomotion modes</p>
+                    <p class="project-impact" data-i18n="projects.calabozoVr.impact">🎯 Impact: Mobile VR optimization with dual locomotion modes</p>
                 </div>
 
                 <div class="project-card creative-project">
                     <div class="project-header">
-                        <h3 class="project-title">Audio-Splitter <span class="status-badge in-development">Expanding to Web</span></h3>
-                        <span class="project-category creative">Audio Engineering</span>
+                        <h3 class="project-title" data-i18n="projects.audioSplitter.title">Audio-Splitter <span class="status-badge in-development" data-i18n="projects.audioSplitter.status">Expanding to Web</span></h3>
+                        <span class="project-category creative" data-i18n="projects.audioSplitter.category">Audio Engineering</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="projects.audioSplitter.description">
                         Professional audio processing suite with modular architecture for music production and podcast workflows. 
                         Features multi-format support, advanced metadata management, precision audio splitting with CLI + Interactive UI. 
                         Currently expanding to web platform.
@@ -961,64 +987,64 @@
                     <div class="project-links">
                         <a href="https://github.com/ICRONOK/Audio-Splitter" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Production-ready for music production workflows, expanding to browser-based platform</p>
+                    <p class="project-impact" data-i18n="projects.audioSplitter.impact">🎯 Impact: Production-ready for music production workflows, expanding to browser-based platform</p>
                 </div>
             </div>
         </section>
 
         <!-- Technical Expertise -->
         <section class="section">
-            <h2 class="section-title">Technical Expertise</h2>
+            <h2 class="section-title" data-i18n="techStack.title">Technical Expertise</h2>
             <div class="skills-container">
                 <div class="skill-category ai-focus">
-                    <h3>🤖 AI & Machine Learning (Current Focus)</h3>
+                    <h3 data-i18n="techStack.ai.title">🤖 AI & Machine Learning (Current Focus)</h3>
                     <div class="skill-item">
-                        <span class="skill-name">Agentic AI Systems</span>
-                        <span class="skill-level">Developing</span>
+                        <span class="skill-name" data-i18n="techStack.ai.agenticSystems">Agentic AI Systems</span>
+                        <span class="skill-level" data-i18n="techStack.levels.developing">Developing</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Agentic Coding</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-name" data-i18n="techStack.ai.agenticCoding">Agentic Coding</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">RAG Implementation</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-name" data-i18n="techStack.ai.rag">RAG Implementation</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">LLM Integration</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-name" data-i18n="techStack.ai.llm">LLM Integration</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Computer Vision</span>
-                        <span class="skill-level">Basic</span>
+                        <span class="skill-name" data-i18n="techStack.ai.computerVision">Computer Vision</span>
+                        <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Manufacturing Intelligence</span>
-                        <span class="skill-level">Research</span>
+                        <span class="skill-name" data-i18n="techStack.ai.manufacturingIntelligence">Manufacturing Intelligence</span>
+                        <span class="skill-level" data-i18n="techStack.levels.research">Research</span>
                     </div>
                 </div>
 
                 <div class="skill-category learning-focus">
-                    <h3>📚 Learning Stack (IBM Certification)</h3>
+                    <h3 data-i18n="techStack.learning.title">📚 Learning Stack (IBM Certification)</h3>
                     <div class="skill-item">
                         <span class="skill-name">Applied Machine Learning</span>
-                        <span class="skill-level learning">Basic</span>
+                        <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">PyTorch & Keras</span>
-                        <span class="skill-level learning">Basic</span>
+                        <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Generative AI Agents</span>
-                        <span class="skill-level learning">Learning</span>
+                        <span class="skill-level learning" data-i18n="techStack.levels.developing">Learning</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Prompt Engineering</span>
-                        <span class="skill-level learning">Intermediate</span>
+                        <span class="skill-level learning" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Large Language Modeling</span>
-                        <span class="skill-level learning">Learning</span>
+                        <span class="skill-level learning" data-i18n="techStack.levels.developing">Learning</span>
                     </div>
                 </div>
 
@@ -1026,19 +1052,19 @@
                     <h3>🎮 XR/AR Development</h3>
                     <div class="skill-item">
                         <span class="skill-name">Unity / C#</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Vuforia AR</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">VR Development</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Google Cardboard</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                     </div>
                 </div>
 
@@ -1046,23 +1072,23 @@
                     <h3>💻 Full-Stack Development</h3>
                     <div class="skill-item">
                         <span class="skill-name">Python / FastAPI</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Java / Spring</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">PHP / Laravel</span>
-                        <span class="skill-level">Expert</span>
+                        <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">JavaScript / Angular</span>
-                        <span class="skill-level">Expert</span>
+                        <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Bootstrap</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                     </div>
                 </div>
 
@@ -1070,7 +1096,7 @@
                     <h3>📱 Mobile Development</h3>
                     <div class="skill-item">
                         <span class="skill-name">Flutter</span>
-                        <span class="skill-level">Basic</span>
+                        <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                     </div>
                 </div>
 
@@ -1078,11 +1104,11 @@
                     <h3>🗄️ Database Management Systems</h3>
                     <div class="skill-item">
                         <span class="skill-name">Oracle MySQL</span>
-                        <span class="skill-level">Expert</span>
+                        <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">MS SQL Server</span>
-                        <span class="skill-level">Expert</span>
+                        <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
                     </div>
                 </div>
 
@@ -1090,19 +1116,19 @@
                     <h3>☁️ Infrastructure & DevOps</h3>
                     <div class="skill-item">
                         <span class="skill-name">Docker</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">AWS</span>
-                        <span class="skill-level">Basic</span>
+                        <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">CI/CD Pipelines</span>
-                        <span class="skill-level">Basic</span>
+                        <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Oracle VirtualBox</span>
-                        <span class="skill-level">Expert</span>
+                        <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
                     </div>
                 </div>
 
@@ -1110,15 +1136,15 @@
                     <h3>🛠️ Development Tools</h3>
                     <div class="skill-item">
                         <span class="skill-name">Git</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Postman</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Google Workspace</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                     </div>
                 </div>
 
@@ -1126,15 +1152,15 @@
                     <h3>🎵 Creative Technology</h3>
                     <div class="skill-item">
                         <span class="skill-name">Audio Engineering</span>
-                        <span class="skill-level">Basic</span>
+                        <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Music Production</span>
-                        <span class="skill-level">Professional</span>
+                        <span class="skill-level" data-i18n="techStack.levels.advanced">Professional</span>
                     </div>
                     <div class="skill-item">
                         <span class="skill-name">Live Performance</span>
-                        <span class="skill-level">Professional</span>
+                        <span class="skill-level" data-i18n="techStack.levels.advanced">Professional</span>
                     </div>
                 </div>
             </div>
@@ -1142,20 +1168,20 @@
 
         <!-- Enterprise Projects (Professional Background) -->
         <section class="section">
-            <h2 class="section-title">💼 Professional Enterprise Projects</h2>
+            <h2 class="section-title" data-i18n="experience.title">💼 Professional Enterprise Projects</h2>
             <div class="projects-grid">
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">ERP2 Full-Stack</h3>
-                        <span class="project-category enterprise">Enterprise</span>
+                        <h3 class="project-title" data-i18n="experience.keyProjects.erp2.title">ERP2 Full-Stack</h3>
+                        <span class="project-category enterprise" data-i18n="experience.keyProjects.erp2.category">Enterprise</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="experience.keyProjects.erp2.description">
                         Modern enterprise system currently in production on LAMP hosting, transitioning to 
                         cloud-native deployment on AWS. Full-stack solution with Laravel REST API backend 
                         and Angular SPA frontend. Planned AWS infrastructure includes ECS, RDS, 
                         ElastiCache, and ALB with Docker-first development and complete DevOps pipeline using infrastructure as code.
-                        <span class="status-badge in-development">Migrating to AWS</span>
+                        <span class="status-badge in-development" data-i18n="experience.keyProjects.erp2.status">Migrating to AWS</span>
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Laravel 9</span>
@@ -1170,15 +1196,15 @@
                         <a href="https://github.com/Grupo-Chadorama/ERP2-backend" class="project-link" target="_blank">🔗 Backend</a>
                         <a href="https://github.com/Grupo-Chadorama/ERP2-frontend" class="project-link" target="_blank">🔗 Frontend</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Production enterprise system serving multi-location retail operations, migrating to scalable cloud infrastructure</p>
+                    <p class="project-impact" data-i18n="experience.keyProjects.erp2.impact">🎯 Impact: Production enterprise system serving multi-location retail operations, migrating to scalable cloud infrastructure</p>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">CFDI Full-Stack</h3>
-                        <span class="project-category enterprise">Gov Tech</span>
+                        <h3 class="project-title" data-i18n="experience.keyProjects.cfdi.title">CFDI Full-Stack</h3>
+                        <span class="project-category enterprise" data-i18n="experience.keyProjects.cfdi.category">Gov Tech</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="experience.keyProjects.cfdi.description">
                         Mexican government tax compliance system (CFDI 3.3 & 4.0 support) with full-stack architecture. 
                         AngularJS SPA frontend with Bootstrap UI and PHP backend API. Features OAuth2 
                         authentication, PAC integration for fiscal certification, cryptographic operations, 
@@ -1197,15 +1223,15 @@
                         <a href="https://github.com/Grupo-Chadorama/CFDI-backend" class="project-link" target="_blank">🔗 Backend</a>
                         <a href="https://github.com/Grupo-Chadorama/CFDI-frontend" class="project-link" target="_blank">🔗 Frontend</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Government compliance system serving thousands of businesses with fiscal certification and tax authority integration</p>
+                    <p class="project-impact" data-i18n="experience.keyProjects.cfdi.impact">🎯 Impact: Government compliance system serving thousands of businesses with fiscal certification and tax authority integration</p>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">uniCenta oPOS Fork</h3>
-                        <span class="project-category enterprise">Open Source</span>
+                        <h3 class="project-title" data-i18n="experience.keyProjects.unicenta.title">uniCenta oPOS Fork</h3>
+                        <span class="project-category enterprise" data-i18n="experience.keyProjects.unicenta.category">Open Source</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="experience.keyProjects.unicenta.description">
                         Open source maintainer of enterprise POS system used globally. Features multi-terminal support 
                         with hardware integration, international localization (13+ languages), and community leadership 
                         with legacy system modernization.
@@ -1220,15 +1246,15 @@
                     <div class="project-links">
                         <a href="https://github.com/Grupo-Chadorama/unicentaopos-3.91.3" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Global community contribution benefiting enterprise POS deployments</p>
+                    <p class="project-impact" data-i18n="experience.keyProjects.unicenta.impact">🎯 Impact: Global community contribution benefiting enterprise POS deployments</p>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">Node POS Integration</h3>
-                        <span class="project-category enterprise">Restaurant Tech</span>
+                        <h3 class="project-title" data-i18n="experience.keyProjects.nodePOS.title">Node POS Integration</h3>
+                        <span class="project-category enterprise" data-i18n="experience.keyProjects.nodePOS.category">Restaurant Tech</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="experience.keyProjects.nodePOS.description">
                         Full-stack restaurant management system serving as the central integration hub for the complete 
                         enterprise ecosystem: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, and WebESCPOSPrint Bridge. 
                         Features complete POS operations, multi-location support, inventory control, automatic CFDI 4.0 
@@ -1246,15 +1272,15 @@
                     <div class="project-links">
                         <a href="https://github.com/Grupo-Chadorama/Node" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Central integration hub orchestrating 4 enterprise systems (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) for complete restaurant management ecosystem</p>
+                    <p class="project-impact" data-i18n="experience.keyProjects.nodePOS.impact">🎯 Impact: Central integration hub orchestrating 4 enterprise systems (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) for complete restaurant management ecosystem</p>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">WebESCPOSPrint Bridge</h3>
-                        <span class="project-category enterprise">System Integration</span>
+                        <h3 class="project-title" data-i18n="experience.keyProjects.webescpos.title">WebESCPOSPrint Bridge</h3>
+                        <span class="project-category enterprise" data-i18n="experience.keyProjects.webescpos.category">System Integration</span>
                     </div>
-                    <p class="project-description">
+                    <p class="project-description" data-i18n="experience.keyProjects.webescpos.description">
                         Java desktop application enabling web-to-printer communication for ESC/POS thermal printers. 
                         HTTP server bridge allowing web applications (ERP2/CFDI systems) to print receipts and tickets 
                         directly to local thermal printers through Base64-encoded commands and CORS-enabled API.
@@ -1270,7 +1296,7 @@
                     <div class="project-links">
                         <a href="https://github.com/Grupo-Chadorama/WebESCPOSprint" class="project-link" target="_blank">🔗 GitHub</a>
                     </div>
-                    <p class="project-impact">🎯 Impact: Critical system integration enabling seamless printing from web-based POS and billing systems</p>
+                    <p class="project-impact" data-i18n="experience.keyProjects.webescpos.impact">🎯 Impact: Critical system integration enabling seamless printing from web-based POS and billing systems</p>
                 </div>
 
             </div>
@@ -1278,25 +1304,25 @@
 
         <!-- Education & Certifications -->
         <section class="section">
-            <h2 class="section-title">🎓 Education & Certifications</h2>
+            <h2 class="section-title" data-i18n="research.title">🎓 Education & Certifications</h2>
             <div class="education-item current">
-                <h3 class="degree">Master in Informatics Engineering</h3>
-                <p class="university">Universitat Politècnica de Catalunya (UPC BarcelonaTech), Barcelona, Spain</p>
-                <p class="year">2024 - 2026 <span class="current-badge">CURRENT</span></p>
+                <h3 class="degree" data-i18n="research.master.title">Master in Informatics Engineering</h3>
+                <p class="university" data-i18n="research.master.institution">Universitat Politècnica de Catalunya (UPC BarcelonaTech), Barcelona, Spain</p>
+                <p class="year">2024 - 2026 <span class="current-badge" data-i18n="research.badges.current">CURRENT</span></p>
                 <p class="thesis">
-                    <strong>Specialization:</strong> AI Systems, Manufacturing Intelligence, Agentic AI, Computer Vision<br>
-                    <strong>Master's Thesis Proposal:</strong> Autonomous agent-based MRP system with predictive analytics
+                    <strong data-i18n="research.master.specialization.label">Specialization:</strong> <span data-i18n="research.master.specialization.text">AI Systems, Manufacturing Intelligence, Agentic AI, Computer Vision</span><br>
+                    <strong data-i18n="research.master.thesis.label">Master's Thesis Proposal:</strong> <span data-i18n="research.master.thesis.text">Autonomous agent-based MRP system with predictive analytics</span>
                 </p>
             </div>
 
             <div class="education-item current">
-                <h3 class="degree">IBM AI Engineering Professional Certificate</h3>
-                <p class="university">IBM via Coursera</p>
-                <p class="year">2025 - Present <span class="current-badge">PURSUING</span></p>
+                <h3 class="degree" data-i18n="research.ibm.title">IBM AI Engineering Professional Certificate</h3>
+                <p class="university" data-i18n="research.ibm.institution">IBM via Coursera</p>
+                <p class="year">2025 - Present <span class="current-badge" data-i18n="research.badges.pursuing">PURSUING</span></p>
                 <p class="thesis">
-                    <strong>Focus:</strong> Advanced ML, Deep Learning, Generative AI, LLMs Fine-Tuning, AI Agents, Keras, TensorFlow, PyTorch<br>
-                    <strong>Goal:</strong> Expanding expertise in ML frameworks for future AI engineering roles<br>
-                    <strong>Certificates Obtained: </strong>Machine Learning with Python, Introduction to Deep Learning & Neural Networks with Keras, Deep Learning with Keras and TensorFlow
+                    <strong data-i18n="research.ibm.focus.label">Focus:</strong> <span data-i18n="research.ibm.focus.text">Advanced ML, Deep Learning, Generative AI, LLMs Fine-Tuning, AI Agents, Keras, TensorFlow, PyTorch</span><br>
+                    <strong data-i18n="research.ibm.goal.label">Goal:</strong> <span data-i18n="research.ibm.goal.text">Expanding expertise in ML frameworks for future AI engineering roles</span><br>
+                    <strong data-i18n="research.ibm.completed.label">Certificates Obtained: </strong><span data-i18n="research.ibm.completed.text">Machine Learning with Python, Introduction to Deep Learning & Neural Networks with Keras, Deep Learning with Keras and TensorFlow</span>
                 </p>
             </div>
 
@@ -1305,10 +1331,9 @@
                 <p class="university">Tecnológico de Monterrey, Monterrey, Mexico</p>
                 <p class="year">2009 - 2012</p>
                 <p class="thesis">
-                    <strong>Thesis:</strong> Service-Oriented Architecture as Competitive Advantage Enabler 
-                    in Enterprise Information Systems Development Companies
+                    <strong data-i18n="research.mti.thesis.label">Thesis:</strong> <span data-i18n="research.mti.thesis.text">Service-Oriented Architecture as Competitive Advantage Enabler in Enterprise Information Systems Development Companies</span>
                 </p>
-                <p class="honors">🏆 Excellence Recognition (Mención Honorífica)</p>
+                <p class="honors" data-i18n="research.honors.excellence">🏆 Excellence Recognition (Mención Honorífica)</p>
             </div>
 
             <div class="education-item">
@@ -1316,8 +1341,8 @@
                 <p class="university">University College of Borås, Sweden</p>
                 <p class="year">2007</p>
                 <p class="thesis">
-                    <strong>Focus:</strong> International Business, Internship in Informatics: InnovationLab<br>
-                    <strong>Impact:</strong> Foundation for current international academic transition
+                    <strong data-i18n="research.exchange.focus.label">Focus:</strong> <span data-i18n="research.exchange.focus.text">International Business, Internship in Informatics: InnovationLab</span><br>
+                    <strong data-i18n="research.exchange.impact.label">Impact:</strong> <span data-i18n="research.exchange.impact.text">Foundation for current international academic transition</span>
                 </p>
             </div>
 
@@ -1325,40 +1350,40 @@
                 <h3 class="degree">Bachelor's in Information Systems Engineering</h3>
                 <p class="university">Tecnológico de Monterrey, Culiacán, Mexico</p>
                 <p class="year">2003 - 2008</p>
-                <p class="honors">🏆 Outstanding Performance in CENEVAL National Exam</p>
+                <p class="honors" data-i18n="research.honors.ceneval">🏆 Outstanding Performance in CENEVAL National Exam</p>
             </div>
         </section>
 
         <!-- Professional Experience (Historical Context) -->
         <section class="section">
-            <h2 class="section-title">💼 Professional Experience Background</h2>
+            <h2 class="section-title" data-i18n="experience.leadership.title">💼 Professional Experience Background</h2>
             <div class="timeline">
                 <div class="timeline-item current-focus">
-                    <h3 class="job-title">Master's Student & VR Entrepreneur</h3>
-                    <p class="company">UPC BarcelonaTech & Independent Research</p>
-                    <p class="duration">2024 - Present <span class="current-badge">CURRENT FOCUS</span></p>
+                    <h3 class="job-title" data-i18n="experience.student.title">Master's Student & VR Entrepreneur</h3>
+                    <p class="company" data-i18n="experience.student.company">UPC BarcelonaTech & Independent Research</p>
+                    <p class="duration">2024 - Present <span class="current-badge" data-i18n="experience.badges.currentFocus">CURRENT FOCUS</span></p>
                     <ul class="achievements">
-                        <li>Developing VR solutions for educational and cultural applications while pursuing Master's degree</li>
-                        <li>Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions</li>
-                        <li>International transition from Mexico to Spain for advanced studies in AI and computer engineering</li>
-                        <li>Research focus on autonomous agent-based MRP system with predictive analytics for Master's thesis</li>
-                        <li>Currently enrolled in IBM AI Engineering Professional Certificate program</li>
+                        <li data-i18n="experience.student.achievements.vr">Developing VR solutions for educational and cultural applications while pursuing Master's degree</li>
+                        <li data-i18n="experience.student.achievements.specialization">Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions</li>
+                        <li data-i18n="experience.student.achievements.transition">International transition from Mexico to Spain for advanced studies in AI and computer engineering</li>
+                        <li data-i18n="experience.student.achievements.research">Research focus on autonomous agent-based MRP system with predictive analytics for Master's thesis</li>
+                        <li data-i18n="experience.student.achievements.certification">Currently enrolled in IBM AI Engineering Professional Certificate program</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
                     <h3 class="job-title">Director of Systems, Continuous Improvement and Company Partner</h3>
                     <p class="company">Grupo Chadorama (restaurant industry): Caprichito Bello, Taller de Pizzas</p>
-                    <p class="duration">2012 - 2024 (10+ years leadership experience)</p>
+                    <p class="duration">2012 - 2024 (<span data-i18n="experience.badges.leadership">10+ years leadership experience</span>)</p>
                     <ul class="achievements">
-                        <li>Coordinated middle management, aligning objectives with business strategy</li>
-                        <li>Coordinated development, implementation, and operation of franchise model</li>
-                        <li>Designed and coordinated the service quality evaluation system</li>
-                        <li>Active participation in the development, launch and operation of the pizza workshop project, Taller de Pizzas</li>
-                        <li>Developed and implemented restaurant ERP system increasing operational efficiency</li>
-                        <li>Led enterprise software architecture and development for multi-location retail operations</li>
-                        <li>Built and implemented SAT-compliant electronic invoicing system</li>
-                        <li>Managed cross-functional teams and strategic technology initiatives</li>
+                        <li data-i18n="experience.director.achievements.management">Coordinated middle management, aligning objectives with business strategy</li>
+                        <li data-i18n="experience.director.achievements.franchise">Coordinated development, implementation, and operation of franchise model</li>
+                        <li data-i18n="experience.director.achievements.quality">Designed and coordinated the service quality evaluation system</li>
+                        <li data-i18n="experience.director.achievements.workshop">Active participation in the development, launch and operation of the pizza workshop project, Taller de Pizzas</li>
+                        <li data-i18n="experience.director.achievements.erp">Developed and implemented restaurant ERP system increasing operational efficiency</li>
+                        <li data-i18n="experience.director.achievements.architecture">Led enterprise software architecture and development for multi-location retail operations</li>
+                        <li data-i18n="experience.director.achievements.invoicing">Built and implemented SAT-compliant electronic invoicing system</li>
+                        <li data-i18n="experience.director.achievements.teams">Managed cross-functional teams and strategic technology initiatives</li>
                     </ul>
                 </div>
 
@@ -1367,9 +1392,9 @@
                     <p class="company">UAS: Secretaría de Administración y Finanzas (Largest Public University in Sinaloa)</p>
                     <p class="duration">2022 - 2024</p>
                     <ul class="achievements">
-                        <li>Provided technical advisory for financial systems serving 300K+ users</li>
-                        <li>Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server</li>
-                        <li>Led technical consulting for systems in compliance with government budget and accounting standards.</li>
+                        <li data-i18n="experience.advisor.achievements.advisory">Provided technical advisory for financial systems serving 300K+ users</li>
+                        <li data-i18n="experience.advisor.achievements.analytics">Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server</li>
+                        <li data-i18n="experience.advisor.achievements.compliance">Led technical consulting for systems in compliance with government budget and accounting standards.</li>
                     </ul>
                 </div>
 
@@ -1378,13 +1403,13 @@
                     <p class="company">UAS: Dirección de Informática (Largest Public University in Sinaloa)</p>
                     <p class="duration">2008 - 2022</p>
                     <ul class="achievements">
-                        <li>2+ years leading a team of developers for the Financial Subsystem</li>
-                        <li>Development of digital expense verification</li>
-                        <li>Architecture, development, and implementation of microservices: integration into Internal Audit modules</li>
-                        <li>Legacy system modernization and internal community leadership</li>
-                        <li>Public information access module, general archive digitization module development</li>
-                        <li>Expense verification module, financial reporting module development</li>
-                        <li>Revenue module development and maintenance</li>
+                        <li data-i18n="experience.fullStack.achievements.team">2+ years leading a team of developers for the Financial Subsystem</li>
+                        <li data-i18n="experience.fullStack.achievements.verification">Development of digital expense verification</li>
+                        <li data-i18n="experience.fullStack.achievements.microservices">Architecture, development, and implementation of microservices: integration into Internal Audit modules</li>
+                        <li data-i18n="experience.fullStack.achievements.modernization">Legacy system modernization and internal community leadership</li>
+                        <li data-i18n="experience.fullStack.achievements.publicInfo">Public information access module, general archive digitization module development</li>
+                        <li data-i18n="experience.fullStack.achievements.financial">Expense verification module, financial reporting module development</li>
+                        <li data-i18n="experience.fullStack.achievements.revenue">Revenue module development and maintenance</li>
                     </ul>
                 </div>
             </div>
@@ -1392,43 +1417,43 @@
 
         <!-- Community Leadership & Social Impact -->
         <section class="section">
-            <h2 class="section-title">🌍 Community Leadership & Social Impact</h2>
+            <h2 class="section-title" data-i18n="community.title">🌍 Community Leadership & Social Impact</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3 class="job-title">Urban Activism & Sustainable Mobility Advisor</h3>
-                    <p class="company">Ciclos Urbanos, PRO-Ciudad, IMPLAN</p>
-                    <p class="duration">2015 - 2022</p>
+                    <h3 class="job-title" data-i18n="community.urbanAdvisor.title">Urban Activism & Sustainable Mobility Advisor</h3>
+                    <p class="company" data-i18n="community.urbanAdvisor.company">Ciclos Urbanos, PRO-Ciudad, IMPLAN</p>
+                    <p class="duration" data-i18n="community.urbanAdvisor.duration">2015 - 2022</p>
                     <ul class="achievements">
-                        <li>Urban activism focused on sustainable mobility and public space development</li>
-                        <li>Sustainable mobility projects development and implementation</li>
-                        <li>Citizen advisor role in local urban planning institute</li>
-                        <li>Cross-sector collaboration between government, NGOs, and civic organizations</li>
-                        <li>Public space design and community engagement in urban development projects</li>
+                        <li data-i18n="community.urbanAdvisor.achievements.activism">Urban activism focused on sustainable mobility and public space development</li>
+                        <li data-i18n="community.urbanAdvisor.achievements.projects">Sustainable mobility projects development and implementation</li>
+                        <li data-i18n="community.urbanAdvisor.achievements.advisor">Citizen advisor role in local urban planning institute</li>
+                        <li data-i18n="community.urbanAdvisor.achievements.collaboration">Cross-sector collaboration between government, NGOs, and civic organizations</li>
+                        <li data-i18n="community.urbanAdvisor.achievements.engagement">Public space design and community engagement in urban development projects</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3 class="job-title">Technology Community Coordinator & Startup Weekend Co-Organizer</h3>
-                    <p class="company">Comunidad Orientada a las Tecnologías de Sinaloa (COLTSIN)</p>
-                    <p class="duration">2014 - 2016</p>
+                    <h3 class="job-title" data-i18n="community.techCoordinator.title">Technology Community Coordinator & Startup Weekend Co-Organizer</h3>
+                    <p class="company" data-i18n="community.techCoordinator.company">Comunidad Orientada a las Tecnologías de Sinaloa (COLTSIN)</p>
+                    <p class="duration" data-i18n="community.techCoordinator.duration">2014 - 2016</p>
                     <ul class="achievements">
-                        <li>Coordination of technology dissemination, promotion and development events</li>
-                        <li>Co-organizer of Startup Weekend events, fostering entrepreneurial ecosystem</li>
-                        <li>Technology community building and ecosystem development</li>
-                        <li>Speaker coordination and event management for tech conferences</li>
-                        <li>Mentorship and support for emerging tech entrepreneurs and startups</li>
+                        <li data-i18n="community.techCoordinator.achievements.coordination">Coordination of technology dissemination, promotion and development events</li>
+                        <li data-i18n="community.techCoordinator.achievements.startup">Co-organizer of Startup Weekend events, fostering entrepreneurial ecosystem</li>
+                        <li data-i18n="community.techCoordinator.achievements.community">Technology community building and ecosystem development</li>
+                        <li data-i18n="community.techCoordinator.achievements.speakers">Speaker coordination and event management for tech conferences</li>
+                        <li data-i18n="community.techCoordinator.achievements.mentorship">Mentorship and support for emerging tech entrepreneurs and startups</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <h3 class="job-title">Founder & Secretary</h3>
-                    <p class="company">PMI Sinaloa, Mexico Chapter</p>
-                    <p class="duration">2011 - 2013</p>
+                    <h3 class="job-title" data-i18n="community.pmi.title">Founder & Secretary</h3>
+                    <p class="company" data-i18n="community.pmi.company">PMI Sinaloa, Mexico Chapter</p>
+                    <p class="duration" data-i18n="community.pmi.duration">2011 - 2013</p>
                     <ul class="achievements">
-                        <li>Founded and established chapter, building professional community from ground up</li>
-                        <li>Organized conferences, courses and networking events for PMI network</li>
-                        <li>Strategic planning and organizational leadership for chapter growth and sustainability</li>
-                        <li>Cross-industry networking and knowledge sharing facilitation</li>
+                        <li data-i18n="community.pmi.achievements.founded">Founded and established chapter, building professional community from ground up</li>
+                        <li data-i18n="community.pmi.achievements.events">Organized conferences, courses and networking events for PMI network</li>
+                        <li data-i18n="community.pmi.achievements.leadership">Strategic planning and organizational leadership for chapter growth and sustainability</li>
+                        <li data-i18n="community.pmi.achievements.networking">Cross-industry networking and knowledge sharing facilitation</li>
                     </ul>
                 </div>
             </div>
@@ -1436,33 +1461,33 @@
 
         <!-- Languages -->
         <section class="section">
-            <h2 class="section-title">🌐 Languages</h2>
+            <h2 class="section-title" data-i18n="languages.title">🌐 Languages</h2>
             <div class="languages-grid">
                 <div class="language-item">
-                    <h3 class="language-name">🇲🇽 Spanish</h3>
-                    <p class="language-level">Native</p>
+                    <h3 class="language-name" data-i18n="languages.spanish.name">🇲🇽 Spanish</h3>
+                    <p class="language-level" data-i18n="languages.spanish.level">Native</p>
                 </div>
                 <div class="language-item">
-                    <h3 class="language-name">🇺🇸 English</h3>
-                    <p class="language-level">Professional<br>(TOEFL ITP 560)</p>
+                    <h3 class="language-name" data-i18n="languages.english.name">🇺🇸 English</h3>
+                    <p class="language-level" data-i18n-html="languages.english.level">Professional<br>(TOEFL ITP 560)</p>
                 </div>
                 <div class="language-item">
-                    <h3 class="language-name">🇩🇪 German</h3>
-                    <p class="language-level">Beginner</p>
+                    <h3 class="language-name" data-i18n="languages.german.name">🇩🇪 German</h3>
+                    <p class="language-level" data-i18n="languages.german.level">Beginner</p>
                 </div>
             </div>
         </section>
 
         <!-- Creative Technology Bridge -->
         <section class="section creative-focus">
-            <h2 class="section-title">🎵 Creative Technology Fusion</h2>
+            <h2 class="section-title" data-i18n="creative.title">🎵 Creative Technology Fusion</h2>
             <div style="text-align: center;">
-                <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 20px; line-height: 1.8;">
+                <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 20px; line-height: 1.8;" data-i18n="creative.text">
                     Beyond AI research and VR development, I'm <strong>The Ocean</strong> - a DJ and electronic music producer 
                     who bridges the gap between <strong>creative artistry</strong> and <strong>technical innovation</strong>. 
                     My audio engineering projects demonstrate how deep technical expertise can enhance creative workflows.
                 </p>
-                <p style="color: #94a3b8; margin-bottom: 20px;">
+                <p style="color: #94a3b8; margin-bottom: 20px;" data-i18n="creative.description">
                     This cross-disciplinary background enables me to bridge technical innovation with creative problem-solving, 
                     creating a unique profile ideal for creative tech companies and innovation roles.
                 </p>
@@ -1475,23 +1500,23 @@
 
         <!-- Call to Action -->
         <section class="section" style="text-align: center; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1)); border-color: rgba(139, 92, 246, 0.3);">
-            <h2 class="section-title">🚀 Open to AI Engineering Opportunities</h2>
-            <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px; line-height: 1.8;">
+            <h2 class="section-title" data-i18n="opportunities.title">🚀 Open to AI Engineering Opportunities</h2>
+            <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px; line-height: 1.8;" data-i18n="opportunities.text">
                 Seeking <strong>AI Engineering and Systems Architecture</strong> positions that leverage both 
                 academic research and enterprise experience
             </p>
             <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
                 <a href="mailto:ochand@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
                     <span>📧</span>
-                    <span>Contact Me</span>
+                    <span data-i18n="opportunities.contact">Contact Me</span>
                 </a>
                 <a href="https://github.com/ochand" class="github-link" target="_blank">
                     <span>💻</span>
-                    <span>View All Projects</span>
+                    <span data-i18n="opportunities.projects">View All Projects</span>
                 </a>
             </div>
             <div style="margin-top: 30px;">
-                <p style="color: #8b5cf6; font-style: italic; max-width: 500px; margin: 0 auto;">
+                <p style="color: #8b5cf6; font-style: italic; max-width: 500px; margin: 0 auto;" data-i18n="opportunities.quote">
                     "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research 
                     to create autonomous business intelligence solutions"
                 </p>
@@ -1534,6 +1559,47 @@
                     this.style.transform = 'translateY(-8px) scale(1)';
                 });
             });
+        });
+        
+        // Ultra simple language switcher
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('lang-btn');
+            const menu = document.getElementById('lang-menu');
+            const langEn = document.getElementById('lang-en');
+            const langEs = document.getElementById('lang-es');
+            
+            if (btn && menu) {
+                btn.onclick = function() {
+                    if (menu.style.display === 'none' || menu.style.display === '') {
+                        menu.style.display = 'block';
+                    } else {
+                        menu.style.display = 'none';
+                    }
+                };
+                
+                if (langEn) {
+                    langEn.onclick = function() {
+                        btn.innerHTML = 'LANG: EN ▼';
+                        menu.style.display = 'none';
+                        if (window.i18n) window.i18n.changeLanguage('en');
+                    };
+                }
+                
+                if (langEs) {
+                    langEs.onclick = function() {
+                        btn.innerHTML = 'LANG: ES ▼';
+                        menu.style.display = 'none';
+                        if (window.i18n) window.i18n.changeLanguage('es');
+                    };
+                }
+                
+                // Close menu when clicking outside
+                document.onclick = function(e) {
+                    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                        menu.style.display = 'none';
+                    }
+                };
+            }
         });
     </script>
 </body>

@@ -1,0 +1,368 @@
+{
+  "meta": {
+    "title": "Oliver Eduardo Chan Dorado - AI Systems Architect in Training | Master's Student at UPC",
+    "description": "AI Systems Architect in Training with 16+ years enterprise experience. Master's Student at UPC BarcelonaTech specializing in agentic AI, manufacturing intelligence, and autonomous systems.",
+    "keywords": "AI Systems Architect in Training, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
+    "ogTitle": "Oliver Eduardo Chan Dorado - AI Systems Architect in Training | UPC BarcelonaTech",
+    "ogDescription": "Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship"
+  },
+  "header": {
+    "name": "Oliver Eduardo Chan Dorado",
+    "title": "AI Systems Architect in Training",
+    "subtitle": "Master's Student at UPC BarcelonaTech",
+    "tagline": "Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship",
+    "badges": {
+      "master": "Expected 2026:",
+      "ibm": "IBM AI Engineer",
+      "research": "MSc Informatics Engineering"
+    },
+    "contact": {
+      "email": "ochand@gmail.com",
+      "location": "Barcelona, Spain",
+      "github": "View GitHub Profile"
+    }
+  },
+  "summary": {
+    "title": "Professional Summary",
+    "text": "AI Systems Architect in Training with 16+ years of enterprise systems expertise, currently pursuing Master in Informatics Engineering at UPC BarcelonaTech (Expected 2026) and IBM AI Engineering Professional Certificate. Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions.\n\nInternational transition from Mexico to Spain for advanced studies while developing VR platform for cultural and entertainment applications."
+  },
+  "research": {
+    "title": "Current Research Focus",
+    "subtitle": "Academic Excellence in AI Systems",
+    "master": {
+      "title": "Master in Informatics Engineering",
+      "institution": "UPC BarcelonaTech, Barcelona, Spain (2024-2026)",
+      "thesis": {
+        "label": "Master's Thesis Proposal:",
+        "text": "Autonomous agent-based MRP system with predictive analytics"
+      },
+      "specialization": {
+        "label": "Specialization:",
+        "text": "AI Systems, Manufacturing Intelligence, Agentic AI, Computer Vision"
+      }
+    },
+    "ibm": {
+      "title": "IBM AI Engineering Professional Certificate",
+      "institution": "IBM via Coursera (2025-Present)",
+      "focus": {
+        "label": "Focus:",
+        "text": "Advanced ML, Deep Learning, Generative AI, LLMs Fine-Tuning, AI Agents, Keras, TensorFlow, PyTorch"
+      },
+      "goal": {
+        "label": "Goal:",
+        "text": "Expanding expertise in ML frameworks for future AI engineering roles"
+      },
+      "completed": {
+        "label": "Certificates Obtained: ",
+        "text": "Machine Learning with Python, Introduction to Deep Learning & Neural Networks with Keras, Deep Learning with Keras and TensorFlow"
+      },
+      "inProgress": "Advanced ML, Generative AI, LLMs Fine-Tuning (In Progress)"
+    },
+    "mti": {
+      "thesis": {
+        "label": "Thesis:",
+        "text": "Service-Oriented Architecture as Competitive Advantage Enabler in Enterprise Information Systems Development Companies"
+      }
+    },
+    "exchange": {
+      "focus": {
+        "label": "Focus:",
+        "text": "International Business, Internship in Informatics: InnovationLab"
+      },
+      "impact": {
+        "label": "Impact:",
+        "text": "Foundation for current international academic transition"
+      }
+    },
+    "badges": {
+      "current": "CURRENT",
+      "pursuing": "PURSUING"
+    },
+    "honors": {
+      "excellence": "🏆 Excellence Recognition (Mención Honorífica)",
+      "ceneval": "🏆 Outstanding Performance in CENEVAL National Exam"
+    }
+  },
+  "projects": {
+    "title": "🎓 Academic Projects",
+    "agenticMrp": {
+      "title": "Agentic-MRP",
+      "badge": "Master's Thesis Project",
+      "category": "AI Systems",
+      "description": "Research focus on Predictive AI Manufacturing System evolving into autonomous agent-based MRP with predictive analytics. Features discrete event simulation for manufacturing optimization, supply chain intelligence with automated procurement decisions, and real-time production planning with inventory optimization.",
+      "impact": "🎯 Impact: Developing autonomous manufacturing decisions with predictive analytics for Master's thesis"
+    },
+    "llmChatRag": {
+      "title": "LLM-Chat-RAG",
+      "category": "AI/LLM",
+      "description": "Advanced AI chat system with Retrieval Augmented Generation (RAG) using vector databases. Features OpenAI GPT integration, OCR capabilities for PDF processing, microservices architecture with explainable AI responses and source citation.",
+      "impact": "🎯 Impact: Intelligent document processing with source citation and explainable AI"
+    },
+    "himalayanDatavis": {
+      "title": "Himalayan-DataVis",
+      "category": "Data Science",
+      "description": "Interactive data science platform for mountaineering expedition analysis (2020-2024). Features Grammar of Graphics visualization with Altair/Vega-Lite, real-time data exploration with statistical analysis, and multi-dimensional analysis with geographic insights.",
+      "status": "🚀 Streamlit Cloud ready",
+      "impact": "🎯 Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities"
+    },
+    "misVids": {
+      "title": "MisVids",
+      "category": "Enterprise Java",
+      "description": "Enterprise video streaming platform with microservices separation. Features AES-256 encryption for video file security, JWT authentication, HTTP Range streaming, YouTube integration with embedded video support, and production-ready deployment.",
+      "impact": "🎯 Impact: Enterprise Java application with comprehensive security and streaming capabilities"
+    },
+    "museoVirtualAr": {
+      "title": "MuseoVirtualAR",
+      "category": "Cultural Heritage AR",
+      "description": "Augmented Reality museum experience with image marker tracking and multi-marker support. Features multilingual system (Spanish/English) with synchronized audio, 3D cultural artifacts (Buddha, Christ the Redeemer, Chichen Itza), and cross-platform deployment with gesture recognition.",
+      "impact": "🎯 Impact: Immersive cultural heritage experience for educational institutions"
+    },
+    "calabozoVr": {
+      "title": "CalabozoVR",
+      "category": "VR Gaming",
+      "description": "Immersive VR escape room with gaze-based interactions and dual locomotion modes. Optimized for Google Cardboard with performance optimization for sustained 60 FPS.",
+      "impact": "🎯 Impact: Mobile VR optimization with dual locomotion modes"
+    },
+    "audioSplitter": {
+      "title": "Audio-Splitter",
+      "status": "Expanding to Web",
+      "category": "Audio Engineering",
+      "description": "Professional audio processing suite with modular architecture for music production and podcast workflows. Features multi-format support, advanced metadata management, precision audio splitting with CLI + Interactive UI. Currently expanding to web platform.",
+      "impact": "🎯 Impact: Production-ready for music production workflows, expanding to browser-based platform"
+    }
+  },
+  "experience": {
+    "title": "💼 Professional Enterprise Projects",
+    "leadership": {
+      "title": "16+ Years Leadership & Development",
+      "roles": "Director of Systems - Grupo Chadorama (2012-2024)\nFinancial Systems Advisor - UAS (300K+ users, 2022-2024)\nFull-Stack Developer & Team Lead - UAS (2008-2022)"
+    },
+    "director": {
+      "achievements": {
+        "management": "Coordinated middle management, aligning objectives with business strategy",
+        "franchise": "Coordinated development, implementation, and operation of franchise model",
+        "quality": "Designed and coordinated the service quality evaluation system",
+        "workshop": "Active participation in the development, launch and operation of the pizza workshop project, Taller de Pizzas",
+        "erp": "Developed and implemented restaurant ERP system increasing operational efficiency",
+        "architecture": "Led enterprise software architecture and development for multi-location retail operations",
+        "invoicing": "Built and implemented SAT-compliant electronic invoicing system",
+        "teams": "Managed cross-functional teams and strategic technology initiatives"
+      }
+    },
+    "advisor": {
+      "achievements": {
+        "advisory": "Provided technical advisory for financial systems serving 300K+ users",
+        "analytics": "Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server",
+        "compliance": "Led technical consulting for systems in compliance with government budget and accounting standards."
+      }
+    },
+    "fullStack": {
+      "achievements": {
+        "team": "2+ years leading a team of developers for the Financial Subsystem",
+        "verification": "Development of digital expense verification",
+        "microservices": "Architecture, development, and implementation of microservices: integration into Internal Audit modules",
+        "modernization": "Legacy system modernization and internal community leadership",
+        "publicInfo": "Public information access module, general archive digitization module development",
+        "financial": "Expense verification module, financial reporting module development",
+        "revenue": "Revenue module development and maintenance"
+      }
+    },
+    "student": {
+      "title": "Master's Student & VR Entrepreneur",
+      "company": "UPC BarcelonaTech & Independent Research",
+      "achievements": {
+        "vr": "Developing VR solutions for educational and cultural applications while pursuing Master's degree",
+        "specialization": "Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions",
+        "transition": "International transition from Mexico to Spain for advanced studies in AI and computer engineering",
+        "research": "Research focus on autonomous agent-based MRP system with predictive analytics for Master's thesis",
+        "certification": "Currently enrolled in IBM AI Engineering Professional Certificate program"
+      }
+    },
+    "badges": {
+      "currentFocus": "CURRENT FOCUS",
+      "leadership": "10+ years leadership experience"
+    },
+    "keyProjects": {
+      "title": "Key Enterprise Projects",
+      "erp2": {
+        "title": "ERP2 Full-Stack",
+        "category": "Enterprise",
+        "description": "Modern enterprise system currently in production on LAMP hosting, transitioning to cloud-native deployment on AWS. Full-stack solution with Laravel REST API backend and Angular SPA frontend. Planned AWS infrastructure includes ECS, RDS, ElastiCache, and ALB with Docker-first development and complete DevOps pipeline using infrastructure as code.",
+        "status": "Migrating to AWS",
+        "impact": "🎯 Impact: Production enterprise system serving multi-location retail operations, migrating to scalable cloud infrastructure"
+      },
+      "cfdi": {
+        "title": "CFDI Full-Stack",
+        "category": "Gov Tech",
+        "description": "Mexican government tax compliance system (CFDI 3.3 & 4.0 support) with full-stack architecture. AngularJS SPA frontend with Bootstrap UI and PHP backend API. Features OAuth2 authentication, PAC integration for fiscal certification, cryptographic operations, real-time tax authority integration with batch processing, and multi-emisor support.",
+        "impact": "🎯 Impact: Government compliance system serving thousands of businesses with fiscal certification and tax authority integration"
+      },
+      "unicenta": {
+        "title": "uniCenta oPOS Fork",
+        "category": "Open Source",
+        "description": "Open source maintainer of enterprise POS system used globally. Features multi-terminal support with hardware integration, international localization (13+ languages), and community leadership with legacy system modernization.",
+        "impact": "🎯 Impact: Global community contribution benefiting enterprise POS deployments"
+      },
+      "nodePOS": {
+        "title": "Node POS Integration",
+        "category": "Restaurant Tech",
+        "description": "Full-stack restaurant management system serving as the central integration hub for the complete enterprise ecosystem: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, and WebESCPOSPrint Bridge. Features complete POS operations, multi-location support, inventory control, automatic CFDI 4.0 electronic invoicing, financial management with cash flow control, and seamless thermal printing integration.",
+        "impact": "🎯 Impact: Central integration hub orchestrating 4 enterprise systems (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) for complete restaurant management ecosystem"
+      },
+      "webescpos": {
+        "title": "WebESCPOSPrint Bridge",
+        "category": "System Integration",
+        "description": "Java desktop application enabling web-to-printer communication for ESC/POS thermal printers. HTTP server bridge allowing web applications (ERP2/CFDI systems) to print receipts and tickets directly to local thermal printers through Base64-encoded commands and CORS-enabled API.",
+        "impact": "🎯 Impact: Critical system integration enabling seamless printing from web-based POS and billing systems"
+      }
+    }
+  },
+  "techStack": {
+    "title": "Technical Expertise",
+    "ai": {
+      "title": "🤖 AI & Machine Learning (Current Focus)",
+      "agenticSystems": "Agentic AI Systems",
+      "agenticCoding": "Agentic Coding", 
+      "rag": "RAG Implementation",
+      "llm": "LLM Integration",
+      "computerVision": "Computer Vision",
+      "manufacturingIntelligence": "Manufacturing Intelligence"
+    },
+    "learning": {
+      "title": "📚 Learning Stack (IBM Certification)",
+      "machineLearning": "Machine Learning with Python",
+      "deepLearning": "Deep Learning & Neural Networks",
+      "tensorflow": "Keras & TensorFlow",
+      "generativeAi": "Generative AI & LLMs Fine-Tuning"
+    },
+    "core": {
+      "title": "💻 Core Development (16+ Years)",
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "databases": "Databases",
+      "cloud": "Cloud & DevOps"
+    },
+    "specialized": {
+      "title": "🎮 Specialized Technologies",
+      "xrAr": "XR/AR Development",
+      "creative": "Creative Technology"
+    },
+    "levels": {
+      "developing": "Learning",
+      "intermediate": "Intermediate", 
+      "basic": "Basic",
+      "research": "Research",
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "expert": "Expert",
+      "advanced": "Advanced"
+    }
+  },
+  "creative": {
+    "title": "🎨 Creative Technology Projects",
+    "text": "Beyond AI research and VR development, I'm The Ocean - a DJ and electronic music producer bridging creative artistry with technical innovation. My Audio-Splitter project demonstrates how deep technical expertise enhances creative workflows.",
+    "description": "This cross-disciplinary background enables me to bridge technical innovation with creative problem-solving, creating a unique profile ideal for creative tech companies and innovation roles."
+  },
+  "impact": {
+    "title": "Impact Metrics",
+    "academic": {
+      "value": "4+ AI/ML academic projects completed",
+      "label": "AI/ML Projects"
+    },
+    "experience": {
+      "value": "16+ years enterprise systems experience",
+      "label": "Years Experience"
+    },
+    "users": {
+      "value": "300K+ users served through financial systems",
+      "label": "Users Served"
+    },
+    "graduation": {
+      "value": "2026 expected Master's graduation",
+      "label": "Expected Graduation"
+    },
+    "languages": "13+ languages supported in open source contributions"
+  },
+  "opportunities": {
+    "title": "🚀 Open to AI Engineering Opportunities",
+    "text": "Seeking AI Engineering and Systems Architecture positions that leverage both academic research and enterprise experience",
+    "contact": "Contact Me",
+    "projects": "View All Projects", 
+    "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",
+    "interests": "Agentic AI systems development\nManufacturing intelligence solutions\nEnterprise AI integration\nResearch-driven technical roles",
+    "location": "Location: Barcelona, Spain (Open to remote/hybrid)",
+    "languages": "Languages: Spanish (Native), English (Professional - TOEFL ITP 560), German (Beginner)"
+  },
+  "connect": {
+    "title": "Let's Connect",
+    "portfolio": "Portfolio",
+    "email": "Email",
+    "github": "GitHub",
+    "music": "Music Project",
+    "whatsapp": "WhatsApp",
+    "phone": "Phone"
+  },
+  "footer": {
+    "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",
+    "builtWith": "Built With: HTML5 • CSS3 • Modern Web Technologies • GitHub Pages • Responsive Design"
+  },
+  "language": {
+    "selector": "Language",
+    "english": "English",
+    "spanish": "Español",
+    "catalan": "Català"
+  },
+  "languages": {
+    "title": "🌐 Languages",
+    "spanish": {
+      "name": "🇲🇽 Spanish",
+      "level": "Native"
+    },
+    "english": {
+      "name": "🇺🇸 English", 
+      "level": "Professional<br>(TOEFL ITP 560)"
+    },
+    "german": {
+      "name": "🇩🇪 German",
+      "level": "Beginner"
+    }
+  },
+  "community": {
+    "title": "🌍 Community Leadership & Social Impact",
+    "urbanAdvisor": {
+      "title": "Urban Activism & Sustainable Mobility Advisor",
+      "company": "Ciclos Urbanos, PRO-Ciudad, IMPLAN", 
+      "duration": "2015 - 2022",
+      "achievements": {
+        "activism": "Urban activism focused on sustainable mobility and public space development",
+        "projects": "Sustainable mobility projects development and implementation",
+        "advisor": "Citizen advisor role in local urban planning institute",
+        "collaboration": "Cross-sector collaboration between government, NGOs, and civic organizations",
+        "engagement": "Public space design and community engagement in urban development projects"
+      }
+    },
+    "techCoordinator": {
+      "title": "Technology Community Coordinator & Startup Weekend Co-Organizer",
+      "company": "Comunidad Orientada a las Tecnologías de Sinaloa (COLTSIN)",
+      "duration": "2014 - 2016",
+      "achievements": {
+        "coordination": "Coordination of technology dissemination, promotion and development events",
+        "startup": "Co-organizer of Startup Weekend events, fostering entrepreneurial ecosystem",
+        "community": "Technology community building and ecosystem development",
+        "speakers": "Speaker coordination and event management for tech conferences",
+        "mentorship": "Mentorship and support for emerging tech entrepreneurs and startups"
+      }
+    },
+    "pmi": {
+      "title": "Founder & Secretary",
+      "company": "PMI Sinaloa, Mexico Chapter",
+      "duration": "2011 - 2013",
+      "achievements": {
+        "founded": "Founded and established chapter, building professional community from ground up",
+        "events": "Organized conferences, courses and networking events for PMI network",
+        "leadership": "Strategic planning and organizational leadership for chapter growth and sustainability",
+        "networking": "Cross-industry networking and knowledge sharing facilitation"
+      }
+    }
+  }
+}

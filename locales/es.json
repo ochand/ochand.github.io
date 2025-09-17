@@ -1,0 +1,368 @@
+{
+  "meta": {
+    "title": "Oliver Eduardo Chan Dorado - Arquitecto de Sistemas IA en Formación | Estudiante de Máster en UPC",
+    "description": "Arquitecto de Sistemas IA en Formación con 16+ años de experiencia empresarial. Estudiante de Máster en UPC BarcelonaTech especializado en IA agéntica, inteligencia manufacturera y sistemas autónomos.",
+    "keywords": "Arquitecto de Sistemas IA en Formación, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
+    "ogTitle": "Oliver Eduardo Chan Dorado - Arquitecto de Sistemas IA en Formación | UPC BarcelonaTech",
+    "ogDescription": "Estudiante de Máster en transición de 16+ años de sistemas empresariales hacia integración de IA de vanguardia y emprendimiento en RV"
+  },
+  "header": {
+    "name": "Oliver Eduardo Chan Dorado",
+    "title": "Arquitecto de Sistemas IA en Formación",
+    "subtitle": "Estudiante de Máster en UPC BarcelonaTech",
+    "tagline": "Transicionando de 16+ años en sistemas empresariales hacia integración de IA de vanguardia y emprendimiento en RV",
+    "badges": {
+      "master": "Previsto 2026:",
+      "ibm": "Ingeniero IA IBM",
+      "research": "MSc Ingeniería Informática"
+    },
+    "contact": {
+      "email": "ochand@gmail.com",
+      "location": "Barcelona, España",
+      "github": "Ver Perfil de GitHub"
+    }
+  },
+  "summary": {
+    "title": "Resumen Profesional",
+    "text": "Arquitecto de Sistemas IA en Formación con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en UPC BarcelonaTech (Previsto 2026) y Certificado Profesional de Ingeniería IA de IBM. Especializado en sistemas de IA agéntica, inteligencia manufacturera y soluciones empresariales autónomas.\n\nTransición internacional de México a España para estudios avanzados mientras desarrollo plataforma de RV para aplicaciones culturales y de entretenimiento."
+  },
+  "research": {
+    "title": "Enfoque Actual de Investigación",
+    "subtitle": "Excelencia Académica en Sistemas IA",
+    "master": {
+      "title": "Máster en Ingeniería Informática",
+      "institution": "UPC BarcelonaTech, Barcelona, España (2024-2026)",
+      "thesis": {
+        "label": "Propuesta de Tesis de Máster:",
+        "text": "Sistema MRP basado en agentes autónomos con analítica predictiva"
+      },
+      "specialization": {
+        "label": "Especialización:",
+        "text": "Sistemas IA, Inteligencia Manufacturera, IA Agéntica, Visión por Computador"
+      }
+    },
+    "ibm": {
+      "title": "Certificado Profesional de Ingeniería IA de IBM",
+      "institution": "IBM vía Coursera (2025-Presente)",
+      "focus": {
+        "label": "Enfoque:",
+        "text": "ML Avanzado, Deep Learning, IA Generativa, Fine-Tuning de LLMs, Agentes IA, Keras, TensorFlow, PyTorch"
+      },
+      "goal": {
+        "label": "Objetivo:",
+        "text": "Expandir experiencia en frameworks ML para futuros roles de ingeniería IA"
+      },
+      "completed": {
+        "label": "Certificados Obtenidos: ",
+        "text": "Machine Learning con Python, Introducción a Deep Learning y Redes Neuronales con Keras, Deep Learning con Keras y TensorFlow"
+      },
+      "inProgress": "ML Avanzado, IA Generativa, Fine-Tuning de LLMs (En Progreso)"
+    },
+    "mti": {
+      "thesis": {
+        "label": "Tesis:",
+        "text": "Arquitectura Orientada a Servicios como Habilitador de Ventaja Competitiva en Empresas Desarrolladoras de Sistemas de Información Empresarial"
+      }
+    },
+    "exchange": {
+      "focus": {
+        "label": "Enfoque:",
+        "text": "Negocios Internacionales, Prácticas en Informática: InnovationLab"
+      },
+      "impact": {
+        "label": "Impacto:",
+        "text": "Base para la transición académica internacional actual"
+      }
+    },
+    "badges": {
+      "current": "ACTUAL",
+      "pursuing": "CURSANDO"
+    },
+    "honors": {
+      "excellence": "🏆 Reconocimiento de Excelencia (Mención Honorífica)",
+      "ceneval": "🏆 Desempeño Sobresaliente en Examen Nacional CENEVAL"
+    }
+  },
+  "projects": {
+    "title": "🎓 Proyectos Académicos",
+    "agenticMrp": {
+      "title": "Agentic-MRP",
+      "badge": "Proyecto de Tesis de Máster",
+      "category": "Sistemas IA",
+      "description": "Investigación enfocada en Sistema Predictivo de IA Manufacturera evolucionando hacia MRP basado en agentes autónomos con analítica predictiva. Incluye simulación de eventos discretos para optimización manufacturera, inteligencia de cadena de suministro con decisiones automatizadas de compras, y planificación de producción en tiempo real con optimización de inventario.",
+      "impact": "🎯 Impacto: Desarrollando decisiones manufactureras autónomas con analítica predictiva para tesis de Máster"
+    },
+    "llmChatRag": {
+      "title": "LLM-Chat-RAG",
+      "category": "IA/LLM",
+      "description": "Sistema de chat IA avanzado con Generación Aumentada por Recuperación (RAG) usando bases de datos vectoriales. Incluye integración con OpenAI GPT, capacidades OCR para procesamiento de PDF, arquitectura de microservicios con respuestas de IA explicables y citación de fuentes.",
+      "impact": "🎯 Impacto: Procesamiento inteligente de documentos con citación de fuentes e IA explicable"
+    },
+    "himalayanDatavis": {
+      "title": "Himalayan-DataVis",
+      "category": "Ciencia de Datos",
+      "description": "Plataforma interactiva de ciencia de datos para análisis de expediciones montañeras (2020-2024). Incluye visualización Grammar of Graphics con Altair/Vega-Lite, exploración de datos en tiempo real con análisis estadístico, y análisis multidimensional con perspectivas geográficas.",
+      "status": "🚀 Listo para Streamlit Cloud",
+      "impact": "🎯 Impacto: Listo para despliegue en Streamlit Cloud con capacidades de análisis estadístico"
+    },
+    "misVids": {
+      "title": "MisVids",
+      "category": "Java Empresarial",
+      "description": "Plataforma empresarial de streaming de video con separación de microservicios. Incluye encriptación AES-256 para seguridad de archivos de video, autenticación JWT, streaming HTTP Range, integración con YouTube con soporte de video embebido, y despliegue listo para producción.",
+      "impact": "🎯 Impacto: Aplicación Java empresarial con capacidades integrales de seguridad y streaming"
+    },
+    "museoVirtualAr": {
+      "title": "MuseoVirtualAR",
+      "category": "Patrimonio Cultural AR",
+      "description": "Experiencia de museo en Realidad Aumentada con seguimiento de marcadores de imagen y soporte multi-marcador. Incluye sistema multilingüe (Español/Inglés) con audio sincronizado, artefactos culturales 3D (Buda, Cristo Redentor, Chichen Itzá), y despliegue multiplataforma con reconocimiento de gestos.",
+      "impact": "🎯 Impacto: Experiencia inmersiva de patrimonio cultural para instituciones educativas"
+    },
+    "calabozoVr": {
+      "title": "CalabozoVR",
+      "category": "Juegos VR",
+      "description": "Escape room inmersivo en RV con interacciones basadas en mirada y modos de locomoción dual. Optimizado para Google Cardboard con optimización de rendimiento para mantener 60 FPS sostenidos.",
+      "impact": "🎯 Impacto: Optimización de VR móvil con modos de locomoción dual"
+    },
+    "audioSplitter": {
+      "title": "Audio-Splitter",
+      "status": "Expandiendo a Web",
+      "category": "Ingeniería de Audio",
+      "description": "Suite profesional de procesamiento de audio con arquitectura modular para flujos de trabajo de producción musical y podcasts. Incluye soporte multi-formato, gestión avanzada de metadatos, división precisa de audio con CLI + UI Interactiva. Actualmente expandiendo a plataforma web.",
+      "impact": "🎯 Impacto: Listo para producción en flujos de trabajo musicales, expandiendo a plataforma basada en navegador"
+    }
+  },
+  "experience": {
+    "title": "💼 Proyectos Empresariales Profesionales",
+    "leadership": {
+      "title": "16+ Años de Liderazgo y Desarrollo",
+      "roles": "Director de Sistemas - Grupo Chadorama (2012-2024)\nAsesor de Sistemas Financieros - UAS (300K+ usuarios, 2022-2024)\nDesarrollador Full-Stack y Líder de Equipo - UAS (2008-2022)"
+    },
+    "director": {
+      "achievements": {
+        "management": "Coordiné gerencia media, alineando objetivos con estrategia empresarial",
+        "franchise": "Coordiné desarrollo, implementación y operación del modelo de franquicia",
+        "quality": "Diseñé y coordiné el sistema de evaluación de calidad de servicio",
+        "workshop": "Participación activa en desarrollo, lanzamiento y operación del proyecto taller de pizzas, Taller de Pizzas",
+        "erp": "Desarrollé e implementé sistema ERP restaurantero aumentando eficiencia operacional",
+        "architecture": "Lideré arquitectura y desarrollo de software empresarial para operaciones minoristas multi-ubicación",
+        "invoicing": "Construí e implementé sistema de facturación electrónica compatible con SAT",
+        "teams": "Administré equipos multifuncionales e iniciativas tecnológicas estratégicas"
+      }
+    },
+    "advisor": {
+      "achievements": {
+        "advisory": "Proporcioné asesoría técnica para sistemas financieros sirviendo 300K+ usuarios",
+        "analytics": "Realicé procesamiento avanzado de datos, presentación e interpretación de analítica contable y financiera usando SQL Server",
+        "compliance": "Lideré consultoría técnica para sistemas en cumplimiento con estándares presupuestarios y contables gubernamentales."
+      }
+    },
+    "fullStack": {
+      "achievements": {
+        "team": "2+ años liderando equipo de desarrolladores para el Subsistema Financiero",
+        "verification": "Desarrollo de verificación digital de gastos",
+        "microservices": "Arquitectura, desarrollo e implementación de microservicios: integración en módulos de Auditoría Interna",
+        "modernization": "Modernización de sistemas legacy y liderazgo de comunidad interna",
+        "publicInfo": "Módulo de acceso a información pública, desarrollo de módulo de digitalización de archivo general",
+        "financial": "Módulo de verificación de gastos, desarrollo de módulo de reportes financieros",
+        "revenue": "Desarrollo y mantenimiento de módulo de ingresos"
+      }
+    },
+    "student": {
+      "title": "Estudiante de Máster y Emprendedor VR",
+      "company": "UPC BarcelonaTech e Investigación Independiente",
+      "achievements": {
+        "vr": "Desarrollando soluciones VR para aplicaciones educativas y culturales mientras curso el Máster",
+        "specialization": "Especializándome en sistemas de IA agéntica, inteligencia manufacturera y soluciones empresariales autónomas",
+        "transition": "Transición internacional de México a España para estudios avanzados en IA e ingeniería informática",
+        "research": "Enfoque de investigación en sistema MRP basado en agentes autónomos con analítica predictiva para tesis de Máster",
+        "certification": "Actualmente inscrito en el programa de Certificado Profesional de Ingeniería IA de IBM"
+      }
+    },
+    "badges": {
+      "currentFocus": "ENFOQUE ACTUAL",
+      "leadership": "10+ años de experiencia en liderazgo"
+    },
+    "keyProjects": {
+      "title": "Proyectos Empresariales Clave",
+      "erp2": {
+        "title": "ERP2 Full-Stack",
+        "category": "Empresarial",
+        "description": "Sistema empresarial moderno actualmente en producción en hosting LAMP, en transición a despliegue nativo en la nube en AWS. Solución full-stack con backend de API REST Laravel y frontend SPA Angular. La infraestructura planificada de AWS incluye ECS, RDS, ElastiCache y ALB con desarrollo Docker-first y pipeline DevOps completo usando infraestructura como código.",
+        "status": "Migrando a AWS",
+        "impact": "🎯 Impacto: Sistema empresarial en producción sirviendo operaciones minoristas multi-ubicación, migrando a infraestructura escalable en la nube"
+      },
+      "cfdi": {
+        "title": "CFDI Full-Stack",
+        "category": "GovTech",
+        "description": "Sistema de cumplimiento fiscal del gobierno mexicano (soporte CFDI 3.3 y 4.0) con arquitectura full-stack. Frontend SPA AngularJS con UI Bootstrap y API backend PHP. Incluye autenticación OAuth2, integración PAC para certificación fiscal, operaciones criptográficas, integración en tiempo real con autoridades fiscales con procesamiento por lotes, y soporte multi-emisor.",
+        "impact": "🎯 Impacto: Sistema de cumplimiento gubernamental sirviendo miles de empresas con certificación fiscal e integración con autoridades fiscales"
+      },
+      "unicenta": {
+        "title": "uniCenta oPOS Fork",
+        "category": "Código Abierto",
+        "description": "Mantenedor de código abierto de sistema POS empresarial usado globalmente. Incluye soporte multi-terminal con integración de hardware, localización internacional (13+ idiomas), y liderazgo comunitario con modernización de sistemas legacy.",
+        "impact": "🎯 Impacto: Contribución comunitaria global beneficiando despliegues POS empresariales"
+      },
+      "nodePOS": {
+        "title": "Node POS Integration",
+        "category": "Tecnología Restaurantera",
+        "description": "Sistema de gestión de restaurantes full-stack sirviendo como hub de integración central para el ecosistema empresarial completo: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, y WebESCPOSPrint Bridge. Incluye operaciones POS completas, soporte multi-ubicación, control de inventario, facturación electrónica automática CFDI 4.0, gestión financiera con control de flujo de efectivo, e integración perfecta de impresión térmica.",
+        "impact": "🎯 Impacto: Hub de integración central orquestando 4 sistemas empresariales (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) para ecosistema completo de gestión de restaurantes"
+      },
+      "webescpos": {
+        "title": "WebESCPOSPrint Bridge",
+        "category": "Integración de Sistemas",
+        "description": "Aplicación de escritorio Java habilitando comunicación web-a-impresora para impresoras térmicas ESC/POS. Puente servidor HTTP permitiendo a aplicaciones web (sistemas ERP2/CFDI) imprimir recibos y tickets directamente a impresoras térmicas locales a través de comandos codificados en Base64 y API habilitada para CORS.",
+        "impact": "🎯 Impacto: Integración crítica de sistemas habilitando impresión perfecta desde sistemas POS y facturación basados en web"
+      }
+    }
+  },
+  "techStack": {
+    "title": "Experiencia Técnica",
+    "ai": {
+      "title": "🤖 IA y Machine Learning (Enfoque Actual)",
+      "agenticSystems": "Sistemas de IA Agéntica",
+      "agenticCoding": "Programación Agéntica", 
+      "rag": "Implementación RAG",
+      "llm": "Integración LLM",
+      "computerVision": "Visión por Computador",
+      "manufacturingIntelligence": "Inteligencia Manufacturera"
+    },
+    "learning": {
+      "title": "📚 Stack de Aprendizaje (Certificación IBM)",
+      "machineLearning": "Machine Learning con Python",
+      "deepLearning": "Deep Learning y Redes Neuronales",
+      "tensorflow": "Keras y TensorFlow",
+      "generativeAi": "IA Generativa y Fine-Tuning de LLMs"
+    },
+    "core": {
+      "title": "💻 Desarrollo Central (16+ Años)",
+      "languages": "Lenguajes",
+      "frameworks": "Frameworks",
+      "databases": "Bases de Datos",
+      "cloud": "Cloud y DevOps"
+    },
+    "specialized": {
+      "title": "🎮 Tecnologías Especializadas",
+      "xrAr": "Desarrollo XR/AR",
+      "creative": "Tecnología Creativa"
+    },
+    "levels": {
+      "developing": "Aprendiendo",
+      "intermediate": "Intermedio", 
+      "basic": "Básico",
+      "research": "Investigación",
+      "completed": "Completado",
+      "inProgress": "En Progreso",
+      "expert": "Experto",
+      "advanced": "Avanzado"
+    }
+  },
+  "creative": {
+    "title": "🎨 Proyectos de Tecnología Creativa",
+    "text": "Más allá de la investigación en IA y el desarrollo de RV, soy The Ocean - un DJ y productor de música electrónica que conecta la expresión artística creativa con la innovación técnica. Mi proyecto Audio-Splitter demuestra cómo la experiencia técnica profunda mejora los flujos de trabajo creativos.",
+    "description": "Este trasfondo interdisciplinario me permite conectar la innovación técnica con la resolución creativa de problemas, creando un perfil único ideal para empresas de tecnología creativa y roles de innovación."
+  },
+  "impact": {
+    "title": "Métricas de Impacto",
+    "academic": {
+      "value": "4+ proyectos académicos de IA/ML completados",
+      "label": "Proyectos IA/ML"
+    },
+    "experience": {
+      "value": "16+ años de experiencia en sistemas empresariales",
+      "label": "Años de Experiencia"
+    },
+    "users": {
+      "value": "300K+ usuarios atendidos a través de sistemas financieros",
+      "label": "Usuarios Atendidos"
+    },
+    "graduation": {
+      "value": "Graduación de Máster prevista para 2026",
+      "label": "Graduación Esperada"
+    },
+    "languages": "13+ idiomas soportados en contribuciones de código abierto"
+  },
+  "opportunities": {
+    "title": "🚀 Abierto a Oportunidades en Ingeniería IA",
+    "text": "Buscando posiciones de Ingeniería IA y Arquitectura de Sistemas que aprovechen tanto la investigación académica como la experiencia empresarial",
+    "contact": "Contáctame",
+    "projects": "Ver Todos los Proyectos",
+    "quote": "Conectando 16+ años de experiencia en sistemas empresariales con investigación de IA de vanguardia para crear soluciones autónomas de inteligencia empresarial",
+    "interests": "Desarrollo de sistemas de IA agéntica\nSoluciones de inteligencia manufacturera\nIntegración empresarial de IA\nRoles técnicos impulsados por investigación",
+    "location": "Ubicación: Barcelona, España (Abierto a remoto/híbrido)",
+    "languages": "Idiomas: Español (Nativo), Inglés (Profesional - TOEFL ITP 560), Alemán (Principiante)"
+  },
+  "connect": {
+    "title": "Conectemos",
+    "portfolio": "Portafolio",
+    "email": "Email",
+    "github": "GitHub",
+    "music": "Proyecto Musical",
+    "whatsapp": "WhatsApp",
+    "phone": "Teléfono"
+  },
+  "footer": {
+    "quote": "Conectando 16+ años de experiencia en sistemas empresariales con investigación de IA de vanguardia para crear soluciones autónomas de inteligencia empresarial",
+    "builtWith": "Construido Con: HTML5 • CSS3 • Tecnologías Web Modernas • GitHub Pages • Diseño Responsivo"
+  },
+  "language": {
+    "selector": "Idioma",
+    "english": "English",
+    "spanish": "Español",
+    "catalan": "Català"
+  },
+  "languages": {
+    "title": "🌐 Idiomas",
+    "spanish": {
+      "name": "🇲🇽 Español",
+      "level": "Nativo"
+    },
+    "english": {
+      "name": "🇺🇸 Inglés", 
+      "level": "Profesional<br>(TOEFL ITP 560)"
+    },
+    "german": {
+      "name": "🇩🇪 Alemán",
+      "level": "Principiante"
+    }
+  },
+  "community": {
+    "title": "🌍 Liderazgo Comunitario e Impacto Social",
+    "urbanAdvisor": {
+      "title": "Activismo Urbano y Asesor de Movilidad Sostenible",
+      "company": "Ciclos Urbanos, PRO-Ciudad, IMPLAN",
+      "duration": "2015 - 2022",
+      "achievements": {
+        "activism": "Activismo urbano enfocado en movilidad sostenible y desarrollo de espacios públicos",
+        "projects": "Desarrollo e implementación de proyectos de movilidad sostenible",
+        "advisor": "Rol de asesor ciudadano en instituto local de planeación urbana",
+        "collaboration": "Colaboración intersectorial entre gobierno, ONGs y organizaciones cívicas",
+        "engagement": "Diseño de espacios públicos y participación comunitaria en proyectos de desarrollo urbano"
+      }
+    },
+    "techCoordinator": {
+      "title": "Coordinador de Comunidad Tecnológica y Co-Organizador Startup Weekend",
+      "company": "Comunidad Orientada a las Tecnologías de Sinaloa (COLTSIN)",
+      "duration": "2014 - 2016",
+      "achievements": {
+        "coordination": "Coordinación de eventos de difusión, promoción y desarrollo tecnológico",
+        "startup": "Co-organizador de eventos Startup Weekend, fomentando ecosistema emprendedor",
+        "community": "Construcción de comunidad tecnológica y desarrollo de ecosistema",
+        "speakers": "Coordinación de ponentes y gestión de eventos para conferencias tecnológicas",
+        "mentorship": "Mentoría y apoyo para emprendedores tecnológicos emergentes y startups"
+      }
+    },
+    "pmi": {
+      "title": "Fundador y Secretario",
+      "company": "PMI Sinaloa, Capítulo México",
+      "duration": "2011 - 2013",
+      "achievements": {
+        "founded": "Fundé y establecí el capítulo, construyendo comunidad profesional desde cero",
+        "events": "Organicé conferencias, cursos y eventos de networking para la red PMI",
+        "leadership": "Planeación estratégica y liderazgo organizacional para crecimiento y sostenibilidad del capítulo",
+        "networking": "Facilitación de networking inter-industrial e intercambio de conocimiento"
+      }
+    }
+  }
+}
