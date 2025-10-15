@@ -33,7 +33,7 @@
       "title": "Master in Informatics Engineering",
       "institution": "UPC BarcelonaTech, Barcelona, Spain (2024-2026)",
       "thesis": {
-        "label": "Master's Thesis Proposal:",
+        "label": "Master's Final Project Proposal:",
         "text": "Autonomous agent-based MRP system with predictive analytics"
       },
       "specialization": {
@@ -87,57 +87,60 @@
     "title": "🎓 Academic Projects",
     "agenticMrp": {
       "title": "Agentic-MRP",
-      "badge": "Master's Thesis Project",
+      "badge": "Master's Project",
       "category": "AI Systems",
       "description": "Research focus on Predictive AI Manufacturing System evolving into autonomous agent-based MRP with predictive analytics. Features discrete event simulation for manufacturing optimization, supply chain intelligence with automated procurement decisions, and real-time production planning with inventory optimization.",
-      "impact": "🎯 Impact: Developing autonomous manufacturing decisions with predictive analytics for Master's thesis"
+      "impact": "🎯 Impact: Developing autonomous manufacturing decisions with predictive analytics for master's project"
     },
     "llmChatRag": {
       "title": "LLM-Chat-RAG",
       "category": "AI/LLM",
-      "description": "Advanced AI chat system with Retrieval Augmented Generation (RAG) using vector databases. Features OpenAI GPT integration, OCR capabilities for PDF processing, microservices architecture with explainable AI responses and source citation.",
-      "impact": "🎯 Impact: Intelligent document processing with source citation and explainable AI"
+      "description": "Advanced AI chat system with Retrieval Augmented Generation (RAG) using vector databases. Features OpenAI GPT integration, OCR capabilities for PDF processing and microservices architecture.",
+      "impact": "🎯 Impact: Intelligent document processing with source citation"
     },
     "himalayanDatavis": {
       "title": "Himalayan-DataVis",
       "category": "Data Science",
-      "description": "Interactive data science platform for mountaineering expedition analysis (2020-2024). Features Grammar of Graphics visualization with Altair/Vega-Lite, real-time data exploration with statistical analysis, and multi-dimensional analysis with geographic insights.",
+      "description": "Interactive data science platform for mountaineering expedition analysis (2020-2024). Features grammar of graphics visualization with Altair/Vega-Lite, real-time data exploration with statistical analysis, and multi-dimensional analysis with geographic insights.",
       "status": "🚀 Streamlit Cloud ready",
       "impact": "🎯 Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities"
     },
     "misVids": {
       "title": "MisVids",
       "category": "Enterprise Java",
-      "description": "Enterprise video streaming platform with microservices separation. Features AES-256 encryption for video file security, JWT authentication, HTTP Range streaming, YouTube integration with embedded video support, and production-ready deployment.",
+      "description": "Enterprise video streaming platform with microservices separation. Features AES-256 encryption for video file security, JWT authentication, HTTP range streaming, YouTube integration with embedded video support, and production-ready deployment.",
       "impact": "🎯 Impact: Enterprise Java application with comprehensive security and streaming capabilities"
     },
     "museoVirtualAr": {
       "title": "MuseoVirtualAR",
-      "category": "Cultural Heritage AR",
-      "description": "Augmented Reality museum experience with image marker tracking and multi-marker support. Features multilingual system (Spanish/English) with synchronized audio, 3D cultural artifacts (Buddha, Christ the Redeemer, Chichen Itza), and cross-platform deployment with gesture recognition.",
-      "impact": "🎯 Impact: Immersive cultural heritage experience for educational institutions"
+      "category": "AR Experience",
+      "description": "Augmented Reality museum experience with image marker tracking and multi-marker support. Features multilingual system (Spanish/English) with synchronized audio, 3D cultural artifacts, and Android deployment with gesture recognition.",
+      "impact": "🎯 Impact: Immersive cultural heritage experience for cultural institutions"
     },
     "calabozoVr": {
       "title": "CalabozoVR",
       "category": "VR Gaming",
       "description": "Immersive VR escape room with gaze-based interactions and dual locomotion modes. Optimized for Google Cardboard with performance optimization for sustained 60 FPS.",
-      "impact": "🎯 Impact: Mobile VR optimization with dual locomotion modes"
+      "impact": "🎯 Impact: Mobile VR with dual locomotion modes"
     },
     "audioSplitter": {
       "title": "Audio-Splitter",
       "status": "Expanding to Web",
       "category": "Audio Engineering",
       "description": "Professional audio processing suite with modular architecture for music production and podcast workflows. Features multi-format support, advanced metadata management, precision audio splitting with CLI + Interactive UI. Currently expanding to web platform.",
-      "impact": "🎯 Impact: Production-ready for music production workflows, expanding to browser-based platform"
+      "impact": "🎯 Impact: Production-ready for music and podcast workflows, expanding to web-based platform"
     }
   },
   "experience": {
     "title": "💼 Professional Enterprise Projects",
     "leadership": {
       "title": "16+ Years Leadership & Development",
-      "roles": "Director of Systems - Grupo Chadorama (2012-2024)\nFinancial Systems Advisor - UAS (300K+ users, 2022-2024)\nFull-Stack Developer & Team Lead - UAS (2008-2022)"
+      "roles": "Director of Systems - Grupo Chadorama (2012-2024)\nFinancial Systems Advisor - UAS (140K+ users, 2022-2024)\nFull-Stack Developer & Team Lead - UAS (2008-2022)"
     },
     "director": {
+      "title": "Director of Systems, Continuous Improvement and Company Partner",
+      "company": "Grupo Chadorama (restaurant industry): Caprichito Bello, Taller de Pizzas",
+      "duration": "2012 - 2024",
       "achievements": {
         "management": "Coordinated middle management, aligning objectives with business strategy",
         "franchise": "Coordinated development, implementation, and operation of franchise model",
@@ -150,13 +153,19 @@
       }
     },
     "advisor": {
+      "title": "Financial Subsystem Advisor",
+      "company": "Universidad Autónoma de Sinaloa (UAS)",
+      "duration": "2022 - 2024 (140K+ users)",
       "achievements": {
-        "advisory": "Provided technical advisory for financial systems serving 300K+ users",
+        "advisory": "Provided technical advisory for financial systems serving 140K+ users",
         "analytics": "Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server",
         "compliance": "Led technical consulting for systems in compliance with government budget and accounting standards."
       }
     },
     "fullStack": {
+      "title": "Full-Stack Developer & Team Lead",
+      "company": "Universidad Autónoma de Sinaloa (UAS) - Financial Subsystem",
+      "duration": "2008 - 2022",
       "achievements": {
         "team": "2+ years leading a team of developers for the Financial Subsystem",
         "verification": "Development of digital expense verification",
@@ -171,7 +180,7 @@
       "title": "Master's Student & VR Entrepreneur",
       "company": "UPC BarcelonaTech & Independent Research",
       "achievements": {
-        "vr": "Developing VR solutions for educational and cultural applications while pursuing Master's degree",
+        "vr": "Developing VR platform for cultural and entertainment applications while pursuing Master's degree",
         "specialization": "Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions",
         "transition": "International transition from Mexico to Spain for advanced studies in AI and computer engineering",
         "research": "Research focus on autonomous agent-based MRP system with predictive analytics for Master's thesis",
@@ -189,29 +198,29 @@
         "category": "Enterprise",
         "description": "Modern enterprise system currently in production on LAMP hosting, transitioning to cloud-native deployment on AWS. Full-stack solution with Laravel REST API backend and Angular SPA frontend. Planned AWS infrastructure includes ECS, RDS, ElastiCache, and ALB with Docker-first development and complete DevOps pipeline using infrastructure as code.",
         "status": "Migrating to AWS",
-        "impact": "🎯 Impact: Production enterprise system serving multi-location retail operations, migrating to scalable cloud infrastructure"
+        "impact": "🎯 Impact: Production enterprise system serving multi-location retail operations with more 90+ employees, migrating to scalable cloud infrastructure"
       },
       "cfdi": {
         "title": "CFDI Full-Stack",
-        "category": "Gov Tech",
-        "description": "Mexican government tax compliance system (CFDI 3.3 & 4.0 support) with full-stack architecture. AngularJS SPA frontend with Bootstrap UI and PHP backend API. Features OAuth2 authentication, PAC integration for fiscal certification, cryptographic operations, real-time tax authority integration with batch processing, and multi-emisor support.",
-        "impact": "🎯 Impact: Government compliance system serving thousands of businesses with fiscal certification and tax authority integration"
+        "category": "Enterprise",
+        "description": "Mexican government tax compliance system (CFDI 3.3 & 4.0 support) with full-stack architecture. AngularJS SPA frontend with Bootstrap UI and PHP backend API. Features OAuth2 authentication, PAC integration for fiscal certification, cryptographic operations, real-time tax authority integration, and multi-emisor support.",
+        "impact": "🎯 Impact: Government compliance system serving multiple businesses with fiscal certification and tax authority integration"
       },
       "unicenta": {
         "title": "uniCenta oPOS Fork",
         "category": "Open Source",
-        "description": "Open source maintainer of enterprise POS system used globally. Features multi-terminal support with hardware integration, international localization (13+ languages), and community leadership with legacy system modernization.",
-        "impact": "🎯 Impact: Global community contribution benefiting enterprise POS deployments"
+        "description": "Open source enterprise POS system fork used globally. Features multi-terminal support with hardware integration, international localization (13+ languages), and community leadership with legacy system modernization.",
+        "impact": "🎯 Impact: Community contribution for enterprise POS deployments"
       },
       "nodePOS": {
         "title": "Node POS Integration",
-        "category": "Restaurant Tech",
-        "description": "Full-stack restaurant management system serving as the central integration hub for the complete enterprise ecosystem: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, and WebESCPOSPrint Bridge. Features complete POS operations, multi-location support, inventory control, automatic CFDI 4.0 electronic invoicing, financial management with cash flow control, and seamless thermal printing integration.",
+        "category": "Enterprise",
+        "description": "Full-stack restaurant management system integration serving as the central hub for the complete enterprise ecosystem: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, and WebESCPOSPrint Bridge. Features complete POS operations, multi-location support, inventory control, automatic CFDI 4.0 electronic invoicing, financial management with cash flow control, and seamless thermal printing integration.",
         "impact": "🎯 Impact: Central integration hub orchestrating 4 enterprise systems (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) for complete restaurant management ecosystem"
       },
       "webescpos": {
         "title": "WebESCPOSPrint Bridge",
-        "category": "System Integration",
+        "category": "Enterprise",
         "description": "Java desktop application enabling web-to-printer communication for ESC/POS thermal printers. HTTP server bridge allowing web applications (ERP2/CFDI systems) to print receipts and tickets directly to local thermal printers through Base64-encoded commands and CORS-enabled API.",
         "impact": "🎯 Impact: Critical system integration enabling seamless printing from web-based POS and billing systems"
       }
@@ -274,7 +283,7 @@
       "label": "Years Experience"
     },
     "users": {
-      "value": "300K+ users served through financial systems",
+      "value": "140K+ users served through financial systems",
       "label": "Users Served"
     },
     "graduation": {
@@ -291,7 +300,26 @@
     "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",
     "interests": "Agentic AI systems development\nManufacturing intelligence solutions\nEnterprise AI integration\nResearch-driven technical roles",
     "location": "Location: Barcelona, Spain (Open to remote/hybrid)",
-    "languages": "Languages: Spanish (Native), English (Professional - TOEFL ITP 560), German (Beginner)"
+    "languages": "Languages: Spanish (Native), English (Professional - TOEFL ITP 560), German (Beginner)",
+    "manufacturingInternship": {
+      "title": "🏭 Seeking Manufacturing AI Internship",
+      "text": "Seeking 15-20h/week internship in Manufacturing AI, Industry 4.0, or Supply Chain Intelligence to validate my Master's thesis project with real industrial data",
+      "idealFit": "Ideal Fit",
+      "options": [
+        "Manufacturing company undergoing digital transformation",
+        "Consultancy serving industrial clients (Accenture, Deloitte, Capgemini)",
+        "Industry 4.0 startup building AI solutions",
+        "Research center with industry partnerships (eurecat, CIM UPC)"
+      ],
+      "whatIBring": "What I Bring",
+      "valueProps": [
+        "Real-world MRP/ERP expertise (16+ years, not just theory)",
+        "Ready-to-deploy AI project (Agentic-MRP thesis)",
+        "Immediate productivity (I've built these systems before)",
+        "Part-time availability allows focused, high-impact contributions"
+      ],
+      "goal": "Goal: Validate Agentic-MRP with real industrial data while contributing to your AI/digital transformation initiatives"
+    }
   },
   "connect": {
     "title": "Let's Connect",
@@ -305,6 +333,10 @@
   "footer": {
     "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",
     "builtWith": "Built With: HTML5 • CSS3 • Modern Web Technologies • GitHub Pages • Responsive Design"
+  },
+  "controls": {
+    "profile": "PROFILE",
+    "language": "LANG"
   },
   "language": {
     "selector": "Language",
@@ -320,7 +352,7 @@
     },
     "english": {
       "name": "🇺🇸 English", 
-      "level": "Professional<br>(TOEFL ITP 560)"
+      "level": "Professional"
     },
     "german": {
       "name": "🇩🇪 German",

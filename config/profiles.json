@@ -1,0 +1,203 @@
+{
+  "default": {
+    "name": "Complete Portfolio",
+    "description": "Full portfolio with all sections and projects",
+    "sections": [
+      { "id": "summary", "enabled": true, "order": 1, "config": { "showStats": true } },
+      { "id": "research", "enabled": true, "order": 2, "config": { "showCurrentBadge": true } },
+      { "id": "projects", "enabled": true, "order": 3, "config": { "limit": null, "showAcademic": true, "showCreative": true } },
+      { "id": "techStack", "enabled": true, "order": 4, "config": { "showLearning": true, "showAI": true } },
+      { "id": "experience", "enabled": true, "order": 5, "config": { "showEnterpriseProjects": true, "showProfessionalHistory": true } },
+      { "id": "community", "enabled": true, "order": 6, "config": { "showSocialImpact": true } },
+      { "id": "languages", "enabled": true, "order": 7, "config": { "showProficiency": true } },
+      { "id": "creative", "enabled": true, "order": 8, "config": { "showSocialLinks": true } },
+      { "id": "opportunities", "enabled": true, "order": 9, "config": { "showCTA": true } }
+    ],
+    "projects": {
+      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis", "misvids"] },
+      "creative": { "enabled": ["museo-virtual-ar", "calabozo-vr", "audio-splitter"] },
+      "enterprise": { "enabled": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"] }
+    }
+  },
+
+  "manufacturing-ai-internship": {
+    "name": "Manufacturing AI Internship",
+    "description": "Optimized for manufacturing/Industry 4.0 internship applications in Barcelona",
+    "sections": [
+      {
+        "id": "summary",
+        "enabled": true,
+        "order": 1,
+        "config": {
+          "showStats": true,
+          "highlightManufacturingExpertise": true
+        }
+      },
+      {
+        "id": "projects",
+        "enabled": true,
+        "order": 2,
+        "config": {
+          "limit": 2,
+          "showAcademic": true,
+          "showCreative": false,
+          "highlightAgenticMRP": true
+        }
+      },
+      {
+        "id": "research",
+        "enabled": true,
+        "order": 3,
+        "config": {
+          "showCurrentBadge": true,
+          "emphasizeThesis": true
+        }
+      },
+      {
+        "id": "techStack",
+        "enabled": true,
+        "order": 4,
+        "config": {
+          "showLearning": true,
+          "showAI": true,
+          "prioritizeManufacturingSkills": true
+        }
+      },
+      {
+        "id": "experience",
+        "enabled": true,
+        "order": 5,
+        "config": {
+          "showEnterpriseProjects": true,
+          "showProfessionalHistory": true,
+          "emphasizeERPExperience": true,
+          "limit": null
+        }
+      },
+      {
+        "id": "languages",
+        "enabled": true,
+        "order": 6,
+        "config": {
+          "showProficiency": true
+        }
+      },
+      {
+        "id": "opportunities",
+        "enabled": true,
+        "order": 7,
+        "config": {
+          "showCTA": true,
+          "customMessage": "manufacturing-internship"
+        }
+      },
+      {
+        "id": "community",
+        "enabled": false,
+        "order": 8
+      },
+      {
+        "id": "creative",
+        "enabled": false,
+        "order": 9
+      }
+    ],
+    "projects": {
+      "academic": {
+        "enabled": ["agentic-mrp", "llm-chat-rag"],
+        "order": ["agentic-mrp", "llm-chat-rag"]
+      },
+      "creative": {
+        "enabled": []
+      },
+      "enterprise": {
+        "enabled": ["erp2", "node-pos"],
+        "order": ["erp2", "node-pos"]
+      }
+    }
+  },
+
+  "ai-engineer": {
+    "name": "AI Engineer Focus",
+    "description": "AI/ML projects and research emphasis for AI engineering positions",
+    "sections": [
+      { "id": "summary", "enabled": true, "order": 1, "config": { "showStats": true } },
+      { "id": "research", "enabled": true, "order": 2, "config": { "showCurrentBadge": true } },
+      { "id": "projects", "enabled": true, "order": 3, "config": { "limit": null, "showAcademic": true, "showCreative": false } },
+      { "id": "techStack", "enabled": true, "order": 4, "config": { "showLearning": true, "showAI": true } },
+      { "id": "experience", "enabled": true, "order": 5, "config": { "showEnterpriseProjects": false, "showProfessionalHistory": true } },
+      { "id": "languages", "enabled": true, "order": 6, "config": { "showProficiency": true } },
+      { "id": "opportunities", "enabled": true, "order": 7, "config": { "showCTA": true } },
+      { "id": "community", "enabled": false },
+      { "id": "creative", "enabled": false }
+    ],
+    "projects": {
+      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis"] },
+      "creative": { "enabled": [] },
+      "enterprise": { "enabled": [] }
+    }
+  },
+
+  "fullstack": {
+    "name": "Full-Stack Developer",
+    "description": "Enterprise systems and full-stack development emphasis",
+    "sections": [
+      { "id": "summary", "enabled": true, "order": 1, "config": { "showStats": true } },
+      { "id": "experience", "enabled": true, "order": 2, "config": { "showEnterpriseProjects": true, "showProfessionalHistory": true } },
+      { "id": "techStack", "enabled": true, "order": 3, "config": { "showLearning": false, "showAI": false } },
+      { "id": "projects", "enabled": true, "order": 4, "config": { "limit": null, "showAcademic": false, "showCreative": false } },
+      { "id": "research", "enabled": true, "order": 5, "config": { "showCurrentBadge": false } },
+      { "id": "languages", "enabled": true, "order": 6, "config": { "showProficiency": true } },
+      { "id": "opportunities", "enabled": true, "order": 7, "config": { "showCTA": true } },
+      { "id": "community", "enabled": false },
+      { "id": "creative", "enabled": false }
+    ],
+    "projects": {
+      "academic": { "enabled": [] },
+      "creative": { "enabled": [] },
+      "enterprise": { "enabled": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"] }
+    }
+  },
+
+  "minimal": {
+    "name": "Minimal Portfolio",
+    "description": "Quick overview with top projects only",
+    "sections": [
+      { "id": "summary", "enabled": true, "order": 1, "config": { "showStats": true } },
+      { "id": "projects", "enabled": true, "order": 2, "config": { "limit": null, "showAcademic": true, "showCreative": false } },
+      { "id": "techStack", "enabled": true, "order": 3, "config": { "showLearning": false, "showAI": true } },
+      { "id": "opportunities", "enabled": true, "order": 4, "config": { "showCTA": true } },
+      { "id": "research", "enabled": false },
+      { "id": "experience", "enabled": false },
+      { "id": "community", "enabled": false },
+      { "id": "languages", "enabled": false },
+      { "id": "creative", "enabled": false }
+    ],
+    "projects": {
+      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis"] },
+      "creative": { "enabled": [] },
+      "enterprise": { "enabled": [] }
+    }
+  },
+
+  "academic": {
+    "name": "Academic Portfolio",
+    "description": "Research and academic projects for academic applications",
+    "sections": [
+      { "id": "research", "enabled": true, "order": 1, "config": { "showCurrentBadge": true } },
+      { "id": "projects", "enabled": true, "order": 2, "config": { "limit": 4, "showAcademic": true, "showCreative": false } },
+      { "id": "summary", "enabled": true, "order": 3, "config": { "showStats": true } },
+      { "id": "techStack", "enabled": true, "order": 4, "config": { "showLearning": true, "showAI": true } },
+      { "id": "languages", "enabled": true, "order": 5, "config": { "showProficiency": true } },
+      { "id": "opportunities", "enabled": true, "order": 6, "config": { "showCTA": true } },
+      { "id": "experience", "enabled": false },
+      { "id": "community", "enabled": false },
+      { "id": "creative", "enabled": false }
+    ],
+    "projects": {
+      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis", "misvids"] },
+      "creative": { "enabled": [] },
+      "enterprise": { "enabled": [] }
+    }
+  }
+}

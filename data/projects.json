@@ -1,0 +1,377 @@
+{
+  "academic": [
+    {
+      "id": "agentic-mrp",
+      "enabled": true,
+      "order": 1,
+      "title": "Agentic-MRP",
+      "titleI18n": "projects.agenticMrp.title",
+      "category": "research",
+      "categoryLabel": "AI Systems",
+      "categoryI18n": "projects.agenticMrp.category",
+      "description": "Research focus on Predictive AI Manufacturing System evolving into autonomous agent-based MRP with predictive analytics. Features discrete event simulation for manufacturing optimization, supply chain intelligence with automated procurement decisions, and real-time production planning with inventory optimization.",
+      "descriptionI18n": "projects.agenticMrp.description",
+      "badge": "Master's Thesis Project",
+      "badgeI18n": "projects.agenticMrp.badge",
+      "badgeClass": "thesis",
+      "technologies": [
+        "Python",
+        "SimPy",
+        "FastAPI",
+        "Streamlit",
+        "Docker"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/UPC-MEI/Agentic-MRP",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Developing autonomous manufacturing decisions with predictive analytics for Master's thesis",
+      "impactI18n": "projects.agenticMrp.impact"
+    },
+    {
+      "id": "llm-chat-rag",
+      "enabled": true,
+      "order": 2,
+      "title": "LLM-Chat-RAG",
+      "titleI18n": "projects.llmChatRag.title",
+      "category": "research",
+      "categoryLabel": "AI/LLM",
+      "categoryI18n": "projects.llmChatRag.category",
+      "description": "Advanced AI chat system with Retrieval Augmented Generation (RAG) using vector databases. Features OpenAI GPT integration, OCR capabilities for PDF processing, microservices architecture with explainable AI responses and source citation.",
+      "descriptionI18n": "projects.llmChatRag.description",
+      "technologies": [
+        "Python",
+        "OpenAI API",
+        "ChromaDB",
+        "FastAPI",
+        "Tesseract OCR"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/UPC-MEI/LLM-Chat-RAG",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Intelligent document processing with source citation and explainable AI",
+      "impactI18n": "projects.llmChatRag.impact"
+    },
+    {
+      "id": "himalayan-datavis",
+      "enabled": true,
+      "order": 3,
+      "title": "Himalayan-DataVis",
+      "titleI18n": "projects.himalayanDatavis.title",
+      "category": "research",
+      "categoryLabel": "Data Science",
+      "categoryI18n": "projects.himalayanDatavis.category",
+      "description": "Interactive data science platform for mountaineering expedition analysis (2020-2024). Features Grammar of Graphics visualization with Altair/Vega-Lite, real-time data exploration with statistical analysis, and multi-dimensional analysis with geographic insights.",
+      "descriptionI18n": "projects.himalayanDatavis.description",
+      "technologies": [
+        "Python",
+        "Streamlit",
+        "Altair",
+        "Pandas",
+        "NumPy"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/UPC-MEI/Himalayan-DataVis",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities",
+      "impactI18n": "projects.himalayanDatavis.impact"
+    },
+    {
+      "id": "misvids",
+      "enabled": true,
+      "order": 4,
+      "title": "MisVids",
+      "titleI18n": "projects.misVids.title",
+      "category": "research",
+      "categoryLabel": "Enterprise Java",
+      "categoryI18n": "projects.misVids.category",
+      "description": "Enterprise video streaming platform with microservices separation. Features AES-256 encryption for video file security, JWT authentication, HTTP Range streaming, YouTube integration with embedded video support, and production-ready deployment.",
+      "descriptionI18n": "projects.misVids.description",
+      "technologies": [
+        "Java 17",
+        "GlassFish",
+        "JSP",
+        "Derby DB",
+        "Bootstrap"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/UPC-MEI/MisVids",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Enterprise Java application with comprehensive security and streaming capabilities",
+      "impactI18n": "projects.misVids.impact"
+    }
+  ],
+  "creative": [
+    {
+      "id": "museo-virtual-ar",
+      "enabled": true,
+      "order": 1,
+      "title": "MuseoVirtualAR",
+      "titleI18n": "projects.museoVirtualAr.title",
+      "category": "creative",
+      "categoryLabel": "Cultural Heritage AR",
+      "categoryI18n": "projects.museoVirtualAr.category",
+      "description": "Augmented Reality museum experience with image marker tracking and multi-marker support. Features multilingual system (Spanish/English) with synchronized audio, 3D cultural artifacts (Buddha, Christ the Redeemer, Chichen Itza), and cross-platform deployment with gesture recognition.",
+      "descriptionI18n": "projects.museoVirtualAr.description",
+      "technologies": [
+        "Unity",
+        "C#",
+        "Vuforia SDK",
+        "Android",
+        "Google Cardboard"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/UPC-MEI/MuseoVirtualAR",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Immersive cultural heritage experience for educational institutions",
+      "impactI18n": "projects.museoVirtualAr.impact"
+    },
+    {
+      "id": "calabozo-vr",
+      "enabled": true,
+      "order": 2,
+      "title": "CalabozoVR",
+      "titleI18n": "projects.calabozoVr.title",
+      "category": "creative",
+      "categoryLabel": "VR Gaming",
+      "categoryI18n": "projects.calabozoVr.category",
+      "description": "Immersive VR escape room with gaze-based interactions and dual locomotion modes. Optimized for Google Cardboard with performance optimization for sustained 60 FPS.",
+      "descriptionI18n": "projects.calabozoVr.description",
+      "technologies": [
+        "Unity",
+        "C#",
+        "Google Cardboard XR",
+        "Performance Optimization"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/UPC-MEI/CalabozoVR",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Mobile VR optimization with dual locomotion modes",
+      "impactI18n": "projects.calabozoVr.impact"
+    },
+    {
+      "id": "audio-splitter",
+      "enabled": true,
+      "order": 3,
+      "title": "Audio-Splitter",
+      "titleI18n": "projects.audioSplitter.title",
+      "category": "creative",
+      "categoryLabel": "Audio Engineering",
+      "categoryI18n": "projects.audioSplitter.category",
+      "description": "Professional audio processing suite with modular architecture for music production and podcast workflows. Features multi-format support, advanced metadata management, precision audio splitting with CLI + Interactive UI. Currently expanding to web platform.",
+      "descriptionI18n": "projects.audioSplitter.description",
+      "badge": "Expanding to Web",
+      "badgeI18n": "projects.audioSplitter.status",
+      "badgeClass": "in-development",
+      "technologies": [
+        "Python",
+        "librosa",
+        "pydub",
+        "Rich CLI",
+        "Audio DSP"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/ICRONOK/Audio-Splitter",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Production-ready for music production workflows, expanding to browser-based platform",
+      "impactI18n": "projects.audioSplitter.impact"
+    }
+  ],
+  "enterprise": [
+    {
+      "id": "erp2",
+      "enabled": true,
+      "order": 1,
+      "title": "ERP2 Full-Stack",
+      "titleI18n": "experience.keyProjects.erp2.title",
+      "category": "enterprise",
+      "categoryLabel": "Enterprise",
+      "categoryI18n": "experience.keyProjects.erp2.category",
+      "description": "Modern enterprise system currently in production on LAMP hosting, transitioning to cloud-native deployment on AWS. Full-stack solution with Laravel REST API backend and Angular SPA frontend. Planned AWS infrastructure includes ECS, RDS, ElastiCache, and ALB with Docker-first development and complete DevOps pipeline using infrastructure as code.",
+      "descriptionI18n": "experience.keyProjects.erp2.description",
+      "badge": "Migrating to AWS",
+      "badgeI18n": "experience.keyProjects.erp2.status",
+      "badgeClass": "in-development",
+      "technologies": [
+        "Laravel 9",
+        "PHP 8.1",
+        "AngularJS",
+        "JavaScript",
+        "Docker",
+        "AWS",
+        "MySQL"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/Grupo-Chadorama/ERP2-backend",
+          "label": "Backend",
+          "icon": "🔗"
+        },
+        {
+          "url": "https://github.com/Grupo-Chadorama/ERP2-frontend",
+          "label": "Frontend",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Production enterprise system serving multi-location retail operations, migrating to scalable cloud infrastructure",
+      "impactI18n": "experience.keyProjects.erp2.impact"
+    },
+    {
+      "id": "cfdi",
+      "enabled": true,
+      "order": 2,
+      "title": "CFDI Full-Stack",
+      "titleI18n": "experience.keyProjects.cfdi.title",
+      "category": "enterprise",
+      "categoryLabel": "Gov Tech",
+      "categoryI18n": "experience.keyProjects.cfdi.category",
+      "description": "Mexican government tax compliance system (CFDI 3.3 & 4.0 support) with full-stack architecture. AngularJS SPA frontend with Bootstrap UI and PHP backend API. Features OAuth2 authentication, PAC integration for fiscal certification, cryptographic operations, real-time tax authority integration with batch processing, and multi-emisor support.",
+      "descriptionI18n": "experience.keyProjects.cfdi.description",
+      "technologies": [
+        "PHP 7.0",
+        "AngularJS",
+        "Bootstrap",
+        "MySQL",
+        "OAuth2",
+        "SAT API",
+        "JavaScript"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/Grupo-Chadorama/CFDI-backend",
+          "label": "Backend",
+          "icon": "🔗"
+        },
+        {
+          "url": "https://github.com/Grupo-Chadorama/CFDI-frontend",
+          "label": "Frontend",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Government compliance system serving thousands of businesses with fiscal certification and tax authority integration",
+      "impactI18n": "experience.keyProjects.cfdi.impact"
+    },
+    {
+      "id": "unicenta",
+      "enabled": true,
+      "order": 3,
+      "title": "uniCenta oPOS Fork",
+      "titleI18n": "experience.keyProjects.unicenta.title",
+      "category": "enterprise",
+      "categoryLabel": "Open Source",
+      "categoryI18n": "experience.keyProjects.unicenta.category",
+      "description": "Open source maintainer of enterprise POS system used globally. Features multi-terminal support with hardware integration, international localization (13+ languages), and community leadership with legacy system modernization.",
+      "descriptionI18n": "experience.keyProjects.unicenta.description",
+      "technologies": [
+        "Java",
+        "Swing",
+        "MySQL",
+        "JasperReports",
+        "Maven"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/Grupo-Chadorama/unicentaopos-3.91.3",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Global community contribution benefiting enterprise POS deployments",
+      "impactI18n": "experience.keyProjects.unicenta.impact"
+    },
+    {
+      "id": "node-pos",
+      "enabled": true,
+      "order": 4,
+      "title": "Node POS Integration",
+      "titleI18n": "experience.keyProjects.nodePOS.title",
+      "category": "enterprise",
+      "categoryLabel": "Restaurant Tech",
+      "categoryI18n": "experience.keyProjects.nodePOS.category",
+      "description": "Full-stack restaurant management system serving as the central integration hub for the complete enterprise ecosystem: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, and WebESCPOSPrint Bridge. Features complete POS operations, multi-location support, inventory control, automatic CFDI 4.0 electronic invoicing, financial management with cash flow control, and seamless thermal printing integration.",
+      "descriptionI18n": "experience.keyProjects.nodePOS.description",
+      "technologies": [
+        "PHP 5.x",
+        "Slim Framework",
+        "Bootstrap",
+        "jQuery",
+        "MySQL",
+        "FPDF",
+        "PHPMailer"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/Grupo-Chadorama/Node",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Central integration hub orchestrating 4 enterprise systems (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) for complete restaurant management ecosystem",
+      "impactI18n": "experience.keyProjects.nodePOS.impact"
+    },
+    {
+      "id": "webescpos",
+      "enabled": true,
+      "order": 5,
+      "title": "WebESCPOSPrint Bridge",
+      "titleI18n": "experience.keyProjects.webescpos.title",
+      "category": "enterprise",
+      "categoryLabel": "System Integration",
+      "categoryI18n": "experience.keyProjects.webescpos.category",
+      "description": "Java desktop application enabling web-to-printer communication for ESC/POS thermal printers. HTTP server bridge allowing web applications (ERP2/CFDI systems) to print receipts and tickets directly to local thermal printers through Base64-encoded commands and CORS-enabled API.",
+      "descriptionI18n": "experience.keyProjects.webescpos.description",
+      "technologies": [
+        "Java 8+",
+        "Swing GUI",
+        "HTTP Server",
+        "ESC/POS Commands",
+        "Apache Ant",
+        "Base64"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/Grupo-Chadorama/WebESCPOSprint",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Critical system integration enabling seamless printing from web-based POS and billing systems",
+      "impactI18n": "experience.keyProjects.webescpos.impact"
+    }
+  ],
+  "meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-10-04",
+    "totalProjects": 12,
+    "academicProjects": 4,
+    "creativeProjects": 3,
+    "enterpriseProjects": 5
+  }
+}

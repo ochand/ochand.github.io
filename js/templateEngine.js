@@ -1,0 +1,987 @@
+/**
+ * Portfolio Template Engine
+ * Handles dynamic rendering of portfolio sections based on configuration
+ */
+
+class TemplateEngine {
+    constructor() {
+        this.config = null;
+        this.projectsData = null;
+        this.profilesData = null;
+        this.currentProfile = null;
+    }
+
+    /**
+     * Initialize the template engine
+     */
+    async init() {
+        try {
+            await this.loadProfiles();
+            await this.detectAndLoadProfile();
+            await this.loadProjectsData();
+            console.log('TemplateEngine initialized successfully');
+        } catch (error) {
+            console.error('Failed to initialize TemplateEngine:', error);
+        }
+    }
+
+    /**
+     * Load profiles configuration
+     */
+    async loadProfiles() {
+        try {
+            const response = await fetch('/config/profiles.json');
+            this.profilesData = await response.json();
+            return this.profilesData;
+        } catch (error) {
+            console.error('Failed to load profiles:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Detect profile from URL or localStorage and load it
+     */
+    async detectAndLoadProfile() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const profileName = urlParams.get('profile') ||
+                           localStorage.getItem('selected-profile') ||
+                           'default';
+
+        await this.loadProfile(profileName);
+    }
+
+    /**
+     * Load specific profile configuration
+     */
+    async loadProfile(profileName = 'default') {
+        if (!this.profilesData) {
+            await this.loadProfiles();
+        }
+
+        const profile = this.profilesData[profileName] || this.profilesData.default;
+        this.currentProfile = profileName;
+
+        // Store selected profile
+        localStorage.setItem('selected-profile', profileName);
+
+        // Use profile config as main config
+        this.config = {
+            sections: profile.sections,
+            meta: {
+                version: '2.0.0',
+                profile: profileName,
+                profileName: profile.name,
+                profileDescription: profile.description
+            }
+        };
+
+        // Store project filters from profile
+        this.profileProjectFilters = profile.projects || {};
+
+        console.log(`Profile loaded: ${profile.name} (${profileName})`);
+        return profile;
+    }
+
+    /**
+     * Load portfolio configuration
+     */
+    async loadConfig() {
+        try {
+            const response = await fetch('/config/portfolio.json');
+            this.config = await response.json();
+            return this.config;
+        } catch (error) {
+            console.error('Failed to load portfolio config:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Load projects data
+     */
+    async loadProjectsData() {
+        try {
+            const response = await fetch('/data/projects.json');
+            this.projectsData = await response.json();
+            return this.projectsData;
+        } catch (error) {
+            console.error('Failed to load projects data:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Get sorted and filtered sections based on config
+     */
+    getSections() {
+        if (!this.config) return [];
+
+        return this.config.sections
+            .filter(section => section.enabled)
+            .sort((a, b) => a.order - b.order);
+    }
+
+    /**
+     * Render all sections dynamically
+     */
+    renderAllSections() {
+        const container = document.querySelector('.container');
+        if (!container) return;
+
+        const header = container.querySelector('.header');
+        const sections = this.getSections();
+
+        // Clear existing content (keep header)
+        const existingSections = container.querySelectorAll('.section');
+        existingSections.forEach(section => section.remove());
+
+        // Render each section
+        sections.forEach(section => {
+            const sectionHTML = this.renderSection(section);
+            if (sectionHTML) {
+                container.insertAdjacentHTML('beforeend', sectionHTML);
+            }
+        });
+    }
+
+    /**
+     * Render a single section based on its type
+     */
+    renderSection(sectionConfig) {
+        const sectionMap = {
+            'summary': () => this.renderSummary(sectionConfig),
+            'research': () => this.renderResearch(sectionConfig),
+            'projects': () => this.renderProjectsSection(sectionConfig),
+            'techStack': () => this.renderTechStack(sectionConfig),
+            'experience': () => this.renderExperience(sectionConfig),
+            'community': () => this.renderCommunity(sectionConfig),
+            'languages': () => this.renderLanguages(sectionConfig),
+            'creative': () => this.renderCreative(sectionConfig),
+            'opportunities': () => this.renderOpportunities(sectionConfig)
+        };
+
+        const renderer = sectionMap[sectionConfig.id];
+        return renderer ? renderer() : '';
+    }
+
+    /**
+     * Filter projects by profile configuration
+     */
+    filterProjectsByProfile(projects, type) {
+        if (!this.profileProjectFilters || !this.profileProjectFilters[type]) {
+            return projects;
+        }
+
+        const enabledIds = this.profileProjectFilters[type].enabled;
+
+        // If no filter specified, return all enabled projects
+        if (!enabledIds || enabledIds.length === 0) {
+            return projects.filter(p => p.enabled !== false);
+        }
+
+        // Filter by profile's enabled list
+        return projects.filter(p => enabledIds.includes(p.id) && p.enabled !== false);
+    }
+
+    /**
+     * Render projects section with dynamic data
+     */
+    renderProjectsSection(sectionConfig) {
+        if (!this.projectsData) return '';
+
+        const limit = sectionConfig.config?.limit;
+        const showAcademic = sectionConfig.config?.showAcademic;
+        const showCreative = sectionConfig.config?.showCreative;
+
+        // Collect all projects to render
+        let allProjects = [];
+
+        if (showAcademic) {
+            const academic = this.filterProjectsByProfile(this.projectsData.academic, 'academic')
+                .sort((a, b) => (a.order || 999) - (b.order || 999))  // Sort by order
+                .map(p => ({...p, type: 'academic'}));
+            allProjects = [...allProjects, ...academic];
+        }
+
+        if (showCreative) {
+            const creative = this.filterProjectsByProfile(this.projectsData.creative, 'creative')
+                .sort((a, b) => (a.order || 999) - (b.order || 999))  // Sort by order
+                .map(p => ({...p, type: 'creative'}));
+            allProjects = [...allProjects, ...creative];
+        }
+
+        // Apply limit if specified (limits total projects across all types)
+        if (limit && limit > 0) {
+            allProjects = allProjects.slice(0, limit);
+        }
+
+        // Group back by type
+        const academicProjects = allProjects.filter(p => p.type === 'academic');
+        const creativeProjects = allProjects.filter(p => p.type === 'creative');
+
+        let html = '';
+
+        if (academicProjects.length > 0) {
+            html += this.renderAcademicProjects(academicProjects);
+        }
+
+        if (creativeProjects.length > 0) {
+            html += this.renderCreativeProjects(creativeProjects);
+        }
+
+        return html;
+    }
+
+    /**
+     * Render academic projects section
+     */
+    renderAcademicProjects(projects = null) {
+        if (!this.projectsData || !this.projectsData.academic) return '';
+
+        const projectsToRender = projects || this.projectsData.academic;
+        const projectCards = projectsToRender
+            .map(project => this.createProjectCard(project))
+            .join('');
+
+        return `
+            <section class="section research-focus" data-section-id="projects-academic">
+                <h2 class="section-title" data-i18n="projects.title">🎓 Academic Projects</h2>
+                <div class="projects-grid">
+                    ${projectCards}
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Render creative projects section
+     */
+    renderCreativeProjects(projects = null) {
+        if (!this.projectsData || !this.projectsData.creative) return '';
+
+        const projectsToRender = projects || this.projectsData.creative;
+        const projectCards = projectsToRender
+            .map(project => this.createProjectCard(project))
+            .join('');
+
+        return `
+            <section class="section creative-focus" data-section-id="projects-creative">
+                <h2 class="section-title" data-i18n="creative.title">🎨 Creative Technology Projects</h2>
+                <div class="projects-grid">
+                    ${projectCards}
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Create a project card HTML
+     */
+    createProjectCard(project) {
+        const categoryClass = project.category === 'research' ? 'research-project' :
+                            project.category === 'creative' ? 'creative-project' : '';
+
+        const badgeHTML = project.badge ?
+            `<span class="status-badge ${project.badgeClass || ''}" data-i18n="${project.badgeI18n}">${project.badge}</span>` : '';
+
+        const techTags = project.technologies.map(tech =>
+            `<span class="tech-tag">${tech}</span>`
+        ).join('');
+
+        const linksHTML = project.links.map(link =>
+            `<a href="${link.url}" class="project-link" target="_blank">${link.icon} ${link.label}</a>`
+        ).join('');
+
+        const impactHTML = project.impact ?
+            `<p class="project-impact" data-i18n="${project.impactI18n}">${project.impact}</p>` : '';
+
+        return `
+            <div class="project-card ${categoryClass}">
+                <div class="project-header">
+                    <h3 class="project-title" data-i18n="${project.titleI18n}">
+                        ${project.title}${badgeHTML}
+                    </h3>
+                    <span class="project-category ${project.category}" data-i18n="${project.categoryI18n}">
+                        ${project.categoryLabel}
+                    </span>
+                </div>
+                <p class="project-description" data-i18n="${project.descriptionI18n}">
+                    ${project.description}
+                </p>
+                <div class="project-tech">
+                    ${techTags}
+                </div>
+                <div class="project-links">
+                    ${linksHTML}
+                </div>
+                ${impactHTML}
+            </div>
+        `;
+    }
+
+    /**
+     * Render enterprise projects section
+     */
+    renderEnterpriseProjects() {
+        if (!this.projectsData || !this.projectsData.enterprise) return '';
+
+        return this.projectsData.enterprise.map(project => this.createProjectCard(project)).join('');
+    }
+
+    /**
+     * Check if a section is enabled
+     */
+    isSectionEnabled(sectionId) {
+        if (!this.config) return false;
+
+        const section = this.config.sections.find(s => s.id === sectionId);
+        return section ? section.enabled : false;
+    }
+
+    /**
+     * Get section configuration by ID
+     */
+    getSectionConfig(sectionId) {
+        if (!this.config) return null;
+
+        return this.config.sections.find(s => s.id === sectionId);
+    }
+
+    /**
+     * Get section order
+     */
+    getSectionOrder(sectionId) {
+        const section = this.getSectionConfig(sectionId);
+        return section ? section.order : 999;
+    }
+
+    /**
+     * Reorder sections in the DOM based on configuration
+     */
+    reorderSections() {
+        const container = document.querySelector('.container');
+        if (!container) return;
+
+        const sections = this.getSections();
+        const sectionElements = {};
+
+        // Map section IDs to their DOM elements
+        sections.forEach(section => {
+            const element = document.querySelector(`[data-section-id="${section.id}"]`);
+            if (element) {
+                sectionElements[section.id] = element;
+            }
+        });
+
+        // Reorder by appending in the correct order
+        sections.forEach(section => {
+            const element = sectionElements[section.id];
+            if (element) {
+                container.appendChild(element);
+            }
+        });
+    }
+
+    /**
+     * Hide/show sections based on configuration
+     */
+    applyVisibility() {
+        if (!this.config) return;
+
+        this.config.sections.forEach(section => {
+            const element = document.querySelector(`[data-section-id="${section.id}"]`);
+            if (element) {
+                element.style.display = section.enabled ? '' : 'none';
+            }
+        });
+    }
+
+    /**
+     * Render summary section
+     */
+    renderSummary(sectionConfig) {
+        return `
+            <section class="section" data-section-id="summary">
+                <h2 class="section-title" data-i18n="summary.title">Professional Summary</h2>
+                <p class="summary-text" data-i18n="summary.text">
+                    <strong>AI Systems Architect in Training</strong> with 16+ years of enterprise systems expertise,
+                    currently pursuing <strong>Master in Informatics Engineering at UPC BarcelonaTech</strong> (Expected 2026) and
+                    <strong>IBM AI Engineering Professional Certificate</strong>. Specializing in <strong>agentic AI systems,
+                    manufacturing intelligence, and autonomous business solutions</strong>. International transition from Mexico to Spain
+                    for advanced studies while developing a VR platform for cultural and entertainment applications.
+                </p>
+                ${sectionConfig.config?.showStats ? `
+                <div class="highlight-stats">
+                    <div class="stat-item academic">
+                        <div class="stat-number">2026</div>
+                        <div class="stat-label" data-i18n="impact.graduation.label">Expected Graduation</div>
+                    </div>
+                    <div class="stat-item academic">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label" data-i18n="impact.academic.label">AI/ML Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">16+</div>
+                        <div class="stat-label" data-i18n="impact.experience.label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300K+</div>
+                        <div class="stat-label" data-i18n="impact.users.label">Users Served</div>
+                    </div>
+                </div>
+                ` : ''}
+            </section>
+        `;
+    }
+
+    /**
+     * Render research/education section
+     */
+    renderResearch(sectionConfig) {
+        return `
+            <section class="section" data-section-id="research">
+                <h2 class="section-title" data-i18n="research.title">🎓 Education & Certifications</h2>
+                <div class="education-item current">
+                    <h3 class="degree" data-i18n="research.master.title">Master in Informatics Engineering</h3>
+                    <p class="university" data-i18n="research.master.institution">Universitat Politècnica de Catalunya (UPC BarcelonaTech), Barcelona, Spain</p>
+                    <p class="year">2024 - 2026 <span class="current-badge" data-i18n="research.badges.current">CURRENT</span></p>
+                    <p class="thesis">
+                        <strong data-i18n="research.master.specialization.label">Specialization:</strong> <span data-i18n="research.master.specialization.text">AI Systems, Manufacturing Intelligence, Agentic AI, Computer Vision</span><br>
+                        <strong data-i18n="research.master.thesis.label">Master's Thesis Proposal:</strong> <span data-i18n="research.master.thesis.text">Autonomous agent-based MRP system with predictive analytics</span>
+                    </p>
+                </div>
+                <div class="education-item current">
+                    <h3 class="degree" data-i18n="research.ibm.title">IBM AI Engineering Professional Certificate</h3>
+                    <p class="university" data-i18n="research.ibm.institution">IBM via Coursera</p>
+                    <p class="year">2025 - Present <span class="current-badge" data-i18n="research.badges.pursuing">PURSUING</span></p>
+                    <p class="thesis">
+                        <strong data-i18n="research.ibm.focus.label">Focus:</strong> <span data-i18n="research.ibm.focus.text">Advanced ML, Deep Learning, Generative AI, LLMs Fine-Tuning, AI Agents, Keras, TensorFlow, PyTorch</span><br>
+                        <strong data-i18n="research.ibm.goal.label">Goal:</strong> <span data-i18n="research.ibm.goal.text">Expanding expertise in ML frameworks for future AI engineering roles</span><br>
+                        <strong data-i18n="research.ibm.completed.label">Certificates Obtained: </strong><span data-i18n="research.ibm.completed.text">Machine Learning with Python, Introduction to Deep Learning & Neural Networks with Keras, Deep Learning with Keras and TensorFlow</span>
+                    </p>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="degree">Master in Information Technology Management</h3>
+                    <p class="university">Tecnológico de Monterrey, Monterrey, Mexico</p>
+                    <p class="year">2009 - 2012</p>
+                    <p class="thesis">
+                        <strong data-i18n="research.mti.thesis.label">Thesis:</strong> <span data-i18n="research.mti.thesis.text">Service-Oriented Architecture as Competitive Advantage Enabler in Enterprise Information Systems Development Companies</span>
+                    </p>
+                    <p class="honors" data-i18n="research.honors.excellence">🏆 Excellence Recognition (Mención Honorífica)</p>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="degree">International Exchange Program</h3>
+                    <p class="university">University College of Borås, Sweden</p>
+                    <p class="year">2007</p>
+                    <p class="thesis">
+                        <strong data-i18n="research.exchange.focus.label">Focus:</strong> <span data-i18n="research.exchange.focus.text">International Business, Internship in Informatics: InnovationLab</span><br>
+                        <strong data-i18n="research.exchange.impact.label">Impact:</strong> <span data-i18n="research.exchange.impact.text">Foundation for current international academic transition</span>
+                    </p>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="degree">Bachelor's in Information Systems Engineering</h3>
+                    <p class="university">Tecnológico de Monterrey, Culiacán, Mexico</p>
+                    <p class="year">2003 - 2008</p>
+                    <p class="honors" data-i18n="research.honors.ceneval">🏆 Outstanding Performance in CENEVAL National Exam</p>
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Render Technical Expertise section
+     */
+    renderTechStack(sectionConfig) {
+        const showAI = sectionConfig.config?.showAI !== false;
+        const showLearning = sectionConfig.config?.showLearning !== false;
+
+        return `
+            <section class="section" data-section-id="techStack">
+                <h2 class="section-title" data-i18n="techStack.title">Technical Expertise</h2>
+                <div class="skills-container">
+                    ${showAI ? `
+                    <div class="skill-category ai-focus">
+                        <h3 data-i18n="techStack.ai.title">🤖 AI & Machine Learning (Current Focus)</h3>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="techStack.ai.agenticSystems">Agentic AI Systems</span>
+                            <span class="skill-level" data-i18n="techStack.levels.developing">Developing</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="techStack.ai.agenticCoding">Agentic Coding</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="techStack.ai.rag">RAG Implementation</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="techStack.ai.llm">LLM Integration</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="techStack.ai.computerVision">Computer Vision</span>
+                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="techStack.ai.manufacturingIntelligence">Manufacturing Intelligence</span>
+                            <span class="skill-level" data-i18n="techStack.levels.research">Research</span>
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    ${showLearning ? `
+                    <div class="skill-category learning-focus">
+                        <h3 data-i18n="techStack.learning.title">📚 Learning Stack (IBM Certification)</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Applied Machine Learning</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PyTorch & Keras</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Generative AI Agents</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.developing">Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Prompt Engineering</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Large Language Modeling</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.developing">Learning</span>
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <div class="skill-category">
+                        <h3>🎮 XR/AR Development</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Unity / C#</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Vuforia AR</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">VR Development</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Google Cardboard</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>💻 Full-Stack Development</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Python / FastAPI</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java / Spring</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PHP / Laravel</span>
+                            <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript / Angular</span>
+                            <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Bootstrap</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🗄️ Database Management Systems</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Oracle MySQL</span>
+                            <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MS SQL Server</span>
+                            <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>☁️ Infrastructure & DevOps</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Oracle VirtualBox</span>
+                            <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🛠️ Development Tools</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Postman</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Google Workspace</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🎵 Creative Technology</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Audio Engineering</span>
+                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Music Production</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Professional</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Live Performance</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Professional</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
+    renderExperience(sectionConfig) {
+        const showProfessionalHistory = sectionConfig.config?.showProfessionalHistory !== false;
+        const showEnterpriseProjects = sectionConfig.config?.showEnterpriseProjects !== false;
+        const limit = sectionConfig.config?.limit || null;
+
+        let html = '';
+
+        // Professional History Timeline (4 roles)
+        if (showProfessionalHistory) {
+            html += `
+                <section class="section" data-section-id="experience-history">
+                    <h2 class="section-title" data-i18n="experience.leadership.title">💼 Professional Experience Background</h2>
+                    <div class="timeline">
+                        <div class="timeline-item current-focus">
+                            <h3 class="job-title" data-i18n="experience.student.title">Master's Student & VR Entrepreneur</h3>
+                            <p class="company" data-i18n="experience.student.company">UPC BarcelonaTech & Independent Research</p>
+                            <p class="duration">2024 - <span data-i18n="experience.badges.currentFocus">CURRENT FOCUS</span></p>
+                            <ul class="achievements">
+                                <li data-i18n="experience.student.achievements.vr">Developing VR solutions for educational and cultural applications while pursuing Master's degree</li>
+                                <li data-i18n="experience.student.achievements.specialization">Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions</li>
+                                <li data-i18n="experience.student.achievements.transition">International transition from Mexico to Spain for advanced studies in AI and computer engineering</li>
+                                <li data-i18n="experience.student.achievements.research">Research focus on autonomous agent-based MRP system with predictive analytics for Master's thesis</li>
+                                <li data-i18n="experience.student.achievements.certification">Currently enrolled in IBM AI Engineering Professional Certificate program</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h3 class="job-title" data-i18n="experience.director.title">Director of Systems, Continuous Improvement and Company Partner</h3>
+                            <p class="company" data-i18n="experience.director.company">Grupo Chadorama (restaurant industry): Caprichito Bello, Taller de Pizzas</p>
+                            <p class="duration"><span data-i18n="experience.director.duration">2012 - 2024</span> (<span data-i18n="experience.badges.leadership">10+ years leadership experience</span>)</p>
+                            <ul class="achievements">
+                                <li data-i18n="experience.director.achievements.management">Coordinated middle management, aligning objectives with business strategy</li>
+                                <li data-i18n="experience.director.achievements.franchise">Coordinated development, implementation, and operation of franchise model</li>
+                                <li data-i18n="experience.director.achievements.quality">Designed and coordinated the service quality evaluation system</li>
+                                <li data-i18n="experience.director.achievements.workshop">Active participation in the development, launch and operation of the pizza workshop project, Taller de Pizzas</li>
+                                <li data-i18n="experience.director.achievements.erp">Developed and implemented restaurant ERP system increasing operational efficiency</li>
+                                <li data-i18n="experience.director.achievements.architecture">Led enterprise software architecture and development for multi-location retail operations</li>
+                                <li data-i18n="experience.director.achievements.invoicing">Built and implemented SAT-compliant electronic invoicing system</li>
+                                <li data-i18n="experience.director.achievements.teams">Managed cross-functional teams and strategic technology initiatives</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h3 class="job-title" data-i18n="experience.advisor.title">Financial Subsystem Advisor</h3>
+                            <p class="company" data-i18n="experience.advisor.company">Universidad Autónoma de Sinaloa (UAS)</p>
+                            <p class="duration" data-i18n="experience.advisor.duration">2022 - 2024 (300K+ users)</p>
+                            <ul class="achievements">
+                                <li data-i18n="experience.advisor.achievements.advisory">Provided technical advisory for financial systems serving 300K+ users</li>
+                                <li data-i18n="experience.advisor.achievements.analytics">Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server</li>
+                                <li data-i18n="experience.advisor.achievements.compliance">Led technical consulting for systems in compliance with government budget and accounting standards.</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <h3 class="job-title" data-i18n="experience.fullStack.title">Full-Stack Developer & Team Lead</h3>
+                            <p class="company" data-i18n="experience.fullStack.company">Universidad Autónoma de Sinaloa (UAS) - Financial Subsystem</p>
+                            <p class="duration" data-i18n="experience.fullStack.duration">2008 - 2022</p>
+                            <ul class="achievements">
+                                <li data-i18n="experience.fullStack.achievements.team">2+ years leading a team of developers for the Financial Subsystem</li>
+                                <li data-i18n="experience.fullStack.achievements.verification">Development of digital expense verification</li>
+                                <li data-i18n="experience.fullStack.achievements.microservices">Architecture, development, and implementation of microservices: integration into Internal Audit modules</li>
+                                <li data-i18n="experience.fullStack.achievements.modernization">Legacy system modernization and internal community leadership</li>
+                                <li data-i18n="experience.fullStack.achievements.publicInfo">Public information access module, general archive digitization module development</li>
+                                <li data-i18n="experience.fullStack.achievements.financial">Expense verification module, financial reporting module development</li>
+                                <li data-i18n="experience.fullStack.achievements.revenue">Revenue module development and maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        // Enterprise Projects Section
+        if (showEnterpriseProjects) {
+            let enterpriseProjects = this.projectsData?.enterprise
+                ? this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise')
+                    .sort((a, b) => (a.order || 999) - (b.order || 999))
+                : [];
+
+            // Apply limit if specified
+            if (limit && limit > 0) {
+                enterpriseProjects = enterpriseProjects.slice(0, limit);
+            }
+
+            if (enterpriseProjects.length > 0) {
+                const enterpriseHTML = enterpriseProjects
+                    .map(p => this.createProjectCard(p))
+                    .join('');
+
+                html += `
+                    <section class="section" data-section-id="experience-projects">
+                        <h2 class="section-title" data-i18n="experience.title">💼 Professional Enterprise Projects</h2>
+                        <div class="projects-grid">
+                            ${enterpriseHTML}
+                        </div>
+                    </section>
+                `;
+            }
+        }
+
+        return html;
+    }
+
+    renderCommunity(sectionConfig) {
+        return `
+            <section class="section" data-section-id="community">
+                <h2 class="section-title" data-i18n="community.title">🌍 Community Leadership & Social Impact</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="job-title" data-i18n="community.urbanAdvisor.title">Urban Activism & Sustainable Mobility Advisor</h3>
+                        <p class="company" data-i18n="community.urbanAdvisor.company">Ciclos Urbanos, PRO-Ciudad, IMPLAN</p>
+                        <p class="duration" data-i18n="community.urbanAdvisor.duration">2015 - 2022</p>
+                        <ul class="achievements">
+                            <li data-i18n="community.urbanAdvisor.achievements.activism">Urban activism focused on sustainable mobility and public space development</li>
+                            <li data-i18n="community.urbanAdvisor.achievements.projects">Sustainable mobility projects development and implementation</li>
+                            <li data-i18n="community.urbanAdvisor.achievements.advisor">Citizen advisor role in local urban planning institute</li>
+                            <li data-i18n="community.urbanAdvisor.achievements.collaboration">Cross-sector collaboration between government, NGOs, and civic organizations</li>
+                            <li data-i18n="community.urbanAdvisor.achievements.engagement">Public space design and community engagement in urban development projects</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="job-title" data-i18n="community.techCoordinator.title">Technology Community Coordinator & Startup Weekend Co-Organizer</h3>
+                        <p class="company" data-i18n="community.techCoordinator.company">Comunidad Orientada a las Tecnologías de Sinaloa (COLTSIN)</p>
+                        <p class="duration" data-i18n="community.techCoordinator.duration">2014 - 2016</p>
+                        <ul class="achievements">
+                            <li data-i18n="community.techCoordinator.achievements.coordination">Coordination of technology dissemination, promotion and development events</li>
+                            <li data-i18n="community.techCoordinator.achievements.startup">Co-organizer of Startup Weekend events, fostering entrepreneurial ecosystem</li>
+                            <li data-i18n="community.techCoordinator.achievements.community">Technology community building and ecosystem development</li>
+                            <li data-i18n="community.techCoordinator.achievements.speakers">Speaker coordination and event management for tech conferences</li>
+                            <li data-i18n="community.techCoordinator.achievements.mentorship">Mentorship and support for emerging tech entrepreneurs and startups</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="job-title" data-i18n="community.pmi.title">Founder & Secretary</h3>
+                        <p class="company" data-i18n="community.pmi.company">PMI Sinaloa, Mexico Chapter</p>
+                        <p class="duration" data-i18n="community.pmi.duration">2011 - 2013</p>
+                        <ul class="achievements">
+                            <li data-i18n="community.pmi.achievements.founded">Founded and established chapter, building professional community from ground up</li>
+                            <li data-i18n="community.pmi.achievements.events">Organized conferences, courses and networking events for PMI network</li>
+                            <li data-i18n="community.pmi.achievements.leadership">Strategic planning and organizational leadership for chapter growth and sustainability</li>
+                            <li data-i18n="community.pmi.achievements.networking">Cross-industry networking and knowledge sharing facilitation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
+    renderLanguages(sectionConfig) {
+        return `
+            <section class="section" data-section-id="languages">
+                <h2 class="section-title" data-i18n="languages.title">🌐 Languages</h2>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <h3 class="language-name" data-i18n="languages.spanish.name">🇲🇽 Spanish</h3>
+                        <p class="language-level" data-i18n="languages.spanish.level">Native</p>
+                    </div>
+                    <div class="language-item">
+                        <h3 class="language-name" data-i18n="languages.english.name">🇺🇸 English</h3>
+                        <p class="language-level" data-i18n-html="languages.english.level">Professional<br>(TOEFL ITP 560)</p>
+                    </div>
+                    <div class="language-item">
+                        <h3 class="language-name" data-i18n="languages.german.name">🇩🇪 German</h3>
+                        <p class="language-level" data-i18n="languages.german.level">Beginner</p>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
+    renderCreative(sectionConfig) {
+        const showSocialLinks = sectionConfig.config?.showSocialLinks !== false;
+
+        return `
+            <section class="section creative-focus" data-section-id="creative">
+                <h2 class="section-title" data-i18n="creative.title">🎵 Creative Technology Fusion</h2>
+                <div style="text-align: center;">
+                    <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 800px; margin: 0 auto 20px; line-height: 1.8;" data-i18n="creative.text">
+                        Beyond AI research and VR development, I'm <strong>The Ocean</strong> - a DJ and electronic music producer
+                        who bridges the gap between <strong>creative artistry</strong> and <strong>technical innovation</strong>.
+                        My audio engineering projects demonstrate how deep technical expertise can enhance creative workflows.
+                    </p>
+                    <p style="color: #94a3b8; margin-bottom: 20px;" data-i18n="creative.description">
+                        This cross-disciplinary background enables me to bridge technical innovation with creative problem-solving,
+                        creating a unique profile ideal for creative tech companies and innovation roles.
+                    </p>
+                    ${showSocialLinks ? `
+                    <a href="https://instagram.com/theoceandj" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, #06b6d4, #10b981); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: transform 0.3s ease;" target="_blank">
+                        <span>🎵</span>
+                        <span>Follow The Ocean DJ</span>
+                    </a>
+                    ` : ''}
+                </div>
+            </section>
+        `;
+    }
+
+    renderOpportunities(sectionConfig) {
+        const showCTA = sectionConfig.config?.showCTA !== false;
+
+        return `
+            <section class="section" data-section-id="opportunities" style="text-align: center; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1)); border-color: rgba(139, 92, 246, 0.3);">
+                <h2 class="section-title" data-i18n="opportunities.title">🚀 Open to AI Engineering Opportunities</h2>
+                <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px; line-height: 1.8;" data-i18n="opportunities.text">
+                    Seeking <strong>AI Engineering and Systems Architecture</strong> positions that leverage both
+                    academic research and enterprise experience
+                </p>
+                ${showCTA ? `
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="mailto:ochand@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, #8b5cf6, #06b6d4); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                        <span>📧</span>
+                        <span data-i18n="opportunities.contact">Contact Me</span>
+                    </a>
+                    <a href="https://github.com/ochand" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(45deg, #333, #555); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;" target="_blank">
+                        <span>💻</span>
+                        <span data-i18n="opportunities.projects">View All Projects</span>
+                    </a>
+                </div>
+                ` : ''}
+                <div style="margin-top: 30px;">
+                    <p style="color: #8b5cf6; font-style: italic; max-width: 500px; margin: 0 auto;" data-i18n="opportunities.quote">
+                        "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research
+                        to create autonomous business intelligence solutions"
+                    </p>
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Switch to a different profile
+     */
+    async switchProfile(profileName) {
+        try {
+            await this.loadProfile(profileName);
+            this.renderAllSections();
+
+            // Trigger i18n update if available
+            if (window.i18n && typeof window.i18n.translatePage === 'function') {
+                window.i18n.translatePage();
+            }
+
+            // Update URL without reload
+            const url = new URL(window.location);
+            url.searchParams.set('profile', profileName);
+            window.history.pushState({}, '', url);
+
+            console.log(`Switched to profile: ${profileName}`);
+
+            // Dispatch custom event for profile change
+            window.dispatchEvent(new CustomEvent('profileChanged', {
+                detail: { profile: profileName }
+            }));
+        } catch (error) {
+            console.error('Failed to switch profile:', error);
+        }
+    }
+
+    /**
+     * Get current profile name
+     */
+    getCurrentProfile() {
+        return this.currentProfile || 'default';
+    }
+
+    /**
+     * Get all available profiles
+     */
+    getAvailableProfiles() {
+        if (!this.profilesData) return {};
+        return Object.keys(this.profilesData).map(key => ({
+            id: key,
+            name: this.profilesData[key].name,
+            description: this.profilesData[key].description
+        }));
+    }
+
+    /**
+     * Apply full configuration to the page
+     */
+    async applyConfiguration() {
+        try {
+            await this.init();
+            this.renderAllSections();
+
+            // Trigger i18n update if available
+            if (window.i18n && typeof window.i18n.translatePage === 'function') {
+                window.i18n.translatePage();
+            }
+
+            console.log('Configuration applied successfully');
+        } catch (error) {
+            console.error('Failed to apply configuration:', error);
+        }
+    }
+}
+
+// Export for global use
+window.TemplateEngine = TemplateEngine;
+
+// Auto-initialize on DOM load
+document.addEventListener('DOMContentLoaded', async () => {
+    const templateEngine = new TemplateEngine();
+    await templateEngine.init();
+
+    // Check if we should use dynamic rendering
+    const useDynamic = document.body.hasAttribute('data-dynamic-rendering');
+    if (useDynamic) {
+        await templateEngine.applyConfiguration();
+    }
+
+    window.templateEngine = templateEngine;
+    console.log('Template Engine ready');
+});

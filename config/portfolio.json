@@ -1,0 +1,85 @@
+{
+  "sections": [
+    {
+      "id": "summary",
+      "enabled": true,
+      "order": 1,
+      "config": {
+        "showStats": true
+      }
+    },
+    {
+      "id": "research",
+      "enabled": true,
+      "order": 2,
+      "config": {
+        "showCurrentBadge": true
+      }
+    },
+    {
+      "id": "projects",
+      "enabled": true,
+      "order": 3,
+      "config": {
+        "limit": null,
+        "showAcademic": true,
+        "showCreative": true
+      }
+    },
+    {
+      "id": "techStack",
+      "enabled": true,
+      "order": 4,
+      "config": {
+        "showLearning": true,
+        "showAI": true
+      }
+    },
+    {
+      "id": "experience",
+      "enabled": true,
+      "order": 5,
+      "config": {
+        "showEnterpriseProjects": true,
+        "showProfessionalHistory": true
+      }
+    },
+    {
+      "id": "community",
+      "enabled": true,
+      "order": 6,
+      "config": {
+        "showSocialImpact": true
+      }
+    },
+    {
+      "id": "languages",
+      "enabled": true,
+      "order": 7,
+      "config": {
+        "showProficiency": true
+      }
+    },
+    {
+      "id": "creative",
+      "enabled": true,
+      "order": 8,
+      "config": {
+        "showSocialLinks": true
+      }
+    },
+    {
+      "id": "opportunities",
+      "enabled": true,
+      "order": 9,
+      "config": {
+        "showCTA": true
+      }
+    }
+  ],
+  "meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-10-04",
+    "description": "Portfolio configuration for dynamic section management"
+  }
+}
