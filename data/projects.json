@@ -84,6 +84,8 @@
           "icon": "🔗"
         }
       ],
+      "status": "🚀 Streamlit Cloud ready",
+      "statusI18n": "projects.himalayanDatavis.status",
       "impact": "🎯 Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities",
       "impactI18n": "projects.himalayanDatavis.impact"
     },

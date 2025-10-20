@@ -293,6 +293,9 @@ class TemplateEngine {
             `<a href="${link.url}" class="project-link" target="_blank">${link.icon} ${link.label}</a>`
         ).join('');
 
+        const statusHTML = project.status ?
+            `<span data-i18n="${project.statusI18n}">${project.status}</span>` : '';
+
         const impactHTML = project.impact ?
             `<p class="project-impact" data-i18n="${project.impactI18n}">${project.impact}</p>` : '';
 
@@ -314,6 +317,7 @@ class TemplateEngine {
                 </div>
                 <div class="project-links">
                     ${linksHTML}
+                    ${statusHTML}
                 </div>
                 ${impactHTML}
             </div>
@@ -426,7 +430,7 @@ class TemplateEngine {
                         <div class="stat-label" data-i18n="impact.experience.label">Years Experience</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">300K+</div>
+                        <div class="stat-number">140K+</div>
                         <div class="stat-label" data-i18n="impact.users.label">Users Served</div>
                     </div>
                 </div>
@@ -463,9 +467,9 @@ class TemplateEngine {
                 </div>
 
                 <div class="education-item">
-                    <h3 class="degree">Master in Information Technology Management</h3>
-                    <p class="university">Tecnológico de Monterrey, Monterrey, Mexico</p>
-                    <p class="year">2009 - 2012</p>
+                    <h3 class="degree" data-i18n="research.mti.title">Master in Information Technology Management</h3>
+                    <p class="university" data-i18n="research.mti.institution">Tecnológico de Monterrey, Monterrey, Mexico</p>
+                    <p class="year" data-i18n="research.mti.year">2009 - 2012</p>
                     <p class="thesis">
                         <strong data-i18n="research.mti.thesis.label">Thesis:</strong> <span data-i18n="research.mti.thesis.text">Service-Oriented Architecture as Competitive Advantage Enabler in Enterprise Information Systems Development Companies</span>
                     </p>
@@ -473,9 +477,9 @@ class TemplateEngine {
                 </div>
 
                 <div class="education-item">
-                    <h3 class="degree">International Exchange Program</h3>
-                    <p class="university">University College of Borås, Sweden</p>
-                    <p class="year">2007</p>
+                    <h3 class="degree" data-i18n="research.exchange.title">International Exchange Program</h3>
+                    <p class="university" data-i18n="research.exchange.institution">University College of Borås, Sweden</p>
+                    <p class="year" data-i18n="research.exchange.year">2007</p>
                     <p class="thesis">
                         <strong data-i18n="research.exchange.focus.label">Focus:</strong> <span data-i18n="research.exchange.focus.text">International Business, Internship in Informatics: InnovationLab</span><br>
                         <strong data-i18n="research.exchange.impact.label">Impact:</strong> <span data-i18n="research.exchange.impact.text">Foundation for current international academic transition</span>
@@ -483,9 +487,9 @@ class TemplateEngine {
                 </div>
 
                 <div class="education-item">
-                    <h3 class="degree">Bachelor's in Information Systems Engineering</h3>
-                    <p class="university">Tecnológico de Monterrey, Culiacán, Mexico</p>
-                    <p class="year">2003 - 2008</p>
+                    <h3 class="degree" data-i18n="research.bachelor.title">Bachelor's in Information Systems Engineering</h3>
+                    <p class="university" data-i18n="research.bachelor.institution">Tecnológico de Monterrey, Culiacán, Mexico</p>
+                    <p class="year" data-i18n="research.bachelor.year">2003 - 2008</p>
                     <p class="honors" data-i18n="research.honors.ceneval">🏆 Outstanding Performance in CENEVAL National Exam</p>
                 </div>
             </section>
@@ -508,11 +512,11 @@ class TemplateEngine {
                         <h3 data-i18n="techStack.ai.title">🤖 AI & Machine Learning (Current Focus)</h3>
                         <div class="skill-item">
                             <span class="skill-name" data-i18n="techStack.ai.agenticSystems">Agentic AI Systems</span>
-                            <span class="skill-level" data-i18n="techStack.levels.developing">Developing</span>
+                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name" data-i18n="techStack.ai.agenticCoding">Agentic Coding</span>
-                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name" data-i18n="techStack.ai.rag">RAG Implementation</span>
@@ -541,7 +545,7 @@ class TemplateEngine {
                             <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">PyTorch & Keras</span>
+                            <span class="skill-name">TensorFlow, Keras & PyTorch</span>
                             <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
@@ -554,7 +558,7 @@ class TemplateEngine {
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Large Language Modeling</span>
-                            <span class="skill-level learning" data-i18n="techStack.levels.developing">Learning</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                     </div>
                     ` : ''}
@@ -583,7 +587,7 @@ class TemplateEngine {
                         <h3>💻 Full-Stack Development</h3>
                         <div class="skill-item">
                             <span class="skill-name">Python / FastAPI</span>
-                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
+                            <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Java / Spring</span>
@@ -600,6 +604,14 @@ class TemplateEngine {
                         <div class="skill-item">
                             <span class="skill-name">Bootstrap</span>
                             <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>📱 Mobile Development</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Flutter</span>
+                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                     </div>
 
@@ -623,7 +635,7 @@ class TemplateEngine {
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">AWS</span>
-                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">CI/CD Pipelines</span>
@@ -716,9 +728,9 @@ class TemplateEngine {
                         <div class="timeline-item">
                             <h3 class="job-title" data-i18n="experience.advisor.title">Financial Subsystem Advisor</h3>
                             <p class="company" data-i18n="experience.advisor.company">Universidad Autónoma de Sinaloa (UAS)</p>
-                            <p class="duration" data-i18n="experience.advisor.duration">2022 - 2024 (300K+ users)</p>
+                            <p class="duration" data-i18n="experience.advisor.duration">2022 - 2024 (140K+ users)</p>
                             <ul class="achievements">
-                                <li data-i18n="experience.advisor.achievements.advisory">Provided technical advisory for financial systems serving 300K+ users</li>
+                                <li data-i18n="experience.advisor.achievements.advisory">Provided technical advisory for financial systems serving 140K+ users</li>
                                 <li data-i18n="experience.advisor.achievements.analytics">Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server</li>
                                 <li data-i18n="experience.advisor.achievements.compliance">Led technical consulting for systems in compliance with government budget and accounting standards.</li>
                             </ul>
@@ -830,11 +842,15 @@ class TemplateEngine {
                     </div>
                     <div class="language-item">
                         <h3 class="language-name" data-i18n="languages.english.name">🇺🇸 English</h3>
-                        <p class="language-level" data-i18n-html="languages.english.level">Professional<br>(TOEFL ITP 560)</p>
+                        <p class="language-level" data-i18n-html="languages.english.level">Professional</p>
                     </div>
                     <div class="language-item">
                         <h3 class="language-name" data-i18n="languages.german.name">🇩🇪 German</h3>
                         <p class="language-level" data-i18n="languages.german.level">Beginner</p>
+                    </div>
+                    <div class="language-item">
+                        <h3 class="language-name" data-i18n="languages.catalan.name">Catalan</h3>
+                        <p class="language-level" data-i18n="languages.catalan.level">Basic (Reading & Listening)</p>
                     </div>
                 </div>
             </section>

@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Oliver Eduardo Chan Dorado - AI Systems Architect in Training | Master's Student at UPC",
+    "title": "Oliver Chan Dorado - AI Systems Architect in Training | Master's Student at UPC",
     "description": "AI Systems Architect in Training with 16+ years enterprise experience. Master's Student at UPC BarcelonaTech specializing in agentic AI, manufacturing intelligence, and autonomous systems.",
     "keywords": "AI Systems Architect in Training, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
-    "ogTitle": "Oliver Eduardo Chan Dorado - AI Systems Architect in Training | UPC BarcelonaTech",
+    "ogTitle": "Oliver Chan Dorado - AI Systems Architect in Training | UPC BarcelonaTech",
     "ogDescription": "Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship"
   },
   "header": {
-    "name": "Oliver Eduardo Chan Dorado",
+    "name": "Oliver Chan Dorado",
     "title": "AI Systems Architect in Training",
     "subtitle": "Master's Student at UPC BarcelonaTech",
     "tagline": "Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship",
@@ -59,12 +59,18 @@
       "inProgress": "Advanced ML, Generative AI, LLMs Fine-Tuning (In Progress)"
     },
     "mti": {
+      "title": "Master in Information Technology Management",
+      "institution": "Tecnológico de Monterrey, Monterrey, Mexico",
+      "year": "2009 - 2012",
       "thesis": {
         "label": "Thesis:",
         "text": "Service-Oriented Architecture as Competitive Advantage Enabler in Enterprise Information Systems Development Companies"
       }
     },
     "exchange": {
+      "title": "International Exchange Program",
+      "institution": "University College of Borås, Sweden",
+      "year": "2007",
       "focus": {
         "label": "Focus:",
         "text": "International Business, Internship in Informatics: InnovationLab"
@@ -73,6 +79,11 @@
         "label": "Impact:",
         "text": "Foundation for current international academic transition"
       }
+    },
+    "bachelor": {
+      "title": "Bachelor's in Information Systems Engineering",
+      "institution": "Tecnológico de Monterrey, Culiacán, Mexico",
+      "year": "2003 - 2008"
     },
     "badges": {
       "current": "CURRENT",
@@ -357,6 +368,10 @@
     "german": {
       "name": "🇩🇪 German",
       "level": "Beginner"
+    },
+    "catalan": {
+      "name": "Catalan",
+      "level": "Basic (Reading & Listening)"
     }
   },
   "community": {

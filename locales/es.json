@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Oliver Eduardo Chan Dorado - Arquitecto de Sistemas de IA en formación | Estudiante de Máster en UPC",
+    "title": "Oliver Chan Dorado - Arquitecto de Sistemas de IA en formación | Estudiante de Máster en UPC",
     "description": "Arquitecto de Sistemas de IA en formación con 16+ años de experiencia empresarial. Estudiante de Máster en UPC BarcelonaTech especializado en IA agéntica, inteligencia manufacturera y sistemas autónomos.",
     "keywords": "Arquitecto de Sistemas de IA en formación, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
-    "ogTitle": "Oliver Eduardo Chan Dorado - Arquitecto de Sistemas de IA en formación | UPC BarcelonaTech",
+    "ogTitle": "Oliver Chan Dorado - Arquitecto de Sistemas de IA en formación | UPC BarcelonaTech",
     "ogDescription": "Estudiante de Máster en transición de 16+ años de sistemas empresariales hacia integración de IA de vanguardia y emprendimiento en RV"
   },
   "header": {
-    "name": "Oliver Eduardo Chan Dorado",
+    "name": "Oliver Chan Dorado",
     "title": "Arquitecto de Sistemas de IA en formación",
     "subtitle": "Estudiante de Máster en UPC BarcelonaTech",
     "tagline": "Evolucionando de 16+ años en sistemas de gestión empresarial hacia la integración de IA y emprendimiento en VR",
@@ -59,12 +59,18 @@
       "inProgress": "ML Avanzado, IA Generativa, Fine-Tuning de LLMs (En Progreso)"
     },
     "mti": {
+      "title": "Maestría en Gestión de Tecnologías de Información",
+      "institution": "Tecnológico de Monterrey, Monterrey, México",
+      "year": "2009 - 2012",
       "thesis": {
         "label": "Tesis:",
         "text": "Arquitectura Orientada a Servicios como Habilitador de Ventajas Competitivas en Empresas Desarrolladoras de Sistemas de Información Empresarial"
       }
     },
     "exchange": {
+      "title": "Programa de Intercambio Internacional",
+      "institution": "University College of Borås, Suecia",
+      "year": "2007",
       "focus": {
         "label": "Enfoque:",
         "text": "Negocios Internacionales, Prácticas en Informática: InnovationLab"
@@ -73,6 +79,11 @@
         "label": "Impacto:",
         "text": "Base para la transición académica internacional actual"
       }
+    },
+    "bachelor": {
+      "title": "Licenciatura en Ingeniería en Sistemas de Información",
+      "institution": "Tecnológico de Monterrey, Culiacán, México",
+      "year": "2003 - 2008"
     },
     "badges": {
       "current": "ACTUAL",
@@ -357,6 +368,10 @@
     "german": {
       "name": "🇩🇪 Alemán",
       "level": "Principiante"
+    },
+    "catalan": {
+      "name": "Catalán",
+      "level": "Básico (Lectura y Escucha)"
     }
   },
   "community": {
