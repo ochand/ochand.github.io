@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Engine Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0a1a;
+            color: #e2e8f0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #3b82f6;
+            margin-bottom: 30px;
+        }
+
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .test-section h2 {
+            color: #8b5cf6;
+            margin-bottom: 15px;
+        }
+
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .error {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .info {
+            color: #06b6d4;
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .project-card h3 {
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin: 3px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+        }
+    </style>
+    <script src="./js/templateEngine.js"></script>
+</head>
+<body>
+    <h1>🧪 Template Engine Test Suite</h1>
+
+    <div class="test-section">
+        <h2>1. Configuration Loading Test</h2>
+        <div id="config-test">
+            <p class="info">Testing configuration loading...</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Projects Data Loading Test</h2>
+        <div id="projects-test">
+            <p class="info">Testing projects data loading...</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Section Order Test</h2>
+        <div id="order-test">
+            <p class="info">Testing section ordering...</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Project Card Rendering Test</h2>
+        <button onclick="testProjectRendering()">Render Sample Projects</button>
+        <div id="render-test"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>5. Configuration Manipulation Test</h2>
+        <button onclick="testToggleSection('projects')">Toggle Projects Section</button>
+        <button onclick="testReorderSections()">Reorder Sections</button>
+        <div id="manipulation-test">
+            <p class="info">Click buttons to test configuration changes</p>
+        </div>
+    </div>
+
+    <script>
+        let templateEngine;
+
+        // Wait for template engine to initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            templateEngine = new TemplateEngine();
+            await templateEngine.init();
+
+            runTests();
+        });
+
+        async function runTests() {
+            // Test 1: Configuration Loading
+            testConfigLoading();
+
+            // Test 2: Projects Data Loading
+            testProjectsLoading();
+
+            // Test 3: Section Order
+            testSectionOrder();
+        }
+
+        function testConfigLoading() {
+            const container = document.getElementById('config-test');
+
+            if (templateEngine.config) {
+                const sectionsCount = templateEngine.config.sections.length;
+                const enabledCount = templateEngine.config.sections.filter(s => s.enabled).length;
+
+                container.innerHTML = `
+                    <p class="success">✓ Configuration loaded successfully!</p>
+                    <pre>${JSON.stringify(templateEngine.config, null, 2)}</pre>
+                    <p class="info">Total sections: ${sectionsCount} | Enabled: ${enabledCount}</p>
+                `;
+            } else {
+                container.innerHTML = `<p class="error">✗ Failed to load configuration</p>`;
+            }
+        }
+
+        function testProjectsLoading() {
+            const container = document.getElementById('projects-test');
+
+            if (templateEngine.projectsData) {
+                const academic = templateEngine.projectsData.academic?.length || 0;
+                const creative = templateEngine.projectsData.creative?.length || 0;
+                const enterprise = templateEngine.projectsData.enterprise?.length || 0;
+
+                container.innerHTML = `
+                    <p class="success">✓ Projects data loaded successfully!</p>
+                    <p class="info">
+                        Academic: ${academic} |
+                        Creative: ${creative} |
+                        Enterprise: ${enterprise}
+                    </p>
+                    <pre>${JSON.stringify(templateEngine.projectsData.meta, null, 2)}</pre>
+                `;
+            } else {
+                container.innerHTML = `<p class="error">✗ Failed to load projects data</p>`;
+            }
+        }
+
+        function testSectionOrder() {
+            const container = document.getElementById('order-test');
+            const sections = templateEngine.getSections();
+
+            if (sections && sections.length > 0) {
+                const orderList = sections.map(s =>
+                    `<li>${s.order}. ${s.id} ${s.enabled ? '(enabled)' : '(disabled)'}</li>`
+                ).join('');
+
+                container.innerHTML = `
+                    <p class="success">✓ Section ordering working correctly!</p>
+                    <ul>${orderList}</ul>
+                `;
+            } else {
+                container.innerHTML = `<p class="error">✗ Failed to get section order</p>`;
+            }
+        }
+
+        function testProjectRendering() {
+            const container = document.getElementById('render-test');
+
+            if (!templateEngine.projectsData) {
+                container.innerHTML = `<p class="error">✗ No projects data available</p>`;
+                return;
+            }
+
+            // Render first 2 academic projects
+            const sampleProjects = templateEngine.projectsData.academic.slice(0, 2);
+            const html = sampleProjects.map(p => templateEngine.createProjectCard(p)).join('');
+
+            container.innerHTML = `
+                <p class="success">✓ Rendering ${sampleProjects.length} sample projects:</p>
+                <div>${html}</div>
+            `;
+        }
+
+        function testToggleSection(sectionId) {
+            const container = document.getElementById('manipulation-test');
+            const section = templateEngine.getSectionConfig(sectionId);
+
+            if (section) {
+                section.enabled = !section.enabled;
+                container.innerHTML = `
+                    <p class="success">✓ Toggled ${sectionId}: ${section.enabled ? 'enabled' : 'disabled'}</p>
+                    <pre>${JSON.stringify(section, null, 2)}</pre>
+                `;
+            } else {
+                container.innerHTML = `<p class="error">✗ Section ${sectionId} not found</p>`;
+            }
+        }
+
+        function testReorderSections() {
+            const container = document.getElementById('manipulation-test');
+
+            // Swap order of first two sections
+            if (templateEngine.config.sections.length >= 2) {
+                const temp = templateEngine.config.sections[0].order;
+                templateEngine.config.sections[0].order = templateEngine.config.sections[1].order;
+                templateEngine.config.sections[1].order = temp;
+
+                const newOrder = templateEngine.getSections().map(s => s.id).join(' → ');
+
+                container.innerHTML = `
+                    <p class="success">✓ Sections reordered!</p>
+                    <p class="info">New order: ${newOrder}</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Eduardo Chan Dorado - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #2d3748;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.4in;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 12px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            font-size: 10px;
+            color: #4a5568;
+        }
+
+        .contact-info span {
+            margin-right: 12px;
+        }
+
+        /* QR Section */
+        .qr-section {
+            text-align: center;
+            width: 120px;
+            flex-shrink: 0;
+        }
+
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #2b6cb0;
+            margin: 0 auto 6px;
+            background: #f7fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #718096;
+        }
+
+        .qr-text {
+            font-size: 9px;
+            font-weight: 600;
+            color: #2b6cb0;
+            margin-bottom: 2px;
+        }
+
+        .qr-url {
+            font-size: 8px;
+            color: #4a5568;
+        }
+
+        /* Power Statement */
+        .power-statement {
+            background: linear-gradient(90deg, #ebf8ff, #f0fff4);
+            padding: 12px;
+            margin-bottom: 16px;
+            border-left: 4px solid #2b6cb0;
+            font-size: 12px;
+            font-weight: 500;
+            color: #2d3748;
+            text-align: center;
+        }
+
+        /* Metrics */
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            background: #f7fafc;
+            padding: 10px;
+            margin-bottom: 16px;
+            border-radius: 4px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2b6cb0;
+        }
+
+        .metric-label {
+            font-size: 9px;
+            color: #718096;
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-icon {
+            margin-right: 6px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column-left {
+            flex: 1.2;
+        }
+
+        .column-right {
+            flex: 0.8;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 11px;
+        }
+
+        .university {
+            color: #4a5568;
+            font-size: 10px;
+            font-style: italic;
+        }
+
+        .year {
+            color: #718096;
+            font-size: 10px;
+        }
+
+        .current {
+            background: #c6f6d5;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 8px;
+            color: #22543d;
+            font-weight: 600;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 11px;
+        }
+
+        .project-badge {
+            background: #bee3f8;
+            color: #2c5282;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 8px;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+
+        .project-description {
+            color: #4a5568;
+            font-size: 10px;
+            margin-top: 2px;
+        }
+
+        .tech-stack {
+            color: #718096;
+            font-size: 9px;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 11px;
+        }
+
+        .company {
+            color: #4a5568;
+            font-size: 10px;
+            margin-top: 1px;
+        }
+
+        .achievement {
+            color: #4a5568;
+            font-size: 10px;
+            margin-top: 1px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .skill-category {
+            margin-bottom: 6px;
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            color: #2b6cb0;
+            font-size: 10px;
+            margin-bottom: 2px;
+        }
+
+        .skill-list {
+            color: #4a5568;
+            font-size: 9px;
+            line-height: 1.3;
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3px;
+        }
+
+        .cert-name {
+            color: #4a5568;
+            font-size: 10px;
+        }
+
+        .cert-status {
+            font-size: 8px;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .completed {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .progress {
+            background: #fef5e7;
+            color: #c05621;
+        }
+
+        /* Languages */
+        .languages {
+            display: flex;
+            gap: 12px;
+        }
+
+        .language {
+            text-align: center;
+        }
+
+        .language-name {
+            font-size: 10px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .language-level {
+            font-size: 8px;
+            color: #718096;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 9px;
+            color: #718096;
+            font-style: italic;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 6px;
+        }
+
+        /* Print Instructions */
+        .print-instructions {
+            background: #fff5b4;
+            padding: 8px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            font-size: 10px;
+            color: #744210;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Print Instructions (only shows on screen) -->
+    <div class="print-instructions no-print">
+        📄 <strong>Print Instructions:</strong> Use Chrome/Edge → Print → More Settings → Paper size: Letter → Margins: Minimum → Background graphics: ON
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <h1 class="name">OLIVER EDUARDO CHAN DORADO</h1>
+            <div class="title">AI Systems Architect in Training</div>
+            <div class="subtitle">Master's Student at UPC BarcelonaTech</div>
+            <div class="contact-info">
+                <span>📧 ochand@gmail.com</span>
+                <span>📱 (+34) 644-478-127</span>
+                <span>📍 Barcelona, Spain</span>
+                <span>🔗 github.com/ochand</span>
+            </div>
+        </div>
+        <div class="qr-section">
+            <div class="qr-code">
+                [QR CODE]<br>
+                Insert actual<br>
+                QR here
+            </div>
+            <div class="qr-text">FULL PORTFOLIO</div>
+            <div class="qr-url">ochand.github.io</div>
+        </div>
+    </div>
+
+    <!-- Power Statement -->
+    <div class="power-statement">
+        Bridging 16+ years enterprise systems expertise with cutting-edge AI research | Specialized in Agentic AI, Manufacturing Intelligence & Autonomous Business Solutions
+    </div>
+
+    <!-- Key Metrics -->
+    <div class="metrics">
+        <div class="metric">
+            <div class="metric-number">16+</div>
+            <div class="metric-label">Years Enterprise</div>
+        </div>
+        <div class="metric">
+            <div class="metric-number">140K+</div>
+            <div class="metric-label">Users Served</div>
+        </div>
+        <div class="metric">
+            <div class="metric-number">4+</div>
+            <div class="metric-label">AI/ML Projects</div>
+        </div>
+        <div class="metric">
+            <div class="metric-number">2026</div>
+            <div class="metric-label">Graduation</div>
+        </div>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="two-column">
+        <!-- Left Column -->
+        <div class="column-left">
+            <!-- Education -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">🎓</span>EDUCATION</h2>
+                <div class="education-item">
+                    <div class="degree">Master in Informatics Engineering <span class="current">CURRENT</span></div>
+                    <div class="university">UPC BarcelonaTech, Barcelona, Spain</div>
+                    <div class="year">2024 - 2026 | Thesis: Autonomous agent-based MRP system</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">IBM AI Engineering Professional Certificate <span class="current">PURSUING</span></div>
+                    <div class="university">IBM via Coursera</div>
+                    <div class="year">2025 - Present | 3/6 courses completed</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Master in Information Technology Management</div>
+                    <div class="university">Tecnológico de Monterrey, Mexico</div>
+                    <div class="year">2009 - 2012 | Excellence Recognition (Mención Honorífica)</div>
+                </div>
+            </div>
+
+            <!-- Academic Projects -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">🤖</span>FEATURED ACADEMIC PROJECTS</h2>
+                <div class="project-item">
+                    <div class="project-title">Agentic-MRP <span class="project-badge">THESIS</span></div>
+                    <div class="project-description">Research focus on Predictive AI Manufacturing System evolving into autonomous agent-based MRP with predictive analytics. Features discrete event simulation for manufacturing optimization, supply chain intelligence with automated procurement decisions</div>
+                    <div class="tech-stack">Tech: Python, SimPy, FastAPI, Streamlit, Docker</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">LLM-Chat-RAG <span class="project-badge">AI/LLM</span></div>
+                    <div class="project-description">Advanced AI chat system with Retrieval Augmented Generation using vector databases. Features OpenAI GPT integration, OCR capabilities for PDF processing, microservices architecture with explainable AI responses and source citation</div>
+                    <div class="tech-stack">Tech: Python, OpenAI API, ChromaDB, FastAPI, Tesseract OCR</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">Himalayan-DataVis <span class="project-badge">DATA SCI</span></div>
+                    <div class="project-description">Interactive data science platform for mountaineering expedition analysis (2020-2024). Features Grammar of Graphics visualization with Altair/Vega-Lite, ready for Streamlit Cloud deployment</div>
+                    <div class="tech-stack">Tech: Python, Streamlit, Altair, Pandas, NumPy</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">MuseoVirtualAR <span class="project-badge">VR/AR</span></div>
+                    <div class="project-description">Augmented Reality museum experience with image marker tracking. Features multilingual system (Spanish/English) with synchronized audio, 3D cultural artifacts (Buddha, Christ the Redeemer, Chichen Itza)</div>
+                    <div class="tech-stack">Tech: Unity, C#, Vuforia SDK, Android, Google Cardboard</div>
+                </div>
+            </div>
+
+            <!-- Professional Experience -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">💼</span>ENTERPRISE EXPERIENCE HIGHLIGHTS</h2>
+                <div class="experience-item">
+                    <div class="job-title">Director of Systems, Continuous Improvement & Company Partner</div>
+                    <div class="company">Grupo Chadorama (Restaurant Industry): Caprichito Bello, Taller de Pizzas | 2012 - 2024</div>
+                    <div class="achievement">Coordinated development, implementation, and operation of franchise model. Led enterprise software architecture for multi-location retail operations. Built SAT-compliant electronic invoicing system</div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Financial Subsystem Advisor</div>
+                    <div class="company">UAS: Secretaría de Administración y Finanzas (Largest Public University in Sinaloa) | 2022 - 2024</div>
+                    <div class="achievement">Technical advisory for financial systems serving 140K+ users. Advanced data processing and interpretation of accounting analytics using SQL Server. Government budget compliance systems</div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Full-Stack Developer & Team Lead</div>
+                    <div class="company">UAS: Dirección de Informática | 2008 - 2022</div>
+                    <div class="achievement">2+ years leading development team for Financial Subsystem. Architecture and implementation of microservices integration. Legacy system modernization and internal community leadership</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column-right">
+            <!-- Core Skills -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">⚡</span>CORE TECHNICAL SKILLS</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-category-title">AI & Machine Learning</div>
+                        <div class="skill-list">Agentic AI Systems<br>RAG Implementation<br>LLM Integration<br>Manufacturing Intelligence<br>Computer Vision</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">Development Stack</div>
+                        <div class="skill-list">Python, Java, PHP, C#<br>FastAPI, Laravel, Angular<br>Unity, Vuforia SDK<br>Docker, AWS<br>MySQL, SQL Server</div>
+                    </div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-category-title">Specialized Tech</div>
+                        <div class="skill-list">Unity/C# XR Development<br>Google Cardboard XR<br>Audio Engineering<br>System Architecture<br>Microservices</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">Enterprise & Leadership</div>
+                        <div class="skill-list">Team Leadership (2+ years)<br>Enterprise Solutions<br>Franchise Development<br>Government Compliance<br>Strategic Planning</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IBM Certifications -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">📜</span>IBM AI CERTIFICATIONS</h2>
+                <div class="cert-item">
+                    <span class="cert-name">Machine Learning with Python</span>
+                    <span class="cert-status completed">✅ COMPLETED</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Deep Learning & Neural Networks</span>
+                    <span class="cert-status completed">✅ COMPLETED</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Deep Learning with TensorFlow</span>
+                    <span class="cert-status completed">✅ COMPLETED</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Generative AI & LLM Fine-Tuning</span>
+                    <span class="cert-status progress">📚 IN PROGRESS</span>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">🌐</span>LANGUAGES</h2>
+                <div class="languages">
+                    <div class="language">
+                        <div class="language-name">🇪🇸 Spanish</div>
+                        <div class="language-level">Native</div>
+                    </div>
+                    <div class="language">
+                        <div class="language-name">🇺🇸 English</div>
+                        <div class="language-level">Professional<br>TOEFL ITP 560</div>
+                    </div>
+                    <div class="language">
+                        <div class="language-name">🇩🇪 German</div>
+                        <div class="language-level">Beginner</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Projects Links -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">🔗</span>KEY PROJECT REPOSITORIES</h2>
+                <div style="font-size: 9px; color: #4a5568; line-height: 1.4;">
+                    <strong>Academic:</strong> github.com/UPC-MEI<br>
+                    <strong>Enterprise:</strong> github.com/Grupo-Chadorama<br>
+                    <strong>Creative:</strong> github.com/ICRONOK<br>
+                    <strong>Personal:</strong> github.com/ochand
+                </div>
+            </div>
+
+            <!-- Community Leadership -->
+            <div class="section">
+                <h2 class="section-title"><span class="section-icon">🌍</span>LEADERSHIP & IMPACT</h2>
+                <div style="font-size: 9px; color: #4a5568; line-height: 1.4;">
+                    • <strong>PMI Sinaloa Chapter Founder & Secretary</strong> (2011-2013)<br>
+                    • <strong>Tech Community Coordinator</strong> - COLTSIN (2014-2016)<br>
+                    • <strong>Urban Mobility Advisor</strong> - IMPLAN (2015-2022)<br>
+                    • <strong>Startup Weekend Co-Organizer</strong> - Entrepreneurial ecosystem<br>
+                    • <strong>Open Source Maintainer</strong> - uniCenta oPOS (Global POS system)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions"<br>
+        <strong>Creative Tech Bridge:</strong> Beyond AI research, I'm "The Ocean" - DJ & electronic music producer bridging creative artistry with technical innovation
+    </div>
+
+    <!-- Instructions for QR Code -->
+    <div style="margin-top: 16px; padding: 8px; background: #f0f9ff; border-radius: 4px; font-size: 9px; color: #1e40af;" class="no-print">
+        <strong>🎯 QR CODE IMPLEMENTATION:</strong><br>
+        1. Generate QR for: https://ochand.github.io<br>
+        2. Replace "[QR CODE]" placeholder with actual QR image<br>
+        3. Test QR size: minimum 0.8 inches for reliable scanning<br>
+        4. Use high contrast (black on white) for best results
+    </div>
+</body>
+</html>

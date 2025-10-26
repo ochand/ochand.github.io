@@ -4,13 +4,13 @@
     "description": "AI Systems Architect in Training with 16+ years enterprise experience. Master's Student at UPC BarcelonaTech specializing in agentic AI, manufacturing intelligence, and autonomous systems.",
     "keywords": "AI Systems Architect in Training, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
     "ogTitle": "Oliver Chan Dorado - AI Systems Architect in Training | UPC BarcelonaTech",
-    "ogDescription": "Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship"
+    "ogDescription": "Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration"
   },
   "header": {
     "name": "Oliver Chan Dorado",
     "title": "AI Systems Architect in Training",
     "subtitle": "Master's Student at UPC BarcelonaTech",
-    "tagline": "Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship",
+    "tagline": "Transitioning from 16+ years enterprise systems to cutting-edge AI integration",
     "badges": {
       "master": "Expected 2026:",
       "ibm": "IBM AI Engineer",
@@ -101,45 +101,48 @@
       "badge": "Master's Project",
       "category": "AI Systems",
       "description": "Research focus on Predictive AI Manufacturing System evolving into autonomous agent-based MRP with predictive analytics. Features discrete event simulation for manufacturing optimization, supply chain intelligence with automated procurement decisions, and real-time production planning with inventory optimization.",
-      "impact": "🎯 Impact: Developing autonomous manufacturing decisions with predictive analytics for master's project"
+      "impact": "Impact: Developing autonomous manufacturing decisions with predictive analytics for master's project"
     },
     "llmChatRag": {
       "title": "LLM-Chat-RAG",
       "category": "AI/LLM",
       "description": "Advanced AI chat system with Retrieval Augmented Generation (RAG) using vector databases. Features OpenAI GPT integration, OCR capabilities for PDF processing and microservices architecture.",
-      "impact": "🎯 Impact: Intelligent document processing with source citation"
+      "impact": "Impact: Intelligent document processing with source citation"
     },
     "himalayanDatavis": {
       "title": "Himalayan-DataVis",
       "category": "Data Science",
       "description": "Interactive data science platform for mountaineering expedition analysis (2020-2024). Features grammar of graphics visualization with Altair/Vega-Lite, real-time data exploration with statistical analysis, and multi-dimensional analysis with geographic insights.",
       "status": "🚀 Streamlit Cloud ready",
-      "impact": "🎯 Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities"
+      "impact": "Impact: Ready for deployment on Streamlit Cloud with statistical analysis capabilities"
     },
     "misVids": {
       "title": "MisVids",
       "category": "Enterprise Java",
       "description": "Enterprise video streaming platform with microservices separation. Features AES-256 encryption for video file security, JWT authentication, HTTP range streaming, YouTube integration with embedded video support, and production-ready deployment.",
-      "impact": "🎯 Impact: Enterprise Java application with comprehensive security and streaming capabilities"
+      "impact": "Impact: Enterprise Java application with comprehensive security and streaming capabilities"
     },
     "museoVirtualAr": {
       "title": "MuseoVirtualAR",
       "category": "AR Experience",
       "description": "Augmented Reality museum experience with image marker tracking and multi-marker support. Features multilingual system (Spanish/English) with synchronized audio, 3D cultural artifacts, and Android deployment with gesture recognition.",
-      "impact": "🎯 Impact: Immersive cultural heritage experience for cultural institutions"
+      "impact": "Impact: Immersive cultural heritage experience for cultural institutions"
     },
     "calabozoVr": {
       "title": "CalabozoVR",
       "category": "VR Gaming",
       "description": "Immersive VR escape room with gaze-based interactions and dual locomotion modes. Optimized for Google Cardboard with performance optimization for sustained 60 FPS.",
-      "impact": "🎯 Impact: Mobile VR with dual locomotion modes"
+      "impact": "Impact: Mobile VR with dual locomotion modes"
     },
     "audioSplitter": {
       "title": "Audio-Splitter",
       "status": "Expanding to Web",
       "category": "Audio Engineering",
       "description": "Professional audio processing suite with modular architecture for music production and podcast workflows. Features multi-format support, advanced metadata management, precision audio splitting with CLI + Interactive UI. Currently expanding to web platform.",
-      "impact": "🎯 Impact: Production-ready for music and podcast workflows, expanding to web-based platform"
+      "impact": "Impact: Production-ready for music and podcast workflows, expanding to web-based platform"
+    },
+    "creative": {
+      "separator": "Creative Projects"
     }
   },
   "experience": {
@@ -152,6 +155,7 @@
       "title": "Director of Systems, Continuous Improvement and Company Partner",
       "company": "Grupo Chadorama (restaurant industry): Caprichito Bello, Taller de Pizzas",
       "duration": "2012 - 2024",
+      "summary": "Led enterprise software architecture for multi-location operations. Built SAT-compliant e-invoicing system",
       "achievements": {
         "management": "Coordinated middle management, aligning objectives with business strategy",
         "franchise": "Coordinated development, implementation, and operation of franchise model",
@@ -167,6 +171,7 @@
       "title": "Financial Subsystem Advisor",
       "company": "Universidad Autónoma de Sinaloa (UAS)",
       "duration": "2022 - 2024 (140K+ users)",
+      "summary": "Technical advisory for financial systems serving 140K+ users. Advanced data processing and analytics using SQL Server",
       "achievements": {
         "advisory": "Provided technical advisory for financial systems serving 140K+ users",
         "analytics": "Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server",
@@ -177,6 +182,7 @@
       "title": "Full-Stack Developer & Team Lead",
       "company": "Universidad Autónoma de Sinaloa (UAS) - Financial Subsystem",
       "duration": "2008 - 2022",
+      "summary": "2+ years leading dev team. Microservices architecture and legacy system modernization",
       "achievements": {
         "team": "2+ years leading a team of developers for the Financial Subsystem",
         "verification": "Development of digital expense verification",
@@ -190,6 +196,7 @@
     "student": {
       "title": "Master's Student & VR Entrepreneur",
       "company": "UPC BarcelonaTech & Independent Research",
+      "summary": "Developing VR solutions while specializing in agentic AI systems and manufacturing intelligence",
       "achievements": {
         "vr": "Developing VR platform for cultural and entertainment applications while pursuing Master's degree",
         "specialization": "Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions",
@@ -209,31 +216,31 @@
         "category": "Enterprise",
         "description": "Modern enterprise system currently in production on LAMP hosting, transitioning to cloud-native deployment on AWS. Full-stack solution with Laravel REST API backend and Angular SPA frontend. Planned AWS infrastructure includes ECS, RDS, ElastiCache, and ALB with Docker-first development and complete DevOps pipeline using infrastructure as code.",
         "status": "Migrating to AWS",
-        "impact": "🎯 Impact: Production enterprise system serving multi-location retail operations with more 90+ employees, migrating to scalable cloud infrastructure"
+        "impact": "Impact: Production enterprise system serving multi-location retail operations with more 90+ employees, migrating to scalable cloud infrastructure"
       },
       "cfdi": {
         "title": "CFDI Full-Stack",
         "category": "Enterprise",
         "description": "Mexican government tax compliance system (CFDI 3.3 & 4.0 support) with full-stack architecture. AngularJS SPA frontend with Bootstrap UI and PHP backend API. Features OAuth2 authentication, PAC integration for fiscal certification, cryptographic operations, real-time tax authority integration, and multi-emisor support.",
-        "impact": "🎯 Impact: Government compliance system serving multiple businesses with fiscal certification and tax authority integration"
+        "impact": "Impact: Government compliance system serving multiple businesses with fiscal certification and tax authority integration"
       },
       "unicenta": {
         "title": "uniCenta oPOS Fork",
         "category": "Open Source",
         "description": "Open source enterprise POS system fork used globally. Features multi-terminal support with hardware integration, international localization (13+ languages), and community leadership with legacy system modernization.",
-        "impact": "🎯 Impact: Community contribution for enterprise POS deployments"
+        "impact": "Impact: Community contribution for enterprise POS deployments"
       },
       "nodePOS": {
         "title": "Node POS Integration",
         "category": "Enterprise",
         "description": "Full-stack restaurant management system integration serving as the central hub for the complete enterprise ecosystem: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, and WebESCPOSPrint Bridge. Features complete POS operations, multi-location support, inventory control, automatic CFDI 4.0 electronic invoicing, financial management with cash flow control, and seamless thermal printing integration.",
-        "impact": "🎯 Impact: Central integration hub orchestrating 4 enterprise systems (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) for complete restaurant management ecosystem"
+        "impact": "Impact: Central integration hub orchestrating 4 enterprise systems (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) for complete restaurant management ecosystem"
       },
       "webescpos": {
         "title": "WebESCPOSPrint Bridge",
         "category": "Enterprise",
         "description": "Java desktop application enabling web-to-printer communication for ESC/POS thermal printers. HTTP server bridge allowing web applications (ERP2/CFDI systems) to print receipts and tickets directly to local thermal printers through Base64-encoded commands and CORS-enabled API.",
-        "impact": "🎯 Impact: Critical system integration enabling seamless printing from web-based POS and billing systems"
+        "impact": "Impact: Critical system integration enabling seamless printing from web-based POS and billing systems"
       }
     }
   },
@@ -410,6 +417,11 @@
         "leadership": "Strategic planning and organizational leadership for chapter growth and sustainability",
         "networking": "Cross-industry networking and knowledge sharing facilitation"
       }
+    }
+  },
+  "resume": {
+    "qr": {
+      "label": "PORTFOLIO"
     }
   }
 }

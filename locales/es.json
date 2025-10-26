@@ -10,7 +10,7 @@
     "name": "Oliver Chan Dorado",
     "title": "Arquitecto de Sistemas de IA en formación",
     "subtitle": "Estudiante de Máster en UPC BarcelonaTech",
-    "tagline": "Evolucionando de 16+ años en sistemas de gestión empresarial hacia la integración de IA y emprendimiento en VR",
+    "tagline": "Evolucionando de 16+ años en sistemas de gestión empresarial hacia la integración de IA",
     "badges": {
       "master": "Previsto 2026:",
       "ibm": "Ingeniero IA IBM",
@@ -101,45 +101,48 @@
       "badge": "Master's Project",
       "category": "AI Systems",
       "description": "Investigación enfocada en sistema predictivo de IA para manufactura, evolucionando para convertirse en un MRP agéntico con analítica predictiva. Incluye simulación de eventos discretos para optimización, inteligencia de la cadena de suministro con decisiones automatizadas de compras y planificación de producción en tiempo real con optimización de inventario.",
-      "impact": "🎯 Impacto: Desarrollo de decisiones de fabricación autónoma con análisis predictivo para proyecto de máster"
+      "impact": "Impacto: Desarrollo de decisiones de fabricación autónoma con análisis predictivo para proyecto de máster"
     },
     "llmChatRag": {
       "title": "LLM-Chat-RAG",
       "category": "AI/LLM",
       "description": "Sistema de chat IA avanzado con generación aumentada por recuperación (RAG) usando bases de datos vectoriales. Incluye integración con GPT API de OpenAI, capacidades OCR para procesamiento de PDFs y arquitectura de microservicios.",
-      "impact": "🎯 Impacto: Procesamiento inteligente de documentos con citado de fuentes"
+      "impact": "Impacto: Procesamiento inteligente de documentos con citado de fuentes"
     },
     "himalayanDatavis": {
       "title": "Himalayan-DataVis",
       "category": "Ciencia de Datos",
       "description": "Plataforma interactiva de ciencia de datos para análisis de expediciones por montañas (2020-2024). Incluye visualización grammar of graphics con Altair/Vega-Lite, exploración de datos en tiempo real con análisis estadístico, y análisis multidimensional con perspectiva geográficas.",
       "status": "🚀 Streamlit Cloud ready",
-      "impact": "🎯 Impacto: Listo para despliegue en Streamlit Cloud con capacidades de análisis estadístico"
+      "impact": "Impacto: Listo para despliegue en Streamlit Cloud con capacidades de análisis estadístico"
     },
     "misVids": {
       "title": "MisVids",
       "category": "Enterprise Java",
       "description": "Plataforma empresarial de streaming de video con separación de microservicios. Incluye encriptación AES-256 para seguridad de archivos de video, autenticación JWT, streaming HTTP range, integración con YouTube con soporte de video embebido, y despliegue listo para producción.",
-      "impact": "🎯 Impacto: Aplicación Java empresarial con capacidades de seguridad y streaming"
+      "impact": "Impacto: Aplicación Java empresarial con capacidades de seguridad y streaming"
     },
     "museoVirtualAr": {
       "title": "MuseoVirtualAR",
       "category": "AR Experience",
       "description": "Experiencia de museo en Realidad Aumentada con seguimiento de marcadores de imagen y soporte multi-marcador. Incluye sistema multilingüe (Español/Inglés) con audio sincronizado, artefactos culturales 3D y despliegue en Android con reconocimiento de gestos.",
-      "impact": "🎯 Impacto: Experiencia inmersiva de patrimonio cultural para instituciones culturales"
+      "impact": "Impacto: Experiencia inmersiva de patrimonio cultural para instituciones culturales"
     },
     "calabozoVr": {
       "title": "CalabozoVR",
       "category": "VR Gaming",
       "description": "Escape room inmersivo en VR con interacciones gaze-based y modos de locomoción dual. Optimizado para Google Cardboard con optimización de rendimiento para mantener 60 FPS sostenidos.",
-      "impact": "🎯 Impacto: VR para móviles con dos modos de locomoción"
+      "impact": "Impacto: VR para móviles con dos modos de locomoción"
     },
     "audioSplitter": {
       "title": "Audio-Splitter",
       "status": "Expandiendo a Web",
       "category": "Audio Engineering",
       "description": "Suite profesional de procesamiento de audio con arquitectura modular para flujos de trabajo de producción musical y podcasts. Incluye soporte multi-formato, gestión avanzada de metadatos, división precisa de audio con CLI + UI Interactiva. Actualmente expandiendo a plataforma web.",
-      "impact": "🎯 Impacto: Listo para producción en flujos de trabajo de música y podcast, expandiendo a plataforma web"
+      "impact": "Impacto: Listo para producción en flujos de trabajo de música y podcast, expandiendo a plataforma web"
+    },
+    "creative": {
+      "separator": "Proyectos Creativos"
     }
   },
   "experience": {
@@ -152,9 +155,10 @@
       "title": "Director de Sistemas, Mejora Continua y Socio de la Empresa",
       "company": "Grupo Chadorama (industria restaurantera): Caprichito Bello, Taller de Pizzas",
       "duration": "2012 - 2024",
+      "summary": "Lideré arquitectura de software y sistemas de inforamción para operaciones multi-ubicación (3 ubicaciones). Construí sistema de facturación electrónica compatible con SAT",
       "achievements": {
         "management": "Coordiné mandos medios, alineando objetivos con estrategia empresarial",
-        "franchise": "Coordiné desarrollo, implementación y operación del modelo de franquicia",
+        "franchise": "Particié en desarrollo, implementación y operación del modelo de franquicia",
         "quality": "Diseñé y coordiné el sistema de evaluación de calidad en el servicio",
         "workshop": "Participación activa en desarrollo, lanzamiento y operación del proyecto de pizzeria custom, Taller de Pizzas",
         "erp": "Desarrollé e implementé sistema ERP restaurantero aumentando eficiencia operacional",
@@ -167,6 +171,7 @@
       "title": "Asesor de Subsistema Financiero",
       "company": "Universidad Autónoma de Sinaloa (UAS)",
       "duration": "2022 - 2024 (140K+ usuarios)",
+      "summary": "Asesoría técnica para sistemas financieros sirviendo 140K+ usuarios. Procesamiento avanzado de datos y analítica usando SQL Server",
       "achievements": {
         "advisory": "Proporcioné asesoría técnica para sistemas financieros sirviendo 140K+ usuarios",
         "analytics": "Realicé procesamiento avanzado de datos, presentación e interpretación de analítica contable y financiera usando SQL Server",
@@ -177,6 +182,7 @@
       "title": "Desarrollador Full-Stack y Líder de Equipo",
       "company": "Universidad Autónoma de Sinaloa (UAS) - Subsistema Financiero",
       "duration": "2008 - 2022",
+      "summary": "2+ años liderando equipo de desarrollo. Arquitectura de microservicios y modernización de sistemas legacy",
       "achievements": {
         "team": "2+ años liderando equipo de desarrolladores para el Subsistema Financiero",
         "verification": "Desarrollo de módulo de comprobación gastos modalidad digital",
@@ -190,6 +196,7 @@
     "student": {
       "title": "Estudiante de Máster y Emprendedor VR",
       "company": "UPC BarcelonaTech e Investigación Independiente",
+      "summary": "Desarrollando plataforma VR mientras me especializo en sistemas de IA agéntica e inteligencia de fabricación",
       "achievements": {
         "vr": "Desarrollo plataforma de VR para aplicaciones culturales y de entretenimiento mientras curso Máster.",
         "specialization": "Especializándome en sistemas de IA agéntica, inteligencia de fabricación y soluciones empresariales autónomas",
@@ -209,31 +216,31 @@
         "category": "Enterprise",
         "description": "Sistema empresarial moderno actualmente en producción en hosting LAMP, en transición a despliegue nativo en la nube en AWS. Solución full-stack con backend de API REST Laravel y frontend SPA Angular. La infraestructura planificada de AWS incluye ECS, RDS, ElastiCache y ALB con desarrollo Docker-first y pipeline DevOps completo usando infraestructura como código.",
         "status": "Migrando a AWS",
-        "impact": "🎯 Impacto: Sistema empresarial en producción sirviendo operaciones minoristas multi-ubicación con 90+ empleados, migrando a infraestructura escalable en la nube"
+        "impact": "Impacto: Sistema empresarial en producción sirviendo operaciones minoristas multi-ubicación con 90+ empleados, migrando a infraestructura escalable en la nube"
       },
       "cfdi": {
         "title": "CFDI Full-Stack",
         "category": "Enterprise",
         "description": "Sistema de facturación que cumple con las regulaciones fiscales del gobierno mexicano (soporte CFDI 3.3 y 4.0) con arquitectura full-stack. Frontend SPA AngularJS con UI Bootstrap y API backend PHP. Incluye autenticación OAuth2, integración PAC para certificación fiscal, operaciones criptográficas, integración en tiempo real con autoridades fiscales y soporte multi-emisor.",
-        "impact": "🎯 Impacto: Sistema de facturación que cumple con las regulaciones gubernamentales y atiende a múltiples empresas con certificación fiscal e integración con autoridades fiscales"
+        "impact": "Impacto: Sistema de facturación que cumple con las regulaciones gubernamentales y atiende a múltiples empresas con certificación fiscal e integración con autoridades fiscales"
       },
       "unicenta": {
         "title": "uniCenta oPOS Fork",
         "category": "Open Source",
         "description": "Fork de sistema POS empresarial de código abierto usado globalmente. Incluye soporte multi-terminal con integración de hardware, localización internacional (13+ idiomas), y liderazgo comunitario con modernización de sistemas legacy.",
-        "impact": "🎯 Impacto: Contribución comunitaria para despliegues POS empresariales"
+        "impact": "Impacto: Contribución comunitaria para despliegues POS empresariales"
       },
       "nodePOS": {
         "title": "Node POS Integration",
         "category": "Enterprise",
         "description": "Integración de sistema de gestión de restaurantes sirviendo como hub para el ecosistema empresarial completo: ERP2 Full-Stack, CFDI Full-Stack, uniCenta oPOS Fork, y WebESCPOSPrint Bridge. Incluye operaciones POS, soporte multi-ubicación, control de inventario, facturación electrónica CFDI 4.0, gestión financiera con control de flujo de efectivo e integración con impresión térmica.",
-        "impact": "🎯 Impacto: Hub de integración central orquestando 4 sistemas empresariales (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) para ecosistema completo de gestión de restaurantes"
+        "impact": "Impacto: Hub de integración central orquestando 4 sistemas empresariales (ERP2, CFDI, uniCenta POS, WebESCPOSPrint) para ecosistema completo de gestión de restaurantes"
       },
       "webescpos": {
         "title": "WebESCPOSPrint Bridge",
         "category": "Enterprise",
         "description": "Aplicación de escritorio Java habilitando comunicación web-impresora para impresoras térmicas ESC/POS. Puente servidor HTTP permitiendo a aplicaciones web (sistemas ERP2/CFDI) imprimir recibos y tickets directamente a impresoras térmicas locales a través de comandos en Base64 y API habilitada para CORS.",
-        "impact": "🎯 Impacto: Integración crítica de sistemas habilitando impresión perfecta desde sistemas POS y tickets basados en web"
+        "impact": "Impacto: Integración crítica de sistemas habilitando impresión perfecta desde sistemas POS y tickets basados en web"
       }
     }
   },
@@ -411,5 +418,11 @@
         "networking": "Facilitación de networking inter-industrial e intercambio de conocimiento"
       }
     }
+  },
+  "resume": {
+    "qr": {
+      "label": "PORTAFOLIO"
+    },
+    "powerStatement": "Uniendo 16+ años de experiencia en sistemas empresariales con investigación de vanguardia en IA | Especializado en IA Agéntica, Inteligencia de Manufactura y Soluciones de Negocio Autónomas"
   }
 }

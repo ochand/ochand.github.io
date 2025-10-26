@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI Systems Architect in Training with 16+ years enterprise experience. Master's Student at UPC BarcelonaTech specializing in agentic AI, manufacturing intelligence, and autonomous systems.">
     <meta name="keywords" content="AI Systems Architect in Training, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning">
-    <meta name="author" content="Oliver Eduardo Chan Dorado">
-    <meta property="og:title" content="Oliver Eduardo Chan Dorado - AI Systems Architect in Training | UPC BarcelonaTech">
+    <meta name="author" content="Oliver Chan Dorado">
+    <meta property="og:title" content="Oliver Chan Dorado - AI Systems Architect in Training | UPC BarcelonaTech">
     <meta property="og:description" content="Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ochand.github.io">
-    <title>Oliver Eduardo Chan Dorado - AI Systems Architect in Training | Master's Student at UPC</title>
+    <title>Oliver Chan Dorado - AI Systems Architect in Training | Master's Student at UPC</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
     <script src="./js/i18n.js"></script>
     <script src="./js/templateEngine.js"></script>
@@ -800,7 +800,7 @@
                 </div>
             <div class="profile-section">
                 <div class="profile-avatar">🎓</div>
-                <h1 class="name" data-i18n="header.name">Oliver Eduardo Chan Dorado</h1>
+                <h1 class="name" data-i18n="header.name">Oliver Chan Dorado</h1>
                 <p class="title" data-i18n="header.title">AI Systems Architect in Training</p>
                 <p class="subtitle" data-i18n="header.subtitle">Master's Student at UPC BarcelonaTech</p>
                 <p class="tagline" data-i18n="header.tagline">Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship</p>
@@ -872,6 +872,11 @@
                     // Update active state
                     langOptions.forEach(opt => opt.classList.remove('active'));
                     this.classList.add('active');
+
+                    // Update URL with new language parameter
+                    const url = new URLSearchParams(window.location.search);
+                    url.set('lang', lang);
+                    window.history.pushState({}, '', `${window.location.pathname}?${url.toString()}`);
 
                     if (window.i18n) window.i18n.changeLanguage(lang);
                 };

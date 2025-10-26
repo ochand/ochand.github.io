@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Oliver Chan Dorado</title>
+
+    <!-- html2pdf.js desde CDN (incluye html2canvas y jsPDF) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #2d3748;
+            background: #f7fafc;
+            padding: 20px;
+        }
+
+        /* === GARANTÍA A4: Límites estrictos === */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        #resume-content {
+            width: 794px;          /* A4 width: 210mm = 794px */
+            height: 1123px;        /* A4 height: 297mm = 1123px */
+            max-height: 1123px;    /* ← GARANTÍA: No exceder */
+            overflow: hidden;      /* ← GARANTÍA: Ocultar overflow */
+            padding: 15px;         /* Reducido - jsPDF ya tiene márgenes */
+            box-sizing: border-box;
+            position: relative;
+            background: white;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Prevenir page breaks */
+        .section,
+        .project-compact,
+        .education-entry,
+        .experience-entry {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* === Indicador visual de límite (solo pantalla) === */
+        .page-limit-indicator {
+            position: absolute;
+            top: 277mm;            /* 297mm - 20mm márgenes */
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 0, 0, 0.3);
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .page-limit-indicator::after {
+            content: 'A4 Page Limit';
+            position: absolute;
+            right: 10px;
+            top: -18px;
+            font-size: 10px;
+            color: red;
+            background: white;
+            padding: 2px 6px;
+        }
+
+        /* === Warning banner === */
+        .warning-banner {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            z-index: 9998;
+            border-bottom: 2px solid #f59e0b;
+        }
+
+        /* === Loading overlay === */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* === Controles flotantes === */
+        .controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .control-btn {
+            background: #2b6cb0;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 600;
+        }
+
+        .control-btn:hover {
+            background: #2c5282;
+        }
+
+        .control-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+        }
+
+        /* === Header Compacto === */
+        .header-compact {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 8px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 23px;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin-bottom: 3px;
+            letter-spacing: 0.3px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            font-size: 9px;
+            color: #4a5568;
+        }
+
+        .contact-info span {
+            margin-right: 8px;
+        }
+
+        .contact-info a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+
+        /* QR Section */
+        .qr-section {
+            text-align: center;
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .qr-code {
+            width: 70px;
+            height: 70px;
+            border: 2px solid #2b6cb0;
+            margin: 0 auto 4px;
+            background: #f7fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #718096;
+            line-height: 1.2;
+            padding: 5px;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .qr-text {
+            font-size: 9px;
+            font-weight: 600;
+            color: #2b6cb0;
+            margin-bottom: 2px;
+        }
+
+        .qr-url {
+            font-size: 8px;
+            color: #4a5568;
+        }
+
+        /* Power Statement */
+        .power-statement {
+            width: 100%;
+            background: linear-gradient(90deg, #ebf8ff, #f0fff4);
+            padding: 10px;
+            margin-top: 8px;
+            border-left: 4px solid #2b6cb0;
+            font-size: 12px;
+            font-weight: 500;
+            color: #2d3748;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* === Secciones Compactas === */
+        .section.compact-section {
+            margin-bottom: 8px;
+        }
+
+        .section-title.compact {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin-bottom: 4px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1px;
+        }
+
+        /* === Summary === */
+        .summary-text.compact {
+            font-size: 10px;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+
+        .metrics-inline {
+            font-size: 9px;
+            color: #4a5568;
+            margin-top: 3px;
+            text-align: center;
+        }
+
+        .metrics-inline strong {
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        /* === Education === */
+        .education-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .education-entry {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        .education-entry strong {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .education-entry .institution {
+            color: #4a5568;
+            margin-left: 5px;
+        }
+
+        .education-entry .year {
+            color: #718096;
+            margin-left: 5px;
+        }
+
+        .badge-inline {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 8px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        /* === Projects === */
+        .projects-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .project-compact {
+            font-size: 9px;
+        }
+
+        .project-compact .project-title {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .project-compact .project-category {
+            color: #4a5568;
+            font-size: 9px;
+            margin-left: 5px;
+            display: inline;
+        }
+
+        .project-tech-inline {
+            display: inline;
+            margin-left: 6px;
+        }
+
+        .tech-tag-small {
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 1px 3px;
+            border-radius: 2px;
+            font-size: 7px;
+            margin-right: 2px;
+        }
+
+        .project-impact {
+            font-weight: 400;
+            color: #4a5568;
+            margin-top: 3px;
+            font-size: 8px;
+            line-height: 1.3;
+            font-style: italic;
+        }
+
+        .projects-separator {
+            margin: 6px 0 0 0;
+            padding: 0;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .projects-separator span {
+            font-size: 8px;
+            font-weight: 600;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: white;
+            padding: 0 6px;
+            position: relative;
+            top: -5px;
+        }
+
+        /* === Skills === */
+        .skills-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .skill-category-compact {
+            font-size: 9px;
+            line-height: 1.3;
+        }
+
+        .skill-category-compact strong {
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        .skill-category-compact span {
+            color: #4a5568;
+        }
+
+        /* === Experience === */
+        .experience-item {
+            margin-bottom: 6px;
+        }
+
+        .experience-item .job-title {
+            font-weight: 600;
+            color: #1a202c;
+            font-size: 10px;
+        }
+
+        .experience-item .company {
+            color: #4a5568;
+            font-size: 9px;
+            margin-top: 1px;
+        }
+
+        .experience-item .achievement {
+            color: #4a5568;
+            font-size: 8px;
+            margin-top: 1px;
+            font-style: italic;
+        }
+
+        .enterprise-compact {
+            font-size: 9px;
+            color: #4a5568;
+            margin-top: 6px;
+        }
+
+        .enterprise-compact strong {
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        /* === Languages === */
+        .languages-inline {
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .languages-inline strong {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        /* === Footer === */
+        .footer {
+            margin-top: 8px;
+            padding-top: 6px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        /* === Media queries para impresión === */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .controls,
+            .loading-overlay,
+            .warning-banner,
+            .page-limit-indicator {
+                display: none !important;
+            }
+
+            #resume-content {
+                width: 210mm;
+                height: 297mm;
+                max-height: 297mm;
+                overflow: hidden;
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            body {
+                padding: 10px;
+            }
+
+            #resume-content {
+                width: 100%;
+                height: auto;
+                max-height: none;
+            }
+
+            .controls {
+                position: static;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div>
+            <div>⏳ Generating PDF...</div>
+            <div style="font-size: 12px; margin-top: 10px;">Please wait...</div>
+        </div>
+    </div>
+
+    <!-- Warning banner (oculto por default) -->
+    <div class="warning-banner" id="overflowWarning"></div>
+
+    <!-- Controles flotantes -->
+    <div class="controls no-print">
+        <button class="control-btn" onclick="generatePDF()" id="pdfBtn">📄 Export PDF</button>
+        <button class="control-btn" onclick="window.print()">🖨️ Print</button>
+        <button class="control-btn" id="lang-toggle">🌐 <span id="lang-text">EN/ES</span></button>
+        <button class="control-btn" onclick="navigateToPortfolio()">← Full Portfolio</button>
+    </div>
+
+    <!-- Contenedor del Resume (con límite A4) -->
+    <div id="resume-content" class="a4-container">
+        <!-- Indicador visual de límite (solo en pantalla) -->
+        <div class="page-limit-indicator no-print"></div>
+
+        <!-- Header compacto -->
+        <div class="header-compact">
+            <div class="header-left">
+                <h1 class="name">OLIVER CHAN DORADO</h1>
+                <div class="title" data-i18n="header.title">AI Systems Architect in Training</div>
+                <div class="subtitle" data-i18n="header.subtitle">Master's Student at UPC BarcelonaTech</div>
+                <div class="contact-info">
+                    <span>📧 ochand@gmail.com</span>
+                    <span>📱 (+34) 644-478-127</span>
+                    <span>📍 Barcelona, Spain</span>
+                    <span>🔗 github.com/ochand</span>
+                </div>
+            </div>
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img id="qr-image"
+                         src="/assets/rebrand.ly.fqbx15t-default_profile-en.svg"
+                         alt="Portfolio QR Code">
+                </div>
+                <div class="qr-text" data-i18n="resume.qr.label">FULL PORTFOLIO</div>
+                <div class="qr-url">ochand.github.io</div>
+            </div>
+
+            <!-- Power Statement -->
+            <div class="power-statement" data-i18n="header.tagline">
+                Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship
+            </div>
+        </div>
+
+        <!-- Contenido dinámico -->
+        <div id="content">
+            <!-- El contenido se renderiza aquí según el perfil activo -->
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div style="margin-bottom: 6px;">
+                <strong style="color: #2b6cb0; font-size: 12px;" data-i18n="opportunities.title">🚀 Open to AI Engineering Opportunities</strong>
+            </div>
+
+            <div style="font-size: 10px; color: #4a5568; margin-bottom: 6px;" data-i18n="opportunities.text">
+                Seeking AI Engineering and Systems Architecture positions that leverage both academic research and enterprise experience
+            </div>
+
+            <div style="font-size: 9px; color: #718096; font-style: italic;" data-i18n="opportunities.quote">
+                "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions"
+            </div>
+        </div>
+
+        <!-- Watermark: Profile & Language indicator -->
+        <div id="watermark" style="position: absolute; bottom: 3px; right: 8px; font-size: 7px; color: #cbd5e0; opacity: 0.6; font-family: monospace;">
+            <span id="watermark-text"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js"></script>
+    <script src="/js/templateEngine.js"></script>
+    <script>
+        // === CONSTANTES A4 ===
+        const A4_HEIGHT_PX = 1123;  // 297mm * 3.78 px/mm
+        const A4_HEIGHT_MM = 297;
+        const A4_SAFE_LIMIT_MM = 290;  // Margen de seguridad de 7mm
+
+        // === VARIABLES GLOBALES ===
+        const urlParams = new URLSearchParams(window.location.search);
+        const profileName = urlParams.get('profile') ||
+                           localStorage.getItem('selected-profile') ||
+                           'default';
+        const lang = urlParams.get('lang') ||
+                    localStorage.getItem('selected-language') ||
+                    'en';
+
+        // === FUNCIONES DE UTILIDAD ===
+
+        /**
+         * Actualiza el QR code según el idioma seleccionado
+         */
+        function updateQRCode(lang) {
+            const qrImage = document.getElementById('qr-image');
+            if (qrImage) {
+                const qrPath = lang === 'es'
+                    ? '/assets/rebrand.ly.lf7t3ih-default_profile-es.svg'
+                    : '/assets/rebrand.ly.fqbx15t-default_profile-en.svg';
+                qrImage.src = qrPath;
+                console.log(`📱 QR actualizado: ${lang.toUpperCase()} (${qrPath})`);
+            }
+        }
+
+        // === FUNCIONES DE VALIDACIÓN ===
+
+        /**
+         * Verifica si contenido excede una página A4
+         */
+        function checkPageOverflow() {
+            const resumeContainer = document.getElementById('resume-content');
+            const contentDiv = document.getElementById('content');
+            const headerDiv = document.querySelector('.header-compact');
+            const footerDiv = document.querySelector('.footer');
+            const warning = document.getElementById('overflowWarning');
+
+            // Calcula altura real: header + contenido dinámico + footer + padding
+            const headerHeightPx = headerDiv ? headerDiv.offsetHeight : 0;
+            const contentHeightPx = contentDiv ? contentDiv.scrollHeight : 0;
+            const footerHeightPx = footerDiv ? footerDiv.offsetHeight : 0;
+            const paddingPx = 15 * 2; // 15px top + 15px bottom
+
+            const totalHeightPx = headerHeightPx + contentHeightPx + footerHeightPx + paddingPx;
+            const totalHeightMm = totalHeightPx / 3.78;
+            const roundedHeight = Math.round(totalHeightMm);
+
+            // Warning si excede límite seguro
+            const exceedsSafe = totalHeightMm > A4_SAFE_LIMIT_MM;
+
+            console.log(`📏 Medidas: Header=${Math.round(headerHeightPx/3.78)}mm, Content=${Math.round(contentHeightPx/3.78)}mm, Footer=${Math.round(footerHeightPx/3.78)}mm, Padding=16mm, Total=${roundedHeight}mm`);
+
+            if (exceedsSafe) {
+                warning.style.display = 'block';
+                warning.innerHTML = `⚠️ Content: <strong>${roundedHeight}mm</strong> (safe limit: ${A4_SAFE_LIMIT_MM}mm). PDF may be clipped.`;
+                console.warn(`⚠️ Content near limit: ${roundedHeight}mm (safe: ${A4_SAFE_LIMIT_MM}mm, max: ${A4_HEIGHT_MM}mm)`);
+                return false;
+            } else {
+                warning.style.display = 'none';
+                console.log(`✅ Content fits: ${roundedHeight}mm (safe: ${A4_SAFE_LIMIT_MM}mm)`);
+                return true;
+            }
+        }
+
+        /**
+         * Genera PDF con garantía de una página
+         */
+        async function generatePDF() {
+            const pdfBtn = document.getElementById('pdfBtn');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const resumeContent = document.getElementById('resume-content');
+
+            // Validación: verifica overflow
+            const fitsInOnePage = checkPageOverflow();
+
+            if (!fitsInOnePage) {
+                const proceed = confirm(
+                    '⚠️ WARNING: Content exceeds one A4 page and will be clipped in PDF.\n\n' +
+                    'Recommendations:\n' +
+                    '• Select "minimal" profile (top 3 projects)\n' +
+                    '• Choose a profile with fewer projects\n' +
+                    '• Use "Print" option instead (allows multiple pages)\n\n' +
+                    'Generate PDF anyway (content will be cut)?'
+                );
+
+                if (!proceed) {
+                    console.log('PDF generation cancelled by user');
+                    return;
+                }
+            }
+
+            try {
+                // Deshabilita botón y muestra loading
+                pdfBtn.disabled = true;
+                loadingOverlay.classList.add('active');
+
+                // Nombre dinámico del archivo
+                const currentLang = window.i18n?.currentLang || 'en';
+                const profileLabel = profileName.replace(/-/g, '_');
+                const fileName = `Oliver_Chan_Resume_${profileLabel}_${currentLang}.pdf`;
+
+                // Ocultar elementos que no deben aparecer en PDF
+                const elementsToHide = [
+                    document.querySelector('.page-limit-indicator'),
+                    document.querySelector('.controls'),
+                    document.getElementById('overflowWarning')
+                ];
+                elementsToHide.forEach(el => {
+                    if (el) el.style.display = 'none';
+                });
+
+                // Convertir SVG a PNG para mejor renderizado en PDF
+                const qrImage = document.getElementById('qr-image');
+                let originalSrc = null;
+                if (qrImage && qrImage.src.endsWith('.svg')) {
+                    originalSrc = qrImage.src;
+                    try {
+                        const img = new Image();
+                        img.crossOrigin = 'anonymous';
+                        await new Promise((resolve, reject) => {
+                            img.onload = () => {
+                                const canvas = document.createElement('canvas');
+                                canvas.width = 200;
+                                canvas.height = 200;
+                                const ctx = canvas.getContext('2d');
+                                ctx.fillStyle = 'white';
+                                ctx.fillRect(0, 0, 200, 200);
+                                ctx.drawImage(img, 0, 0, 200, 200);
+                                qrImage.src = canvas.toDataURL('image/png');
+                                resolve();
+                            };
+                            img.onerror = reject;
+                            img.src = originalSrc;
+                        });
+                    } catch (e) {
+                        console.warn('Could not convert SVG to PNG:', e);
+                    }
+                }
+
+                // MÉTODO DIRECTO: html2canvas + jsPDF manual
+                // Paso 1: Captura canvas (sin forzar dimensiones, usa el tamaño real del contenedor)
+                const canvas = await html2canvas(resumeContent, {
+                    scale: 3,
+                    useCORS: true,
+                    allowTaint: true,
+                    logging: false,
+                    backgroundColor: '#ffffff',
+                    imageTimeout: 0,
+                    removeContainer: true,
+                    foreignObjectRendering: false
+                });
+
+                // Paso 2: Crear PDF con jsPDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'a4',
+                    compress: true
+                });
+
+                // Paso 3: Convertir canvas a imagen
+                const imgData = canvas.toDataURL('image/jpeg', 0.95);
+
+                // Paso 4: Calcular dimensiones para ajustar a A4 manteniendo proporciones
+                const pdfWidth = 210;  // A4 width en mm
+                const pdfHeight = 297; // A4 height en mm
+                const margin = 10;     // Margen en mm
+
+                // Calcular ratio del canvas capturado
+                const canvasRatio = canvas.width / canvas.height;
+                const pageRatio = (pdfWidth - margin * 2) / (pdfHeight - margin * 2);
+
+                let imgWidth, imgHeight;
+
+                // Ajustar dimensiones manteniendo proporción del canvas
+                if (canvasRatio > pageRatio) {
+                    // Canvas más ancho, ajustar por ancho
+                    imgWidth = pdfWidth - (margin * 2);
+                    imgHeight = imgWidth / canvasRatio;
+                } else {
+                    // Canvas más alto, ajustar por alto
+                    imgHeight = pdfHeight - (margin * 2);
+                    imgWidth = imgHeight * canvasRatio;
+                }
+
+                // Paso 5: Agregar imagen al PDF (UNA SOLA PÁGINA, centrada)
+                const xOffset = (pdfWidth - imgWidth) / 2;
+                const yOffset = margin;
+
+                pdf.addImage(imgData, 'JPEG', xOffset, yOffset, imgWidth, imgHeight, undefined, 'FAST');
+
+                // Paso 6: Guardar PDF
+                pdf.save(fileName);
+
+                // Restaurar SVG original si se convirtió
+                if (originalSrc && qrImage) {
+                    qrImage.src = originalSrc;
+                }
+
+                // Restaurar elementos ocultos
+                elementsToHide.forEach(el => {
+                    if (el) el.style.display = '';
+                });
+
+                console.log(`✅ PDF generado: ${fileName}`);
+
+            } catch (error) {
+                console.error('❌ Error generando PDF:', error);
+                alert('Error generating PDF. Please try Print option or contact support.');
+            } finally {
+                // Rehabilita botón y oculta loading
+                pdfBtn.disabled = false;
+                loadingOverlay.classList.remove('active');
+            }
+        }
+
+        /**
+         * Navega de regreso al portfolio manteniendo perfil e idioma
+         */
+        function navigateToPortfolio() {
+            const url = new URL(window.location.origin + '/index.html');
+            url.searchParams.set('profile', profileName);
+            url.searchParams.set('lang', window.i18n?.currentLang || 'en');
+            window.location.href = url.toString();
+        }
+
+        // === INICIALIZACIÓN ===
+
+        // Actualiza UI con idioma detectado (i18n ya lo detectó automáticamente del URL)
+        const detectedLang = window.i18n?.currentLang || lang;
+        console.log(`🌐 Idioma inicializado: URL param="${lang}", Detectado="${detectedLang}"`);
+        document.getElementById('lang-text').textContent = detectedLang.toUpperCase();
+
+        // Inicializa QR code con idioma correcto
+        updateQRCode(detectedLang);
+
+        // Función para actualizar marca de agua
+        function updateWatermark(profile, lang) {
+            const watermarkText = document.getElementById('watermark-text');
+            if (watermarkText) {
+                watermarkText.textContent = `Profile: ${profile} | Lang: ${lang.toUpperCase()}`;
+            }
+        }
+
+        // Actualiza marca de agua inicial
+        updateWatermark(profileName, detectedLang);
+
+        // Inicializa template engine en modo RESUME
+        const templateEngine = new TemplateEngine();
+        templateEngine.setRenderMode('resume');
+
+        // Carga perfil y valida después de renderizar
+        let initialCheckDone = false;
+        templateEngine.loadProfile(profileName).then(() => {
+            templateEngine.applyConfiguration();
+
+            // Espera a que DOM se actualice y valida UNA SOLA VEZ
+            if (!initialCheckDone) {
+                setTimeout(() => {
+                    checkPageOverflow();
+                    initialCheckDone = true;
+                }, 600);
+            }
+        });
+
+        // === EVENT LISTENERS ===
+
+        // Toggle de idioma
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            const currentLang = window.i18n?.currentLang || 'en';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+
+            if (window.i18n) {
+                window.i18n.changeLanguage(newLang);
+                document.getElementById('lang-text').textContent = newLang.toUpperCase();
+            }
+
+            // Actualiza QR code
+            updateQRCode(newLang);
+
+            // Actualiza marca de agua
+            updateWatermark(profileName, newLang);
+
+            // Actualiza URL
+            const url = new URL(window.location);
+            url.searchParams.set('lang', newLang);
+            window.history.pushState({}, '', url);
+
+            // Re-valida después de cambio de idioma (espera a que termine i18n)
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(checkPageOverflow, 800);
+        });
+
+        // Atajo de teclado para PDF (Ctrl+Shift+P)
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'P') {
+                e.preventDefault();
+                generatePDF();
+            }
+        });
+
+        // Re-validar al cambiar tamaño de ventana (con debounce)
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(checkPageOverflow, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Oliver Eduardo Chan Dorado
+# Oliver Chan Dorado
 ## AI Systems Architect in Training | Master's Student at UPC BarcelonaTech
 
 🤖 **Bridging 16+ years of enterprise systems expertise with cutting-edge AI research and VR entrepreneurship**
@@ -7,6 +7,12 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ochand)
 [![Email](https://img.shields.io/badge/Email-ochand%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:ochand@gmail.com)
 
+[![Version](https://img.shields.io/badge/Version-2.2.1-green?style=flat-square)](https://github.com/ochand/ochand.github.io)
+[![Profiles](https://img.shields.io/badge/Profiles-6-orange?style=flat-square)](https://ochand.github.io?profile=ai-engineer)
+[![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20ES-blue?style=flat-square)](https://ochand.github.io?lang=es)
+[![PDF Resume](https://img.shields.io/badge/PDF-Resume%20Generator-red?style=flat-square)](https://ochand.github.io/one_page_resume.html)
+[![Projects](https://img.shields.io/badge/Projects-12-purple?style=flat-square)](https://ochand.github.io?profile=default)
+
 ---
 
 ## 🎯 **Professional Summary**
@@ -14,6 +20,42 @@
 **AI Systems Architect in Training** with 16+ years of enterprise systems expertise, currently pursuing **Master in Informatics Engineering at UPC BarcelonaTech** (Expected 2026) and **IBM AI Engineering Professional Certificate**. Specializing in **agentic AI systems, manufacturing intelligence, and autonomous business solutions**.
 
 International transition from Mexico to Spain for advanced studies while developing VR platform for cultural and entertainment applications.
+
+---
+
+## 🎨 **Dynamic Portfolio System**
+
+This portfolio features a **sophisticated dynamic rendering system** built from scratch:
+
+### 🌟 **Key Features**
+- 🔀 **6 Configurable Profiles** - Tailored views for different audiences ([AI Engineer](https://ochand.github.io?profile=ai-engineer), [Manufacturing AI Internship](https://ochand.github.io?profile=manufacturing-ai-internship), [Full-Stack](https://ochand.github.io?profile=fullstack), [Minimal](https://ochand.github.io?profile=minimal), [Academic](https://ochand.github.io?profile=academic))
+- 🌍 **Bilingual i18n System** - Complete EN/ES translation with URL-based switching (`?lang=es`)
+- 📄 **Dynamic PDF Resume** - One-page A4 resume generator with profile inheritance ([Try it](https://ochand.github.io/one_page_resume.html?profile=minimal&lang=en))
+- 📱 **Smart QR Codes** - Language-specific tracking with automatic switching
+- 🏷️ **PDF Watermarking** - Each export tagged with profile + language
+- ⚙️ **Zero-Code Customization** - All via JSON configuration
+
+### 🔧 **Technical Implementation**
+```
+12 projects • 9 sections • 6 profiles • 2 languages • 420+ i18n keys per locale
+```
+- **Template Engine**: Dual-mode rendering (full/resume) with dynamic section management
+- **PDF Export**: SVG→PNG conversion + html2canvas + jsPDF with A4 guarantee
+- **Profile System**: URL-based with localStorage persistence and visual selector
+- **i18n Engine**: Query parameter detection, automatic translation, URL synchronization
+
+### 🚀 **Quick Start Guide**
+
+| Profile | Best For | URL |
+|---------|----------|-----|
+| 🤖 **AI Engineer** | AI/ML positions | [View →](https://ochand.github.io?profile=ai-engineer&lang=en) |
+| 🏭 **Manufacturing AI** | Industry 4.0 internships | [View →](https://ochand.github.io?profile=manufacturing-ai-internship&lang=en) |
+| 💻 **Full-Stack** | Enterprise dev roles | [View →](https://ochand.github.io?profile=fullstack&lang=en) |
+| 📑 **Minimal** | Quick overview | [View →](https://ochand.github.io?profile=minimal&lang=en) |
+| 🎓 **Academic** | PhD applications | [View →](https://ochand.github.io?profile=academic&lang=en) |
+| 📄 **PDF Resume** | Print/download | [Generate →](https://ochand.github.io/one_page_resume.html?profile=minimal&lang=en) |
+
+**[📚 Full Technical Documentation →](https://github.com/ochand/ochand.github.io/blob/main/CLAUDE.md)** | **[🇪🇸 Ver en Español →](https://ochand.github.io?lang=es)**
 
 ---
 
@@ -108,11 +150,22 @@ Beyond AI research and VR development, I'm **[The Ocean](https://instagram.com/t
 
 ## 📊 **Impact Metrics**
 
-- 🎓 **4+** AI/ML academic projects completed
+### **Academic & Research**
+- 🎓 **4** AI/ML academic projects completed
+- 📚 **3** IBM AI Engineering certifications earned
+- 🏆 **2026** expected Master's graduation (UPC BarcelonaTech)
+
+### **Professional Experience**
 - 💼 **16+** years enterprise systems experience
 - 👥 **300K+** users served through financial systems
-- 🏆 **2026** expected Master's graduation
-- 🌍 **13+** languages supported in open source contributions
+- 🏢 **5** major enterprise projects delivered
+
+### **Technical Portfolio**
+- 🎨 **6** dynamic portfolio profiles
+- 🌍 **2** languages (EN/ES) with 420+ translations each
+- 📦 **12** total projects (4 academic + 3 creative + 5 enterprise)
+- 📄 **1** dynamic PDF resume system with A4 guarantee
+- 🔧 **9** configurable sections via JSON
 
 ---
 
@@ -125,22 +178,31 @@ Seeking **AI Engineering and Systems Architecture** positions that leverage both
 - Research-driven technical roles
 
 ### 📍 **Location**: Barcelona, Spain (Open to remote/hybrid)
-### 🗣️ **Languages**: Spanish (Native), English (Professional - TOEFL ITP 560), German (Beginner)
+### 🗣️ **Languages**: Spanish (Native), English (Professional), German (Beginner)
 
 ---
 
 ## 📫 **Let's Connect**
 
-- **Portfolio**: [ochand.github.io](https://ochand.github.io) 
-- **Email**: [ochand@gmail.com](mailto:ochand@gmail.com)
-- **GitHub**: [@ochand](https://github.com/ochand)
-- **Music Project**: [@theoceandj](https://instagram.com/theoceandj)
-- **WhatsApp**: [(+52) 667 152 9220](https://wa.me/+526671529220?text=Hi%20Oliver)
-- **Phone**: [(+34) 644 478 127](tel:+34644478127)
+### **Portfolio Access**
+- 🌐 **Full Portfolio**: [ochand.github.io](https://ochand.github.io)
+- 🤖 **AI Engineer View**: [ochand.github.io?profile=ai-engineer](https://ochand.github.io?profile=ai-engineer)
+- 🏭 **Manufacturing AI View**: [ochand.github.io?profile=manufacturing-ai-internship](https://ochand.github.io?profile=manufacturing-ai-internship)
+- 📄 **One-Page Resume**: [ochand.github.io/one_page_resume.html](https://ochand.github.io/one_page_resume.html?profile=minimal&lang=en)
+- 🇪🇸 **En Español**: [ochand.github.io?lang=es](https://ochand.github.io?lang=es)
+
+### **Contact**
+- 📧 **Email**: [ochand@gmail.com](mailto:ochand@gmail.com)
+- 💻 **GitHub**: [@ochand](https://github.com/ochand)
+- 🎵 **Music Project**: [@theoceandj](https://instagram.com/theoceandj)
+- 💬 **WhatsApp**: [(+52) 667 152 9220](https://wa.me/+526671529220?text=Hi%20Oliver)
+- 📱 **Phone**: [(+34) 644 478 127](tel:+34644478127)
 
 ---
 
 *"Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions"*
 
 ### 🏗️ **Built With**
-HTML5 • CSS3 • Modern Web Technologies • GitHub Pages • Responsive Design
+HTML5 • CSS3 • JavaScript (ES6+) • i18n System • Dynamic Rendering • JSON Profiles • PDF Export (html2canvas + jsPDF) • GitHub Pages • Responsive Design
+
+**Version**: 2.2.1 | **Portfolio Profiles**: 6 | **Languages**: EN/ES

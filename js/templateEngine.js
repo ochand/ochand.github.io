@@ -3,12 +3,31 @@
  * Handles dynamic rendering of portfolio sections based on configuration
  */
 
+// === CONSTANTES PARA MODO RESUME ===
+// Límites de contenido para garantizar que cabe en una página A4
+const RESUME_LIMITS = {
+    education: 3,           // Máximo # títulos académicos
+    projects: 10,            // Máximo # proyectos
+    experience: 10,          // Máximo 2 roles profesionales
+    skillCategories: 10,     // Máximo 5 categorías de skills
+    summaryMaxWords: 800     // Máximo 80 palabras en summary
+};
+
+// Dimensiones exactas de página A4
+const A4_DIMENSIONS = {
+    height: { mm: 297, px: 1123 },
+    width: { mm: 210, px: 794 },
+    contentArea: { height: 277, width: 190 } // Con márgenes de 10mm
+};
+
 class TemplateEngine {
     constructor() {
         this.config = null;
         this.projectsData = null;
         this.profilesData = null;
         this.currentProfile = null;
+        this.renderMode = 'full';       // 'full' | 'resume'
+        this.resumeLimits = RESUME_LIMITS;
     }
 
     /**
@@ -23,6 +42,28 @@ class TemplateEngine {
         } catch (error) {
             console.error('Failed to initialize TemplateEngine:', error);
         }
+    }
+
+    /**
+     * Set render mode (full or resume)
+     */
+    setRenderMode(mode) {
+        this.renderMode = mode;
+        console.log(`Render mode set to: ${mode}`);
+    }
+
+    /**
+     * Check if currently in resume mode
+     */
+    isResumeMode() {
+        return this.renderMode === 'resume';
+    }
+
+    /**
+     * Get resume limits configuration
+     */
+    getResumeLimits() {
+        return this.resumeLimits;
     }
 
     /**
@@ -126,15 +167,21 @@ class TemplateEngine {
      * Render all sections dynamically
      */
     renderAllSections() {
-        const container = document.querySelector('.container');
+        // Support both .container (full portfolio) and #content (resume)
+        const container = document.querySelector('.container') || document.querySelector('#content');
         if (!container) return;
 
-        const header = container.querySelector('.header');
         const sections = this.getSections();
 
-        // Clear existing content (keep header)
-        const existingSections = container.querySelectorAll('.section');
-        existingSections.forEach(section => section.remove());
+        // Clear existing content
+        if (this.isResumeMode()) {
+            // Resume mode: clear everything in #content
+            container.innerHTML = '';
+        } else {
+            // Full mode: clear sections but keep header
+            const existingSections = container.querySelectorAll('.section');
+            existingSections.forEach(section => section.remove());
+        }
 
         // Render each section
         sections.forEach(section => {
@@ -149,6 +196,12 @@ class TemplateEngine {
      * Render a single section based on its type
      */
     renderSection(sectionConfig) {
+        // Si está en modo resume, usa métodos compactos
+        if (this.isResumeMode()) {
+            return this.renderSectionCompact(sectionConfig);
+        }
+
+        // Modo full: usa métodos normales
         const sectionMap = {
             'summary': () => this.renderSummary(sectionConfig),
             'research': () => this.renderResearch(sectionConfig),
@@ -163,6 +216,26 @@ class TemplateEngine {
 
         const renderer = sectionMap[sectionConfig.id];
         return renderer ? renderer() : '';
+    }
+
+    /**
+     * Render section in compact mode (for resume)
+     */
+    renderSectionCompact(sectionConfig) {
+        const compactRenderMethods = {
+            'summary': () => this.renderSummaryCompact(sectionConfig),
+            'research': () => this.renderResearchCompact(sectionConfig),
+            'projects': () => this.renderProjectsCompact(sectionConfig),
+            'techStack': () => this.renderTechStackCompact(sectionConfig),
+            'experience': () => this.renderExperienceCompact(sectionConfig),
+            'languages': () => this.renderLanguagesCompact(sectionConfig),
+            // Community, Creative, Opportunities se omiten en resume
+            'community': () => '',
+            'creative': () => '',
+            'opportunities': () => ''
+        };
+
+        return compactRenderMethods[sectionConfig.id] ? compactRenderMethods[sectionConfig.id]() : '';
     }
 
     /**
@@ -981,6 +1054,327 @@ class TemplateEngine {
         } catch (error) {
             console.error('Failed to apply configuration:', error);
         }
+    }
+
+    // ============================================
+    // MÉTODOS COMPACTOS PARA MODO RESUME
+    // ============================================
+
+    /**
+     * Render Summary in compact format (2-3 lines + inline metrics)
+     */
+    renderSummaryCompact(sectionConfig) {
+        const showStats = sectionConfig.config?.showStats !== false;
+
+        return `
+            <section class="section compact-section" data-section-id="summary">
+                <h2 class="section-title compact" data-i18n="summary.title">Professional Summary</h2>
+                <p class="summary-text compact" data-i18n="summary.text">
+                    AI Systems Architect in Training with 16+ years enterprise experience, transitioning from enterprise leadership to AI systems development. Currently pursuing Master's in Informatics Engineering at UPC BarcelonaTech, specializing in agentic AI systems and manufacturing intelligence.
+                </p>
+                ${showStats ? `
+                <div class="metrics-inline">
+                    <span><strong>2026</strong> <span data-i18n="impact.graduation.label">Expected Graduation</span></span> |
+                    <span><strong>4+</strong> <span data-i18n="impact.academic.label">AI/ML Projects</span></span> |
+                    <span><strong>16+</strong> <span data-i18n="impact.experience.label">Years Experience</span></span> |
+                    <span><strong>140K+</strong> <span data-i18n="impact.users.label">Users Served</span></span>
+                </div>
+                ` : ''}
+            </section>
+        `;
+    }
+
+    /**
+     * Render Education in compact format (condensed list)
+     */
+    renderResearchCompact(sectionConfig) {
+        const limit = RESUME_LIMITS.education;
+
+        // Array de todas las entradas de educación (5 total)
+        const educationEntries = [
+            {
+                title: 'research.master.title',
+                titleText: 'Master in Informatics Engineering',
+                institution: 'research.master.institution',
+                institutionText: 'UPC BarcelonaTech, Barcelona, Spain (2024-2026)',
+                year: null,
+                yearText: null,
+                badge: 'research.badges.current',
+                badgeText: 'CURRENT'
+            },
+            {
+                title: 'research.ibm.title',
+                titleText: 'IBM AI Engineering Professional Certificate',
+                institution: 'research.ibm.institution',
+                institutionText: 'IBM via Coursera (2025-Present)',
+                year: null,
+                yearText: null,
+                badge: 'research.badges.pursuing',
+                badgeText: 'PURSUING'
+            },
+            {
+                title: 'research.mti.title',
+                titleText: 'Master in Information Technology Management',
+                institution: 'research.mti.institution',
+                institutionText: 'Tecnológico de Monterrey, Monterrey, Mexico',
+                year: 'research.mti.year',
+                yearText: '2009 - 2012',
+                badge: null,
+                badgeText: null
+            },
+            {
+                title: 'research.exchange.title',
+                titleText: 'International Exchange Program',
+                institution: 'research.exchange.institution',
+                institutionText: 'University College of Borås, Sweden',
+                year: 'research.exchange.year',
+                yearText: '2007',
+                badge: null,
+                badgeText: null
+            },
+            {
+                title: 'research.bachelor.title',
+                titleText: "Bachelor's in Information Systems Engineering",
+                institution: 'research.bachelor.institution',
+                institutionText: 'Tecnológico de Monterrey, Culiacán, Mexico',
+                year: 'research.bachelor.year',
+                yearText: '2003 - 2008',
+                badge: null,
+                badgeText: null
+            }
+        ];
+
+        // Aplicar límite
+        const limitedEntries = educationEntries.slice(0, limit);
+
+        // Generar HTML para cada entrada
+        const entriesHTML = limitedEntries.map(entry => `
+            <div class="education-entry">
+                <strong data-i18n="${entry.title}">${entry.titleText}</strong>
+                <span class="institution" ${entry.institution ? `data-i18n="${entry.institution}"` : ''}>${entry.institutionText}</span>
+                ${entry.yearText ? `<span class="year" ${entry.year ? `data-i18n="${entry.year}"` : ''}>${entry.yearText}</span>` : ''}
+                ${entry.badge ? `<span class="badge-inline" data-i18n="${entry.badge}">${entry.badgeText}</span>` : ''}
+            </div>
+        `).join('');
+
+        return `
+            <section class="section compact-section" data-section-id="research">
+                <h2 class="section-title compact" data-i18n="research.title">🎓 Education & Certifications</h2>
+                <div class="education-compact">
+                    ${entriesHTML}
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Render Projects in compact format (title + tech only)
+     */
+    renderProjectsCompact(sectionConfig) {
+        const showAcademic = sectionConfig.config?.showAcademic !== false;
+        const showCreative = sectionConfig.config?.showCreative !== false;
+        const limit = RESUME_LIMITS.projects;
+
+        let academicProjects = [];
+        let creativeProjects = [];
+
+        if (showAcademic && this.projectsData?.academic) {
+            academicProjects = this.filterProjectsByProfile(this.projectsData.academic, 'academic')
+                .sort((a, b) => (a.order || 999) - (b.order || 999));
+        }
+
+        if (showCreative && this.projectsData?.creative) {
+            creativeProjects = this.filterProjectsByProfile(this.projectsData.creative, 'creative')
+                .sort((a, b) => (a.order || 999) - (b.order || 999));
+        }
+
+        // Aplicar límite total
+        const totalLimit = limit;
+        let limitedAcademic = academicProjects.slice(0, totalLimit);
+        let limitedCreative = creativeProjects.slice(0, Math.max(0, totalLimit - limitedAcademic.length));
+
+        const renderProject = (project) => `
+            <div class="project-compact">
+                <strong class="project-title" data-i18n="${project.titleI18n}">${project.title}</strong>
+                <span class="project-category" data-i18n="${project.categoryI18n}">${project.categoryLabel}</span>
+                <div class="project-tech-inline">
+                    ${project.technologies.slice(0, 3).map(tech => `<span class="tech-tag-small">${tech}</span>`).join(' ')}
+                </div>
+                ${project.impact ? `<p class="project-impact" data-i18n="${project.impactI18n}">${project.impact}</p>` : ''}
+            </div>
+        `;
+
+        const academicHTML = limitedAcademic.map(renderProject).join('');
+        const creativeHTML = limitedCreative.map(renderProject).join('');
+
+        const separator = (limitedAcademic.length > 0 && limitedCreative.length > 0)
+            ? '<div class="projects-separator"><span data-i18n="projects.creative.separator">Creative Projects</span></div>'
+            : '';
+
+        return `
+            <section class="section compact-section" data-section-id="projects">
+                <h2 class="section-title compact" data-i18n="projects.title">🎓 Projects</h2>
+                <div class="projects-compact">
+                    ${academicHTML}
+                    ${separator}
+                    ${creativeHTML}
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Render TechStack in compact format (inline layout similar to projects-compact)
+     */
+    renderTechStackCompact(sectionConfig) {
+        const showAI = sectionConfig.config?.showAI !== false;
+        const showLearning = sectionConfig.config?.showLearning !== false;
+
+        return `
+            <section class="section compact-section" data-section-id="techStack">
+                <h2 class="section-title compact" data-i18n="techStack.title">💡 Technical Expertise</h2>
+                <div class="skills-compact">
+                    ${showAI ? `
+                    <div class="skill-category-compact">
+                        <strong data-i18n="techStack.ai.title">🤖 AI & ML (Current Focus):</strong>
+                        <span>Agentic AI Systems, Agentic Coding, RAG Implementation, LLM Integration, Computer Vision, Manufacturing Intelligence</span>
+                    </div>
+                    ` : ''}
+                    ${showLearning ? `
+                    <div class="skill-category-compact">
+                        <strong data-i18n="techStack.learning.title">📚 Learning Stack (IBM):</strong>
+                        <span>Applied ML, TensorFlow/Keras/PyTorch, Generative AI Agents, Prompt Engineering, LLM Modeling</span>
+                    </div>
+                    ` : ''}
+                    <div class="skill-category-compact">
+                        <strong>🎮 XR/AR:</strong>
+                        <span>Unity/C#, Vuforia AR, VR Development, Google Cardboard</span>
+                    </div>
+                    <div class="skill-category-compact">
+                        <strong>💻 Full-Stack:</strong>
+                        <span>Python/FastAPI, Java/Spring, PHP/Laravel, JavaScript/Angular, Bootstrap</span>
+                    </div>
+                    <div class="skill-category-compact">
+                        <strong>🗄️ Database:</strong>
+                        <span>Oracle MySQL, MS SQL Server</span>
+                    </div>
+                    <div class="skill-category-compact">
+                        <strong>☁️ DevOps:</strong>
+                        <span>Docker, AWS, CI/CD, VirtualBox</span>
+                    </div>
+                    <div class="skill-category-compact">
+                        <strong>🛠️ Tools:</strong>
+                        <span>Git, Postman, Google Workspace</span>
+                    </div>
+                    <div class="skill-category-compact">
+                        <strong>🎵 Creative Tech:</strong>
+                        <span>Audio Engineering, Music Production, Live Performance</span>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Render Experience in compact format (dynamic roles + enterprise projects)
+     */
+    renderExperienceCompact(sectionConfig) {
+        const limit = RESUME_LIMITS.experience;
+
+        // Array de 4 roles profesionales con i18n
+        const professionalRoles = [
+            {
+                titleI18n: 'experience.student.title',
+                titleText: "Master's Student & VR Entrepreneur",
+                companyI18n: 'experience.student.company',
+                companyText: 'UPC BarcelonaTech & Independent Research',
+                duration: '2024-Present',
+                achievementI18n: 'experience.student.summary',
+                achievement: 'Developing VR solutions while specializing in agentic AI systems and manufacturing intelligence'
+            },
+            {
+                titleI18n: 'experience.director.title',
+                titleText: 'Director of Systems, Continuous Improvement & Company Partner',
+                companyI18n: 'experience.director.company',
+                companyText: 'Grupo Chadorama (Restaurant Industry): Caprichito Bello, Taller de Pizzas',
+                durationI18n: 'experience.director.duration',
+                duration: '2012 - 2024',
+                achievementI18n: 'experience.director.summary',
+                achievement: 'Led enterprise software architecture for multi-location operations. Built SAT-compliant e-invoicing system'
+            },
+            {
+                titleI18n: 'experience.advisor.title',
+                titleText: 'Financial Subsystem Advisor',
+                companyI18n: 'experience.advisor.company',
+                companyText: 'Universidad Autónoma de Sinaloa (UAS)',
+                durationI18n: 'experience.advisor.duration',
+                duration: '2022 - 2024',
+                achievementI18n: 'experience.advisor.summary',
+                achievement: 'Technical advisory for financial systems serving 140K+ users. Advanced data processing and analytics using SQL Server'
+            },
+            {
+                titleI18n: 'experience.fullStack.title',
+                titleText: 'Full-Stack Developer & Team Lead',
+                companyI18n: 'experience.fullStack.company',
+                companyText: 'Universidad Autónoma de Sinaloa (UAS) - Financial Subsystem',
+                durationI18n: 'experience.fullStack.duration',
+                duration: '2008 - 2022',
+                achievementI18n: 'experience.fullStack.summary',
+                achievement: '2+ years leading dev team. Microservices architecture and legacy system modernization'
+            }
+        ];
+
+        // Aplicar límite
+        const limitedRoles = professionalRoles.slice(0, limit);
+
+        // Generar HTML de roles
+        const rolesHTML = limitedRoles.map(role => `
+            <div class="experience-item">
+                <div class="job-title" data-i18n="${role.titleI18n}">${role.titleText}</div>
+                <div class="company"><span data-i18n="${role.companyI18n}">${role.companyText}</span> | ${role.duration}</div>
+                <div class="achievement" data-i18n="${role.achievementI18n}">${role.achievement}</div>
+            </div>
+        `).join('');
+
+        // Cargar enterprise projects dinámicamente
+        let enterpriseProjects = this.projectsData?.enterprise
+            ? this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise')
+                .sort((a, b) => (a.order || 999) - (b.order || 999))
+            : [];
+
+        // Generar lista de proyectos enterprise
+        const projectNames = enterpriseProjects
+            .map(p => p.title)
+            .join(', ');
+
+        return `
+            <section class="section compact-section" data-section-id="experience">
+                <h2 class="section-title compact" data-i18n="experience.leadership.title">💼 Professional Experience</h2>
+                ${rolesHTML}
+                ${projectNames ? `
+                <div class="enterprise-compact">
+                    <strong>Key Enterprise Projects:</strong> ${projectNames}
+                </div>
+                ` : ''}
+            </section>
+        `;
+    }
+
+    /**
+     * Render Languages in inline format
+     */
+    renderLanguagesCompact(sectionConfig) {
+        return `
+            <section class="section compact-section" data-section-id="languages">
+                <h2 class="section-title compact" data-i18n="languages.title">🌐 Languages</h2>
+                <div class="languages-inline">
+                    <span><strong data-i18n="languages.spanish.name">Spanish:</strong> <span data-i18n="languages.spanish.level">Native</span></span> |
+                    <span><strong data-i18n="languages.english.name">English:</strong> <span data-i18n="languages.english.level">Professional</span></span> |
+                    <span><strong data-i18n="languages.german.name">German:</strong> <span data-i18n="languages.german.level">Beginner</span></span> |
+                    <span><strong data-i18n="languages.catalan.name">Catalan:</strong> <span data-i18n="languages.catalan.level">Basic (Reading & Listening)</span></span>
+                </div>
+            </section>
+        `;
     }
 }
 

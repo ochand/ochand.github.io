@@ -24,21 +24,41 @@ class I18n {
         const urlLang = this.getLanguageFromURL();
         const storedLang = localStorage.getItem('preferred-language');
         const browserLang = navigator.language.split('-')[0];
-        
+
+        console.log('🔍 Detección de idioma:', {
+            urlLang,
+            storedLang,
+            browserLang,
+            search: window.location.search,
+            pathname: window.location.pathname
+        });
+
         if (urlLang && this.supportedLanguages.includes(urlLang)) {
             this.currentLang = urlLang;
+            console.log('✅ Usando idioma de URL:', urlLang);
         } else if (storedLang && this.supportedLanguages.includes(storedLang)) {
             this.currentLang = storedLang;
+            console.log('✅ Usando idioma de localStorage:', storedLang);
         } else if (this.supportedLanguages.includes(browserLang)) {
             this.currentLang = browserLang;
+            console.log('✅ Usando idioma del navegador:', browserLang);
         } else {
             this.currentLang = this.fallbackLang;
+            console.log('✅ Usando idioma por defecto:', this.fallbackLang);
         }
-        
+
         localStorage.setItem('preferred-language', this.currentLang);
     }
 
     getLanguageFromURL() {
+        // Primero intenta obtener de query parameter ?lang=es
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        if (langParam && this.supportedLanguages.includes(langParam)) {
+            return langParam;
+        }
+
+        // Si no existe, intenta obtener del path /es/
         const path = window.location.pathname;
         const langMatch = path.match(/^\/([a-z]{2})\//);
         return langMatch ? langMatch[1] : null;
