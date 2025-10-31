@@ -205,4 +205,4 @@ Seeking **AI Engineering and Systems Architecture** positions that leverage both
 ### 🏗️ **Built With**
 HTML5 • CSS3 • JavaScript (ES6+) • i18n System • Dynamic Rendering • JSON Profiles • PDF Export (html2canvas + jsPDF) • GitHub Pages • Responsive Design
 
-**Version**: 2.2.1 | **Portfolio Profiles**: 6 | **Languages**: EN/ES
+**Version**: 2.2.2 | **Portfolio Profiles**: 6 | **Languages**: EN/ES | **Updated**: 2025-10-31
