@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "Oliver Chan Dorado - Arquitecto de Sistemas de IA en formación | Estudiante de Máster en UPC",
-    "description": "Arquitecto de Sistemas de IA en formación con 16+ años de experiencia empresarial. Estudiante de Máster en UPC BarcelonaTech especializado en IA agéntica, inteligencia manufacturera y sistemas autónomos.",
-    "keywords": "Arquitecto de Sistemas de IA en formación, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
-    "ogTitle": "Oliver Chan Dorado - Arquitecto de Sistemas de IA en formación | UPC BarcelonaTech",
+    "title": "Oliver Chan Dorado - Especialista en IA para Manufactura | Investigador de Sistemas MRP Autónomos",
+    "description": "Especialista en IA para Manufactura con 16+ años de experiencia empresarial. Investigador de Sistemas MRP Autónomos en BarcelonaTech especializado en IA agéntica, inteligencia manufacturera y sistemas autónomos.",
+    "keywords": "Especialista en IA para Manufactura, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
+    "ogTitle": "Oliver Chan Dorado - Especialista en IA para Manufactura | UPC BarcelonaTech",
     "ogDescription": "Estudiante de Máster en transición de 16+ años de sistemas empresariales hacia integración de IA de vanguardia y emprendimiento en RV"
   },
   "header": {
     "name": "Oliver Chan Dorado",
-    "title": "Arquitecto de Sistemas de IA en formación",
-    "subtitle": "Estudiante de Máster en UPC BarcelonaTech",
-    "tagline": "Evolucionando de 16+ años en sistemas de gestión empresarial hacia la integración de IA",
+    "title": "Especialista en IA para Manufactura",
+    "subtitle": "Investigador de Sistemas MRP Autónomos en BarcelonaTech",
+    "tagline": "16+ años desarrollando sistemas empresariales → Ahora aplicando IA para resolver problemas: decisiones reactiva, planificación manual, falta de pronósticos",
     "badges": {
       "master": "Previsto 2026:",
       "ibm": "Ingeniero IA IBM",
@@ -19,12 +19,25 @@
     "contact": {
       "email": "ochand@gmail.com",
       "location": "Barcelona, España",
+      "linkedin": "linkedin.com/in/ochand",
       "github": "Ver Perfil de GitHub"
     }
   },
   "summary": {
     "title": "Resumen Profesional",
-    "text": "Arquitecto de Sistemas de IA en formación con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas.\n\nMigración de México a España para estudios de posgrado y emprendimiento de plataforma de VR para experiencias culturales, artísticas y de entretenimiento."
+    "text": "Especialista en IA para Manufactura con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas. Buscando prácticas en Barcelona para validar proyecto final de máster con datos reales mientras contribuyo a iniciativas de transformación para la industria 4.0",
+    "domainExpertise": {
+      "title": "Experiencia en Dominio: Manufactura y Cadena de Suministro",
+      "intro": "10+ años implementando sistemas SCM/ERP en producción",
+      "inventory": "Gestión de inventario, adquisiciones, planificación de producción",
+      "bom": "BOM, pronóstico de demanda, reorden manual",
+      "multiLocation": "Operaciones multi-ubicación, coordinación cadena de suministro",
+      "optimization": "Optimización inventario, integración financiera",
+      "restaurant": "Industria restaurantera (100+ SKUs, 4 ubicaciones)",
+      "retail": "Operaciones retail: sincronización de inventario y ventas",
+      "compactTitle": "Experiencia en el Dominio:",
+      "compactText": "10+ años SCM/ERP (inventario, BOM, adquisiciones, pronósticos) | 100+ SKUs, 4 ubicaciones | Operaciones restaurante + retail"
+    }
   },
   "research": {
     "title": "Enfoque Actual de Investigación",
@@ -101,7 +114,7 @@
       "badge": "Master's Project",
       "category": "AI Systems",
       "description": "Investigación enfocada en sistema predictivo de IA para manufactura, evolucionando para convertirse en un MRP agéntico con analítica predictiva. Incluye simulación de eventos discretos para optimización, inteligencia de la cadena de suministro con decisiones automatizadas de compras y planificación de producción en tiempo real con optimización de inventario.",
-      "impact": "Impacto: Desarrollo de decisiones de fabricación autónoma con análisis predictivo para proyecto de máster"
+      "impact": "Los sistemas MRP tradicionales son reactivos, requieren intervención manual constante, no aprenden de datos históricos. SOLUCIÓN 🎯 Sistema multi-agente de IA: decisiones autónomas de adquisición (Agente IA), pronóstico predictivo (ML), optimización de inventario, planificación basada en simulación."
     },
     "llmChatRag": {
       "title": "LLM-Chat-RAG",
@@ -311,8 +324,8 @@
     "languages": "13+ idiomas soportados en contribuciones de código abierto"
   },
   "opportunities": {
-    "title": "🚀 Abierto a Oportunidades en Ingeniería IA",
-    "text": "Buscando posiciones en Ingeniería IA y Arquitectura de Sistemas que saquen provecho de la investigación académica y la experiencia empresarial",
+    "title": "🏭 BUSCANDO PRÁCTICAS EN IA PARA MANUFACTURA / INDUSTRIA 4.0",
+    "text": "Buscando prácticas en Ingeniería IA o Arquitectura de Sistemas que saquen provecho de la investigación académica y la experiencia empresarial. 15-20 horas/semana en Barcelona.",
     "contact": "Contáctame",
     "projects": "Ver Todos los Proyectos",
     "quote": "Integrando 16+ años de experiencia en sistemas empresariales e investigación en IA para crear soluciones de inteligencia empresarial autónomos",
@@ -354,7 +367,8 @@
   },
   "controls": {
     "profile": "PERFIL",
-    "language": "IDIOMA"
+    "language": "IDIOMA",
+    "resume": "CURRÍCULUM"
   },
   "language": {
     "selector": "Idioma",

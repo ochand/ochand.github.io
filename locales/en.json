@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "Oliver Chan Dorado - AI Systems Architect in Training | Master's Student at UPC",
-    "description": "AI Systems Architect in Training with 16+ years enterprise experience. Master's Student at UPC BarcelonaTech specializing in agentic AI, manufacturing intelligence, and autonomous systems.",
-    "keywords": "AI Systems Architect in Training, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
-    "ogTitle": "Oliver Chan Dorado - AI Systems Architect in Training | UPC BarcelonaTech",
+    "title": "Oliver Chan Dorado - Manufacturing AI Specialist | Autonomous MRP Systems Researcher",
+    "description": "Manufacturing AI Specialist with 16+ years enterprise experience. Autonomous MRP Systems Researcher at UPC BarcelonaTech specializing in agentic AI, manufacturing intelligence, and autonomous systems.",
+    "keywords": "Manufacturing AI Specialist, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
+    "ogTitle": "Oliver Chan Dorado - Manufacturing AI Specialist | UPC BarcelonaTech",
     "ogDescription": "Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration"
   },
   "header": {
     "name": "Oliver Chan Dorado",
-    "title": "AI Systems Architect in Training",
-    "subtitle": "Master's Student at UPC BarcelonaTech",
-    "tagline": "Transitioning from 16+ years enterprise systems to cutting-edge AI integration",
+    "title": "Manufacturing AI Specialist",
+    "subtitle": "Autonomous MRP Systems Researcher at UPC BarcelonaTech",
+    "tagline": "16+ years building enterprise systems → Now applying cutting-edge AI to solve problems: reactive decision-making, manual planning, lack of intelligent forecasting",
     "badges": {
       "master": "Expected 2026:",
       "ibm": "IBM AI Engineer",
@@ -19,12 +19,25 @@
     "contact": {
       "email": "ochand@gmail.com",
       "location": "Barcelona, Spain",
+      "linkedin": "linkedin.com/in/ochand",
       "github": "View GitHub Profile"
     }
   },
   "summary": {
     "title": "Professional Summary",
-    "text": "AI Systems Architect in Training with 16+ years of enterprise systems expertise, currently pursuing Master in Informatics Engineering at UPC BarcelonaTech (Expected 2026) and IBM AI Engineering Professional Certificate. Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions.\n\nInternational transition from Mexico to Spain for advanced studies while developing VR platform for cultural and entertainment applications."
+    "text": "AI Specialist for Manufacturing with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Computer Engineering at UPC BarcelonaTech and professional certification as an IBM AI Engineer (expected in 2026). Specialized in agentic AI systems, manufacturing intelligence, and autonomous enterprise solutions. Seeking an internship in Barcelona to validate my final Master's project with real-world data while contributing to Industry 4.0 transformation initiatives.",
+    "domainExpertise": {
+      "title": "Manufacturing & Supply Chain Domain Expertise",
+      "intro": "10+ years implementing SCM/ERP systems in production",
+      "inventory": "Inventory management, procurement, production planning",
+      "bom": "BOM, demand forecasting, manual reordering",
+      "multiLocation": "Multi-location operations, supply chain coordination",
+      "optimization": "Inventory optimization, financial integration",
+      "restaurant": "Restaurant industry (100+ SKUs, 4 locations)",
+      "retail": "Retail operations: inventory and sales synchronization",
+      "compactTitle": "Domain Expertise:",
+      "compactText": "10+ years SCM/ERP (inventory, BOM, procurement, forecasting) | 100+ SKUs, 4 locations | Restaurant + Retail operations"
+    }
   },
   "research": {
     "title": "Current Research Focus",
@@ -101,7 +114,7 @@
       "badge": "Master's Project",
       "category": "AI Systems",
       "description": "Research focus on Predictive AI Manufacturing System evolving into autonomous agent-based MRP with predictive analytics. Features discrete event simulation for manufacturing optimization, supply chain intelligence with automated procurement decisions, and real-time production planning with inventory optimization.",
-      "impact": "Impact: Developing autonomous manufacturing decisions with predictive analytics for master's project"
+      "impact": "Traditional MRP systems are reactive, require constant manual intervention, and don't learn from historical data. SOLUTION 🎯 Multi-agent AI system: autonomous procurement decisions (AI Agent), predictive forecasting (ML), inventory optimization, simulation-based planning."
     },
     "llmChatRag": {
       "title": "LLM-Chat-RAG",
@@ -311,8 +324,8 @@
     "languages": "13+ languages supported in open source contributions"
   },
   "opportunities": {
-    "title": "🚀 Open to AI Engineering Opportunities",
-    "text": "Seeking AI Engineering and Systems Architecture positions that leverage both academic research and enterprise experience",
+    "title": "🏭 SEEKING INTERNSHIP IN MANUFACTURING AI / INDUSTRY 4.0",
+    "text": "Seeking internships in AI Engineering or Systems Architecture that leverage academic research and business experience. 15-20 hours/week in Barcelona.",
     "contact": "Contact Me",
     "projects": "View All Projects", 
     "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",
@@ -354,7 +367,8 @@
   },
   "controls": {
     "profile": "PROFILE",
-    "language": "LANG"
+    "language": "LANG",
+    "resume": "RÉSUMÉ"
   },
   "language": {
     "selector": "Language",

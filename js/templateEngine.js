@@ -488,6 +488,7 @@ class TemplateEngine {
                     manufacturing intelligence, and autonomous business solutions</strong>. International transition from Mexico to Spain
                     for advanced studies while developing a VR platform for cultural and entertainment applications.
                 </p>
+
                 ${sectionConfig.config?.showStats ? `
                 <div class="highlight-stats">
                     <div class="stat-item academic">
@@ -508,6 +509,22 @@ class TemplateEngine {
                     </div>
                 </div>
                 ` : ''}
+
+                <div class="domain-expertise-highlight" style="background: rgba(139, 92, 246, 0.08); border-left: 4px solid #8b5cf6; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                    <h3 style="color: #8b5cf6; font-size: 18px; margin: 0 0 12px 0; display: flex; align-items: center;">
+                        <span style="margin-right: 8px;">📦</span>
+                        <span data-i18n="summary.domainExpertise.title">Manufacturing & Supply Chain Domain Expertise</span>
+                    </h3>
+                    <p style="margin-bottom: 10px; font-weight: 600; color: #e2e8f0;" data-i18n="summary.domainExpertise.intro">16+ years implementing MRP/ERP systems in production:</p>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: #c4b5fd;">
+                        <li data-i18n="summary.domainExpertise.inventory">Inventory management, procurement, production planning</li>
+                        <li data-i18n="summary.domainExpertise.bom">BOM management, demand forecasting, manual reordering</li>
+                        <li data-i18n="summary.domainExpertise.multiLocation">Multi-location operations, supply chain coordination</li>
+                        <li data-i18n="summary.domainExpertise.optimization">Inventory optimization, financial integration</li>
+                        <li data-i18n="summary.domainExpertise.restaurant">Restaurant industry (300+ SKUs, 4 locations): Grupo Chadorama (2012-2024)</li>
+                        <li data-i18n="summary.domainExpertise.retail">Retail operations: Multi-channel inventory synchronization</li>
+                    </ul>
+                </div>
             </section>
         `;
     }
@@ -1080,6 +1097,10 @@ class TemplateEngine {
                     <span><strong>140K+</strong> <span data-i18n="impact.users.label">Users Served</span></span>
                 </div>
                 ` : ''}
+                <div class="domain-expertise-compact" style="background: #f0f9ff; border-left: 3px solid #2b6cb0; padding: 6px 10px; margin: 8px 0; font-size: 9px; line-height: 1.4;">
+                    <strong style="color: #2b6cb0;">📦 <span data-i18n="summary.domainExpertise.compactTitle">Manufacturing Domain:</span></strong>
+                    <span data-i18n="summary.domainExpertise.compactText">16+ years MRP/ERP (inventory, BOM, procurement, forecasting) | 300+ SKUs, 4 locations | Restaurant + Retail operations</span>
+                </div>
             </section>
         `;
     }

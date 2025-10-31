@@ -38,7 +38,7 @@
         "enabled": true,
         "order": 2,
         "config": {
-          "limit": 2,
+          "limit": null,
           "showAcademic": true,
           "showCreative": false,
           "highlightAgenticMRP": true
@@ -104,15 +104,15 @@
     ],
     "projects": {
       "academic": {
-        "enabled": ["agentic-mrp", "llm-chat-rag"],
-        "order": ["agentic-mrp", "llm-chat-rag"]
+        "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis"],
+        "order": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis"]
       },
       "creative": {
         "enabled": []
       },
       "enterprise": {
-        "enabled": ["erp2", "node-pos"],
-        "order": ["erp2", "node-pos"]
+        "enabled": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"],
+        "order": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"]
       }
     }
   },

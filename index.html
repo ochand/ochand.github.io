@@ -797,6 +797,11 @@
                             <div id="lang-es" data-lang="es" data-i18n="language.spanish">Español</div>
                         </div>
                     </div>
+
+                    <!-- Resume Link -->
+                    <button id="resume-btn" class="control-btn">
+                        📄 <span data-i18n="controls.resume">RÉSUMÉ</span>
+                    </button>
                 </div>
             <div class="profile-section">
                 <div class="profile-avatar">🎓</div>
@@ -819,6 +824,10 @@
                     <div class="contact-item">
                         <span>📧</span>
                         <a href="mailto:ochand@gmail.com" style="color: #94a3b8; text-decoration: none;" data-i18n="header.contact.email">ochand@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <a href="https://www.linkedin.com/in/ochand/" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; text-decoration: none;" data-i18n="header.contact.linkedin">linkedin.com/in/ochand</a>
                     </div>
                     <div class="contact-item">
                         <span>💬</span>
@@ -955,6 +964,16 @@
                     opt.classList.add('active');
                 }
             });
+
+            // Resume button - navigate to one_page_resume.html with current profile and language
+            const resumeBtn = document.getElementById('resume-btn');
+            if (resumeBtn) {
+                resumeBtn.onclick = function() {
+                    const currentProfile = window.templateEngine?.getCurrentProfile() || 'default';
+                    const currentLang = window.i18n?.currentLang || 'en';
+                    window.location.href = `/one_page_resume.html?profile=${currentProfile}&lang=${currentLang}`;
+                };
+            }
         });
     </script>
 </body>
