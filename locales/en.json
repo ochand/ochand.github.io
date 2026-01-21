@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Oliver Chan Dorado - Manufacturing AI Specialist | Autonomous MRP Systems Researcher",
+    "title": "Oliver Chan Dorado - AI for Business focus | Autonomous MRP Systems Researcher",
     "description": "Manufacturing AI Specialist with 16+ years enterprise experience. Autonomous MRP Systems Researcher at UPC BarcelonaTech specializing in agentic AI, manufacturing intelligence, and autonomous systems.",
-    "keywords": "Manufacturing AI Specialist, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
-    "ogTitle": "Oliver Chan Dorado - Manufacturing AI Specialist | UPC BarcelonaTech",
+    "keywords": "AI for Business focus, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
+    "ogTitle": "Oliver Chan Dorado - AI for Business focus | UPC BarcelonaTech",
     "ogDescription": "Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration"
   },
   "header": {
     "name": "Oliver Chan Dorado",
-    "title": "Manufacturing AI Specialist",
+    "title": "AI for Business",
     "subtitle": "Autonomous MRP Systems Researcher at UPC BarcelonaTech",
     "tagline": "16+ years building enterprise systems → Now applying cutting-edge AI to solve problems: reactive decision-making, manual planning, lack of intelligent forecasting",
     "badges": {
@@ -25,10 +25,10 @@
   },
   "summary": {
     "title": "Professional Summary",
-    "text": "AI Specialist for Manufacturing with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Computer Engineering at UPC BarcelonaTech and professional certification as an IBM AI Engineer (expected in 2026). Specialized in agentic AI systems, manufacturing intelligence, and autonomous enterprise solutions. Seeking an internship in Barcelona to validate my final Master's project with real-world data while contributing to Industry 4.0 transformation initiatives.",
+    "text": "AI for Business focus with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Computer Engineering at UPC BarcelonaTech and professional certification as an IBM AI Engineer (expected in 2026). Specialized in agentic AI systems, manufacturing intelligence, and autonomous enterprise solutions. Seeking an internship in Barcelona to validate my final Master's project with real-world data while contributing to Industry 4.0 transformation initiatives.",
     "domainExpertise": {
       "title": "Manufacturing & Supply Chain Domain Expertise",
-      "intro": "10+ years implementing SCM/ERP systems in production",
+      "intro": "10+ years developing implementing SCM/ERP systems in production",
       "inventory": "Inventory management, procurement, production planning",
       "bom": "BOM, demand forecasting, manual reordering",
       "multiLocation": "Multi-location operations, supply chain coordination",
@@ -46,12 +46,12 @@
       "title": "Master in Informatics Engineering",
       "institution": "UPC BarcelonaTech, Barcelona, Spain (2024-2026)",
       "thesis": {
-        "label": "Master's Final Project Proposal:",
-        "text": "Autonomous agent-based MRP system with predictive analytics"
+        "label": "Master's Final Project:",
+        "text": "Intelligent MRP system based on Digital Twins and Multi-Agent Architecture under Society 5.0 principles"
       },
       "specialization": {
         "label": "Specialization:",
-        "text": "AI Systems, Manufacturing Intelligence, Agentic AI, Computer Vision"
+        "text": "AI Systems, Manufacturing Intelligence, Agentic AI, AI Architecture Systems"
       }
     },
     "ibm": {
@@ -67,7 +67,7 @@
       },
       "completed": {
         "label": "Certificates Obtained: ",
-        "text": "Machine Learning with Python, Introduction to Deep Learning & Neural Networks with Keras, Deep Learning with Keras and TensorFlow"
+        "text": "1) Machine Learning with Python, 2) Introduction to Deep Learning & Neural Networks with Keras, 3) Deep Learning with Keras and TensorFlow, 4) Introduction to Neural Networks and PyTorch"
       },
       "inProgress": "Advanced ML, Generative AI, LLMs Fine-Tuning (In Progress)"
     },
@@ -168,7 +168,7 @@
       "title": "Director of Systems, Continuous Improvement and Company Partner",
       "company": "Grupo Chadorama (restaurant industry): Caprichito Bello, Taller de Pizzas",
       "duration": "2012 - 2024",
-      "summary": "Led enterprise software architecture for multi-location operations. Built SAT-compliant e-invoicing system",
+      "summary": "Led enterprise software architecture and development for multi-location operations. Built SAT-compliant e-invoicing system",
       "achievements": {
         "management": "Coordinated middle management, aligning objectives with business strategy",
         "franchise": "Coordinated development, implementation, and operation of franchise model",
@@ -324,8 +324,8 @@
     "languages": "13+ languages supported in open source contributions"
   },
   "opportunities": {
-    "title": "🏭 SEEKING INTERNSHIP IN MANUFACTURING AI / INDUSTRY 4.0",
-    "text": "Seeking internships in AI Engineering or Systems Architecture that leverage academic research and business experience. 20 hours/week in Barcelona.",
+    "title": "🏭 SEEKING INTERNSHIP IN AI FOR BUSINESS / INDUSTRY 4.0",
+    "text": "Seeking internships in AI for Business or Systems Architecture that leverage academic research and business experience. 20 hours/week in Barcelona.",
     "contact": "Contact Me",
     "projects": "View All Projects", 
     "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",
@@ -333,7 +333,7 @@
     "location": "Location: Barcelona, Spain (Open to remote/hybrid)",
     "languages": "Languages: Spanish (Native), English (Professional - TOEFL ITP 560), German (Beginner)",
     "manufacturingInternship": {
-      "title": "🏭 Seeking Manufacturing AI Internship",
+      "title": "🏭 Seeking AI for Business Internship",
       "text": "Seeking 20h/week internship in Manufacturing AI, Industry 4.0, or Supply Chain Intelligence to validate my Master's thesis project with real industrial data",
       "idealFit": "Ideal Fit",
       "options": [

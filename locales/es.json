@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Oliver Chan Dorado - Especialista en IA para Manufactura | Investigador de Sistemas MRP Autónomos",
-    "description": "Especialista en IA para Manufactura con 16+ años de experiencia empresarial. Investigador de Sistemas MRP Autónomos en BarcelonaTech especializado en IA agéntica, inteligencia manufacturera y sistemas autónomos.",
-    "keywords": "Especialista en IA para Manufactura, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
-    "ogTitle": "Oliver Chan Dorado - Especialista en IA para Manufactura | UPC BarcelonaTech",
+    "title": "Oliver Chan Dorado - Enfoque en IA para empresas | Investigador de Sistemas MRP Autónomos",
+    "description": "Enfoque en IA para empresas con 16+ años de experiencia empresarial. Investigador de Sistemas MRP Autónomos en BarcelonaTech especializado en IA agéntica, inteligencia manufacturera y sistemas autónomos.",
+    "keywords": "Enfoque en IA para empresas, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
+    "ogTitle": "Oliver Chan Dorado - Enfoque en IA para empresas | UPC BarcelonaTech",
     "ogDescription": "Estudiante de Máster en transición de 16+ años de sistemas empresariales hacia integración de IA de vanguardia y emprendimiento en RV"
   },
   "header": {
     "name": "Oliver Chan Dorado",
-    "title": "Especialista en IA para Manufactura",
+    "title": "IA para Empresas",
     "subtitle": "Investigador de Sistemas MRP Autónomos en BarcelonaTech",
     "tagline": "16+ años desarrollando sistemas empresariales → Ahora aplicando IA para resolver problemas: decisiones reactiva, planificación manual, falta de pronósticos",
     "badges": {
@@ -25,10 +25,10 @@
   },
   "summary": {
     "title": "Resumen Profesional",
-    "text": "Especialista en IA para Manufactura con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas. Buscando prácticas en Barcelona para validar proyecto final de máster con datos reales mientras contribuyo a iniciativas de transformación para la industria 4.0",
+    "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas. Buscando prácticas en Barcelona para validar proyecto final de máster con datos reales mientras contribuyo a iniciativas de transformación para la industria 4.0",
     "domainExpertise": {
       "title": "Experiencia en Dominio: Manufactura y Cadena de Suministro",
-      "intro": "10+ años implementando sistemas SCM/ERP en producción",
+      "intro": "10+ años desarrollando e implementando módulos de sistemas SCM/ERP en producción",
       "inventory": "Gestión de inventario, adquisiciones, planificación de producción",
       "bom": "BOM, pronóstico de demanda, reorden manual",
       "multiLocation": "Operaciones multi-ubicación, coordinación cadena de suministro",
@@ -46,12 +46,12 @@
       "title": "Máster en Ingeniería Informática",
       "institution": "UPC BarcelonaTech, Barcelona, España (2024-2026)",
       "thesis": {
-        "label": "Propuesta de Trabajo Final de Máster:",
-        "text": "Sistema MRP basado en agentes autónomos con analítica predictiva"
+        "label": "Trabajo Final de Máster:",
+        "text": "Sistema MRP Inteligente basado en Digital Twins y Arquitectura Multi-Agente bajo principios de Sociedad 5.0"
       },
       "specialization": {
         "label": "Especialización:",
-        "text": "Sistemas IA, Inteligencia de Fabricación, IA Agéntica, Visión por Computador"
+        "text": "Sistemas IA, Inteligencia de Fabricación, IA Agéntica, Arquitectura de Sistemas IA"
       }
     },
     "ibm": {
@@ -67,7 +67,7 @@
       },
       "completed": {
         "label": "Certificados Obtenidos: ",
-        "text": "Machine Learning con Python, Introducción a Deep Learning y Redes Neuronales con Keras, Deep Learning con Keras y TensorFlow"
+        "text": "1) Machine Learning con Python, 2) Introducción a Deep Learning y Redes Neuronales con Keras, 3) Deep Learning con Keras y TensorFlow, 4) Introducción a Redes Neuronales y PyTorch"
       },
       "inProgress": "ML Avanzado, IA Generativa, Fine-Tuning de LLMs (En Progreso)"
     },
@@ -168,7 +168,7 @@
       "title": "Director de Sistemas, Mejora Continua y Socio de la Empresa",
       "company": "Grupo Chadorama (industria restaurantera): Caprichito Bello, Taller de Pizzas",
       "duration": "2012 - 2024",
-      "summary": "Lideré arquitectura de software y sistemas de inforamción para operaciones multi-ubicación (3 ubicaciones). Construí sistema de facturación electrónica compatible con SAT",
+      "summary": "Lideré arquitectura y desarrollo de sistema de información para operaciones multi-ubicación (3 ubicaciones). Construí sistema de facturación electrónica compatible con SAT",
       "achievements": {
         "management": "Coordiné mandos medios, alineando objetivos con estrategia empresarial",
         "franchise": "Participé en desarrollo, implementación y operación del modelo de franquicia",
@@ -324,8 +324,8 @@
     "languages": "13+ idiomas soportados en contribuciones de código abierto"
   },
   "opportunities": {
-    "title": "🏭 BUSCANDO PRÁCTICAS EN IA PARA MANUFACTURA / INDUSTRIA 4.0",
-    "text": "Buscando prácticas en Ingeniería IA o Arquitectura de Sistemas que saquen provecho de la investigación académica y la experiencia empresarial. 20 horas/semana en Barcelona.",
+    "title": "🏭 BUSCANDO PRÁCTICAS EN IA PARA EMPRESAS / INDUSTRIA 4.0",
+    "text": "Buscando prácticas en IA para Empresas o Arquitectura de Sistemas que saquen provecho de la investigación académica y la experiencia empresarial. 20 horas/semana en Barcelona.",
     "contact": "Contáctame",
     "projects": "Ver Todos los Proyectos",
     "quote": "Integrando 16+ años de experiencia en sistemas empresariales e investigación en IA para crear soluciones de inteligencia empresarial autónomos",
@@ -333,8 +333,8 @@
     "location": "Ubicación: Barcelona, España (Abierto a remoto/híbrido)",
     "languages": "Idiomas: Español (Nativo), Inglés (Profesional - TOEFL ITP 560), Alemán (Principiante)",
     "manufacturingInternship": {
-      "title": "🏭 Buscando Prácticas en IA Manufacturera",
-      "text": "Buscando prácticas de 20h/semana en IA Manufacturera, Industria 4.0 o Inteligencia de Cadena de Suministro para validar mi proyecto de tesis de Máster con datos industriales reales",
+      "title": "🏭 Buscando Prácticas en IA para Empresas",
+      "text": "Buscando prácticas de 20h/semana en IA para Empresas, Industria 4.0 o Inteligencia de Cadena de Suministro para validar mi proyecto de tesis de Máster con datos industriales reales",
       "idealFit": "Ajuste Ideal",
       "options": [
         "Empresa manufacturera en transformación digital",

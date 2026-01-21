@@ -17,7 +17,7 @@
 
 ## 🎯 **Professional Summary**
 
-**AI Systems Architect in Training** with 16+ years of enterprise systems expertise, currently pursuing **Master in Informatics Engineering at UPC BarcelonaTech** (Expected 2026) and **IBM AI Engineering Professional Certificate**. Specializing in **agentic AI systems, manufacturing intelligence, and autonomous business solutions**.
+**AI for Business focus** with 16+ years of enterprise systems expertise, currently pursuing **Master in Informatics Engineering at UPC BarcelonaTech** (Expected 2026) and **IBM AI Engineering Professional Certificate**. Specializing in **agentic AI systems, manufacturing intelligence, and autonomous business solutions**.
 
 International transition from Mexico to Spain for advanced studies while developing VR platform for cultural and entertainment applications.
 
@@ -49,7 +49,7 @@ This portfolio features a **sophisticated dynamic rendering system** built from 
 | Profile | Best For | URL |
 |---------|----------|-----|
 | 🤖 **AI Engineer** | AI/ML positions | [View →](https://ochand.github.io?profile=ai-engineer&lang=en) |
-| 🏭 **Manufacturing AI** | Industry 4.0 internships | [View →](https://ochand.github.io?profile=manufacturing-ai-internship&lang=en) |
+| 🏭 **AI for Business** | Industry 4.0 internships | [View →](https://ochand.github.io?profile=manufacturing-ai-internship&lang=en) |
 | 💻 **Full-Stack** | Enterprise dev roles | [View →](https://ochand.github.io?profile=fullstack&lang=en) |
 | 📑 **Minimal** | Quick overview | [View →](https://ochand.github.io?profile=minimal&lang=en) |
 | 🎓 **Academic** | PhD applications | [View →](https://ochand.github.io?profile=academic&lang=en) |
@@ -61,16 +61,17 @@ This portfolio features a **sophisticated dynamic rendering system** built from 
 
 ## 🎓 **Current Academic Focus**
 
-### **Master in Informatics Engineering** 
+### **Master in Informatics Engineering**
 *UPC BarcelonaTech, Barcelona, Spain (2024-2026)*
-- **Thesis**: Autonomous agent-based MRP system with predictive analytics
-- **Specialization**: AI Systems, Manufacturing Intelligence, Agentic AI, Computer Vision
+- **Thesis**: Intelligent MRP system based on Digital Twins and Multi-Agent Architecture under Society 5.0 principles
+- **Specialization**: AI Systems, Manufacturing Intelligence, Agentic AI, AI Architecture Systems
 
-### **IBM AI Engineering Professional Certificate** 
+### **IBM AI Engineering Professional Certificate**
 *IBM via Coursera (2025-Present)*
 - Machine Learning with Python ✅
 - Deep Learning & Neural Networks with Keras ✅
 - Deep Learning with Keras and TensorFlow ✅
+- Introduction to Neural Networks and PyTorch ✅
 - *Advanced ML, Generative AI, LLMs Fine-Tuning (In Progress)*
 
 ---
@@ -102,9 +103,10 @@ Augmented Reality museum experience with cultural heritage artifacts
 ## 💼 **Professional Enterprise Experience**
 
 ### **16+ Years Leadership & Development**
-- **Director of Systems** - Grupo Chadorama (2012-2024)
+- **Director of Systems & Development** - Grupo Chadorama (2012-2024)
 - **Financial Systems Advisor** - UAS (300K+ users, 2022-2024)
 - **Full-Stack Developer & Team Lead** - UAS (2008-2022)
+- **Domain Expertise**: 10+ years developing and implementing SCM/ERP systems in production
 
 ### **Key Enterprise Projects**
 - **[ERP2 Full-Stack](https://github.com/Grupo-Chadorama/ERP2-backend)** - Modern enterprise system migrating to AWS
@@ -152,7 +154,7 @@ Beyond AI research and VR development, I'm **[The Ocean](https://instagram.com/t
 
 ### **Academic & Research**
 - 🎓 **4** AI/ML academic projects completed
-- 📚 **3** IBM AI Engineering certifications earned
+- 📚 **4** IBM AI Engineering certifications earned
 - 🏆 **2026** expected Master's graduation (UPC BarcelonaTech)
 
 ### **Professional Experience**
