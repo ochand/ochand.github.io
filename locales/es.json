@@ -25,18 +25,18 @@
   },
   "summary": {
     "title": "Resumen Profesional",
-    "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas. Buscando prácticas en Barcelona para validar proyecto final de máster con datos reales mientras contribuyo a iniciativas de transformación para la industria 4.0",
+    "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas. Buscando prácticas en Barcelona para implementar automatización mediante IA, sistemas autónomos, analítica predictiva, o inteligencia de manufactura en entornos productivos.",
     "domainExpertise": {
       "title": "Experiencia en Dominio: Manufactura y Cadena de Suministro",
-      "intro": "10+ años desarrollando e implementando módulos de sistemas SCM/ERP en producción",
-      "inventory": "Gestión de inventario, adquisiciones, planificación de producción",
+      "intro": "10+ años desarrollando e implementando POS, Gestión de Inventarios y procesos de negocio de SCM/ERP en producción",
+      "inventory": "Gestión de inventario, adquisiciones",
       "bom": "BOM, pronóstico de demanda, reorden manual",
       "multiLocation": "Operaciones multi-ubicación, coordinación cadena de suministro",
       "optimization": "Optimización inventario, integración financiera",
       "restaurant": "Industria restaurantera (100+ SKUs, 4 ubicaciones)",
       "retail": "Operaciones retail: sincronización de inventario y ventas",
       "compactTitle": "Experiencia en el Dominio:",
-      "compactText": "10+ años SCM/ERP (inventario, BOM, adquisiciones, pronósticos) | 100+ SKUs, 4 ubicaciones | Operaciones restaurante + retail"
+      "compactText": "10+ años POS/SCM/ERP (inventario, BOM, adquisiciones, pronósticos) | 100+ SKUs, 4 ubicaciones | Operaciones restaurante + retail"
     }
   },
   "research": {
@@ -67,7 +67,7 @@
       },
       "completed": {
         "label": "Certificados Obtenidos: ",
-        "text": "1) Machine Learning con Python, 2) Introducción a Deep Learning y Redes Neuronales con Keras, 3) Deep Learning con Keras y TensorFlow, 4) Introducción a Redes Neuronales y PyTorch"
+        "text": "1) Machine Learning con Python, 2) Introducción a Deep Learning y Redes Neuronales con Keras, 3) Deep Learning con Keras y TensorFlow, 4) Introducción a Redes Neuronales y PyTorch, 5) Fundamentos de Agentes de IA con RAG y LangChain"
       },
       "inProgress": "ML Avanzado, IA Generativa, Fine-Tuning de LLMs (En Progreso)"
     },
@@ -162,19 +162,19 @@
     "title": "💼 Proyectos Empresariales Profesionales",
     "leadership": {
       "title": "16+ Años de Liderazgo y Desarrollo",
-      "roles": "Director de Sistemas - Grupo Chadorama (2012-2024)\nAsesor de Sistemas Financieros - UAS (140K+ usuarios, 2022-2024)\nDesarrollador Full-Stack y Líder de Equipo - UAS (2008-2022)"
+      "roles": "Director de Sistemas - Grupo Chadorama (2012-2024)\nAsesor de Sistemas Financieros - UAS (100K+ usuarios, 2022-2024)\nDesarrollador Full-Stack y Líder de Equipo - UAS (2008-2022)"
     },
     "director": {
       "title": "Director de Sistemas, Mejora Continua y Socio de la Empresa",
       "company": "Grupo Chadorama (industria restaurantera): Caprichito Bello, Taller de Pizzas",
       "duration": "2012 - 2024",
-      "summary": "Lideré arquitectura y desarrollo de sistema de información para operaciones multi-ubicación (3 ubicaciones). Construí sistema de facturación electrónica compatible con SAT",
+      "summary": "Lideré arquitectura y desarrollo de sistema de información para operaciones multi-ubicación (escalando 1 a 4 ubicaciones). Construí sistema de facturación electrónica compatible con SAT",
       "achievements": {
         "management": "Coordiné mandos medios, alineando objetivos con estrategia empresarial",
         "franchise": "Participé en desarrollo, implementación y operación del modelo de franquicia",
         "quality": "Diseñé y coordiné el sistema de evaluación de calidad en el servicio",
         "workshop": "Participación activa en desarrollo, lanzamiento y operación del proyecto de pizzeria custom, Taller de Pizzas",
-        "erp": "Desarrollé e implementé sistema ERP restaurantero aumentando eficiencia operacional",
+        "erp": "Desarrollé e implementé sistema POS, facturación, gestión de inventarios, aprovisionamiento y operaciones multi-ubicación para restaurantes (escalado de 1 a 4 ubicaciones)",
         "architecture": "Lideré arquitectura y desarrollo de software empresarial para operación integrada de sucursales en multi-ubicación",
         "invoicing": "Construí e implementé sistema de facturación electrónica compatible con especificación del SAT",
         "teams": "Administré equipos multifuncionales e iniciativas tecnológicas estratégicas"
@@ -183,10 +183,10 @@
     "advisor": {
       "title": "Asesor de Subsistema Financiero",
       "company": "Universidad Autónoma de Sinaloa (UAS)",
-      "duration": "2022 - 2024 (140K+ usuarios)",
-      "summary": "Asesoría técnica para sistemas financieros sirviendo 140K+ usuarios. Procesamiento avanzado de datos y analítica usando SQL Server",
+      "duration": "2022 - 2024 (100K+ usuarios)",
+      "summary": "Asesoría técnica para sistemas financieros sirviendo 100K+ usuarios. Procesamiento avanzado de datos y analítica usando SQL Server",
       "achievements": {
-        "advisory": "Proporcioné asesoría técnica para sistemas financieros sirviendo 140K+ usuarios",
+        "advisory": "Proporcioné asesoría técnica para sistemas financieros sirviendo 100K+ usuarios",
         "analytics": "Realicé procesamiento avanzado de datos, presentación e interpretación de analítica contable y financiera usando SQL Server",
         "compliance": "Lideré consultoría técnica para sistemas en cumplimiento con estándares presupuestarios y de contabilidad gubernamental."
       }
@@ -207,12 +207,12 @@
       }
     },
     "student": {
-      "title": "Estudiante de Máster y Emprendedor VR",
+      "title": "Estudiante de Máster",
       "company": "UPC BarcelonaTech e Investigación Independiente",
-      "summary": "Desarrollando plataforma VR mientras me especializo en sistemas de IA agéntica e inteligencia de fabricación",
+      "summary": "Especializándome en sistemas de IA agéntica e inteligencia de fabricación",
       "achievements": {
-        "vr": "Desarrollo plataforma de VR para aplicaciones culturales y de entretenimiento mientras curso Máster.",
-        "specialization": "Especializándome en sistemas de IA agéntica, inteligencia de fabricación y soluciones empresariales autónomas",
+        "vr": "Desarrollo plataforma de VR para aplicaciones culturales y de entretenimiento.",
+        "specialization": "Especializándome en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas",
         "transition": "Transición internacional de México a España para estudios avanzados en IA e ingeniería informática",
         "research": "Enfoque de investigación en sistema MRP basado en agentes autónomos con analítica predictiva para tesis de Máster",
         "certification": "Actualmente inscrito en el programa de Certificado Profesional de Ingeniería IA de IBM"
@@ -314,7 +314,7 @@
       "label": "Años de Experiencia"
     },
     "users": {
-      "value": "140K+ usuarios atendidos a través de sistemas financieros",
+      "value": "100K+ usuarios atendidos a través de sistemas financieros",
       "label": "Usuarios Atendidos"
     },
     "graduation": {
@@ -324,8 +324,8 @@
     "languages": "13+ idiomas soportados en contribuciones de código abierto"
   },
   "opportunities": {
-    "title": "🏭 BUSCANDO PRÁCTICAS EN IA PARA EMPRESAS / INDUSTRIA 4.0",
-    "text": "Buscando prácticas en IA para Empresas o Arquitectura de Sistemas que saquen provecho de la investigación académica y la experiencia empresarial. 20 horas/semana en Barcelona.",
+    "title": "🏭 BUSCANDO PRÁCTICAS: IA PARA EMPRESAS / INDUSTRIA 4.0",
+    "text": " Buscando prácticas en Barcelona para implementar automatización mediante IA, sistemas autónomos, analítica predictiva, o inteligencia de manufactura en entornos productivos.",
     "contact": "Contáctame",
     "projects": "Ver Todos los Proyectos",
     "quote": "Integrando 16+ años de experiencia en sistemas empresariales e investigación en IA para crear soluciones de inteligencia empresarial autónomos",

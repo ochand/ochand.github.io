@@ -496,7 +496,7 @@ class TemplateEngine {
                         <div class="stat-label" data-i18n="impact.graduation.label">Expected Graduation</div>
                     </div>
                     <div class="stat-item academic">
-                        <div class="stat-number">4+</div>
+                        <div class="stat-number">3</div>
                         <div class="stat-label" data-i18n="impact.academic.label">AI/ML Projects</div>
                     </div>
                     <div class="stat-item">
@@ -504,7 +504,7 @@ class TemplateEngine {
                         <div class="stat-label" data-i18n="impact.experience.label">Years Experience</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">140K+</div>
+                        <div class="stat-number">100K+</div>
                         <div class="stat-label" data-i18n="impact.users.label">Users Served</div>
                     </div>
                 </div>
@@ -631,7 +631,11 @@ class TemplateEngine {
                     <div class="skill-category learning-focus">
                         <h3 data-i18n="techStack.learning.title">📚 Learning Stack (IBM Certification)</h3>
                         <div class="skill-item">
-                            <span class="skill-name">Applied Machine Learning</span>
+                            <span class="skill-name">Machine Learning with Python</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Deep Learning and Neural Networks</span>
                             <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
@@ -639,16 +643,16 @@ class TemplateEngine {
                             <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Generative AI Agents</span>
-                            <span class="skill-level learning" data-i18n="techStack.levels.developing">Learning</span>
+                            <span class="skill-name">AI Agents with RAG and LangChain</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.intermediate">Intermediate</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Prompt Engineering</span>
                             <span class="skill-level learning" data-i18n="techStack.levels.intermediate">Intermediate</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Large Language Modeling</span>
-                            <span class="skill-level learning" data-i18n="techStack.levels.basic">Basic</span>
+                            <span class="skill-name">Generative AI and LLMs: Models and Fine-Tuning</span>
+                            <span class="skill-level learning" data-i18n="techStack.levels.developing">Learning</span>
                         </div>
                     </div>
                     ` : ''}
@@ -688,7 +692,7 @@ class TemplateEngine {
                             <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">JavaScript / Angular</span>
+                            <span class="skill-name">JavaScript / AngularJS</span>
                             <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
                         </div>
                         <div class="skill-item">
@@ -718,17 +722,17 @@ class TemplateEngine {
                     </div>
 
                     <div class="skill-category">
-                        <h3>☁️ Infrastructure & DevOps</h3>
+                        <h3>☁️ Infrastructure</h3>
                         <div class="skill-item">
                             <span class="skill-name">Docker</span>
                             <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">AWS</span>
+                            <span class="skill-name">AWS (EC2, Serverless, IoC)</span>
                             <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">CI/CD Pipelines</span>
+                            <span class="skill-name">HPC Parallel Training BSC</span>
                             <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
@@ -738,7 +742,7 @@ class TemplateEngine {
                     </div>
 
                     <div class="skill-category">
-                        <h3>🛠️ Development Tools</h3>
+                        <h3>🛠️ DevTools & DevOps</h3>
                         <div class="skill-item">
                             <span class="skill-name">Git</span>
                             <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
@@ -746,6 +750,10 @@ class TemplateEngine {
                         <div class="skill-item">
                             <span class="skill-name">Postman</span>
                             <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Google Workspace</span>
@@ -787,15 +795,15 @@ class TemplateEngine {
                     <h2 class="section-title" data-i18n="experience.leadership.title">💼 Professional Experience Background</h2>
                     <div class="timeline">
                         <div class="timeline-item current-focus">
-                            <h3 class="job-title" data-i18n="experience.student.title">Master's Student & VR Entrepreneur</h3>
+                            <h3 class="job-title" data-i18n="experience.student.title">Master's Student</h3>
                             <p class="company" data-i18n="experience.student.company">UPC BarcelonaTech & Independent Research</p>
                             <p class="duration">2024 - <span data-i18n="experience.badges.currentFocus">CURRENT FOCUS</span></p>
                             <ul class="achievements">
-                                <li data-i18n="experience.student.achievements.vr">Developing VR solutions for educational and cultural applications while pursuing Master's degree</li>
                                 <li data-i18n="experience.student.achievements.specialization">Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions</li>
                                 <li data-i18n="experience.student.achievements.transition">International transition from Mexico to Spain for advanced studies in AI and computer engineering</li>
                                 <li data-i18n="experience.student.achievements.research">Research focus on autonomous agent-based MRP system with predictive analytics for Master's thesis</li>
                                 <li data-i18n="experience.student.achievements.certification">Currently enrolled in IBM AI Engineering Professional Certificate program</li>
+                                <li data-i18n="experience.student.achievements.vr">Developing VR solutions for educational and cultural applications</li>
                             </ul>
                         </div>
 
@@ -808,7 +816,7 @@ class TemplateEngine {
                                 <li data-i18n="experience.director.achievements.franchise">Coordinated development, implementation, and operation of franchise model</li>
                                 <li data-i18n="experience.director.achievements.quality">Designed and coordinated the service quality evaluation system</li>
                                 <li data-i18n="experience.director.achievements.workshop">Active participation in the development, launch and operation of the pizza workshop project, Taller de Pizzas</li>
-                                <li data-i18n="experience.director.achievements.erp">Developed and implemented restaurant ERP system increasing operational efficiency</li>
+                                <li data-i18n="experience.director.achievements.erp">Developed and implemented restaurant POS, invoicing, inventory management, procurement, and multi-location operations (scaled from 1 to 4 locations)</li>
                                 <li data-i18n="experience.director.achievements.architecture">Led enterprise software architecture and development for multi-location retail operations</li>
                                 <li data-i18n="experience.director.achievements.invoicing">Built and implemented SAT-compliant electronic invoicing system</li>
                                 <li data-i18n="experience.director.achievements.teams">Managed cross-functional teams and strategic technology initiatives</li>
@@ -818,9 +826,9 @@ class TemplateEngine {
                         <div class="timeline-item">
                             <h3 class="job-title" data-i18n="experience.advisor.title">Financial Subsystem Advisor</h3>
                             <p class="company" data-i18n="experience.advisor.company">Universidad Autónoma de Sinaloa (UAS)</p>
-                            <p class="duration" data-i18n="experience.advisor.duration">2022 - 2024 (140K+ users)</p>
+                            <p class="duration" data-i18n="experience.advisor.duration">2022 - 2024 (100K+ users)</p>
                             <ul class="achievements">
-                                <li data-i18n="experience.advisor.achievements.advisory">Provided technical advisory for financial systems serving 140K+ users</li>
+                                <li data-i18n="experience.advisor.achievements.advisory">Provided technical advisory for financial systems serving 100K+ users</li>
                                 <li data-i18n="experience.advisor.achievements.analytics">Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server</li>
                                 <li data-i18n="experience.advisor.achievements.compliance">Led technical consulting for systems in compliance with government budget and accounting standards.</li>
                             </ul>
@@ -1092,9 +1100,9 @@ class TemplateEngine {
                 ${showStats ? `
                 <div class="metrics-inline">
                     <span><strong>2026</strong> <span data-i18n="impact.graduation.label">Expected Graduation</span></span> |
-                    <span><strong>4+</strong> <span data-i18n="impact.academic.label">AI/ML Projects</span></span> |
+                    <span><strong>3</strong> <span data-i18n="impact.academic.label">AI/ML Projects</span></span> |
                     <span><strong>16+</strong> <span data-i18n="impact.experience.label">Years Experience</span></span> |
-                    <span><strong>140K+</strong> <span data-i18n="impact.users.label">Users Served</span></span>
+                    <span><strong>100K+</strong> <span data-i18n="impact.users.label">Users Served</span></span>
                 </div>
                 ` : ''}
                 <div class="domain-expertise-compact" style="background: #f0f9ff; border-left: 3px solid #2b6cb0; padding: 6px 10px; margin: 8px 0; font-size: 9px; line-height: 1.4;">
@@ -1264,7 +1272,7 @@ class TemplateEngine {
                     ${showLearning ? `
                     <div class="skill-category-compact">
                         <strong data-i18n="techStack.learning.title">📚 Learning Stack (IBM):</strong>
-                        <span>Applied ML, TensorFlow/Keras/PyTorch, Generative AI Agents, Prompt Engineering, LLM Modeling</span>
+                        <span>ML, DL & NN, TensorFlow/Keras/PyTorch, AI Agents (RAG/LangChain), Prompt Engineering, Generative AI & LLMs Fine-Tuning</span>
                     </div>
                     ` : ''}
                     <div class="skill-category-compact">
@@ -1280,12 +1288,12 @@ class TemplateEngine {
                         <span>Oracle MySQL, MS SQL Server</span>
                     </div>
                     <div class="skill-category-compact">
-                        <strong>☁️ DevOps:</strong>
-                        <span>Docker, AWS, CI/CD, VirtualBox</span>
+                        <strong>☁️ Infrastructure:</strong>
+                        <span>Docker, AWS (EC2, Serverless, IoC), Parallel Training BSC, VirtualBox</span>
                     </div>
                     <div class="skill-category-compact">
-                        <strong>🛠️ Tools:</strong>
-                        <span>Git, Postman, Google Workspace</span>
+                        <strong>🛠️ DevTools & DevOps:</strong>
+                        <span>Git, Postman, CI/CD Pipelines, Google Workspace</span>
                     </div>
                     <div class="skill-category-compact">
                         <strong>🎵 Creative Tech:</strong>
@@ -1331,7 +1339,7 @@ class TemplateEngine {
                 durationI18n: 'experience.advisor.duration',
                 duration: '2022 - 2024',
                 achievementI18n: 'experience.advisor.summary',
-                achievement: 'Technical advisory for financial systems serving 140K+ users. Advanced data processing and analytics using SQL Server'
+                achievement: 'Technical advisory for financial systems serving 100K+ users. Advanced data processing and analytics using SQL Server'
             },
             {
                 titleI18n: 'experience.fullStack.title',

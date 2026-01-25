@@ -25,18 +25,18 @@
   },
   "summary": {
     "title": "Professional Summary",
-    "text": "AI for Business focus with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Computer Engineering at UPC BarcelonaTech and professional certification as an IBM AI Engineer (expected in 2026). Specialized in agentic AI systems, manufacturing intelligence, and autonomous enterprise solutions. Seeking an internship in Barcelona to validate my final Master's project with real-world data while contributing to Industry 4.0 transformation initiatives.",
+    "text": "AI for Business focus with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Informatics Engineering at UPC BarcelonaTech and professional certification as an IBM AI Engineer (expected in 2026). Specialized in agentic AI systems, manufacturing intelligence, and autonomous enterprise solutions. Seeking an internship in Barcelona to implement AI-driven automation, autonomous systems, predictive analytics, or manufacturing intelligence to solve real production challenges.",
     "domainExpertise": {
       "title": "Manufacturing & Supply Chain Domain Expertise",
-      "intro": "10+ years developing implementing SCM/ERP systems in production",
-      "inventory": "Inventory management, procurement, production planning",
+      "intro": "10+ years developing and implementing POS, Inventory Management, and SCM/ERP business processes in production",
+      "inventory": "Inventory management, procurement",
       "bom": "BOM, demand forecasting, manual reordering",
       "multiLocation": "Multi-location operations, supply chain coordination",
       "optimization": "Inventory optimization, financial integration",
       "restaurant": "Restaurant industry (100+ SKUs, 4 locations)",
       "retail": "Retail operations: inventory and sales synchronization",
       "compactTitle": "Domain Expertise:",
-      "compactText": "10+ years SCM/ERP (inventory, BOM, procurement, forecasting) | 100+ SKUs, 4 locations | Restaurant + Retail operations"
+      "compactText": "10+ years POS/SCM/ERP (inventory, BOM, procurement, forecasting) | 100+ SKUs, 4 locations | Restaurant + Retail operations"
     }
   },
   "research": {
@@ -67,7 +67,7 @@
       },
       "completed": {
         "label": "Certificates Obtained: ",
-        "text": "1) Machine Learning with Python, 2) Introduction to Deep Learning & Neural Networks with Keras, 3) Deep Learning with Keras and TensorFlow, 4) Introduction to Neural Networks and PyTorch"
+        "text": "1) Machine Learning with Python, 2) Introduction to Deep Learning & Neural Networks with Keras, 3) Deep Learning with Keras and TensorFlow, 4) Introduction to Neural Networks and PyTorch, 5) Fundamentals of AI Agents Using RAG and LangChain"
       },
       "inProgress": "Advanced ML, Generative AI, LLMs Fine-Tuning (In Progress)"
     },
@@ -162,19 +162,19 @@
     "title": "💼 Professional Enterprise Projects",
     "leadership": {
       "title": "16+ Years Leadership & Development",
-      "roles": "Director of Systems - Grupo Chadorama (2012-2024)\nFinancial Systems Advisor - UAS (140K+ users, 2022-2024)\nFull-Stack Developer & Team Lead - UAS (2008-2022)"
+      "roles": "Director of Systems - Grupo Chadorama (2012-2024)\nFinancial Systems Advisor - UAS (100K+ users, 2022-2024)\nFull-Stack Developer & Team Lead - UAS (2008-2022)"
     },
     "director": {
       "title": "Director of Systems, Continuous Improvement and Company Partner",
       "company": "Grupo Chadorama (restaurant industry): Caprichito Bello, Taller de Pizzas",
       "duration": "2012 - 2024",
-      "summary": "Led enterprise software architecture and development for multi-location operations. Built SAT-compliant e-invoicing system",
+      "summary": "Led enterprise software architecture and development for multi-location operations (scaled from 1 to 4 locations). Built SAT-compliant e-invoicing system",
       "achievements": {
         "management": "Coordinated middle management, aligning objectives with business strategy",
         "franchise": "Coordinated development, implementation, and operation of franchise model",
         "quality": "Designed and coordinated the service quality evaluation system",
         "workshop": "Active participation in the development, launch and operation of the pizza workshop project, Taller de Pizzas",
-        "erp": "Developed and implemented restaurant ERP system increasing operational efficiency",
+        "erp": "Developed and implemented restaurant POS, invoicing, inventory management, procurement, and multi-location operations (scaled from 1 to 4 locations)",
         "architecture": "Led enterprise software architecture and development for multi-location retail operations",
         "invoicing": "Built and implemented SAT-compliant electronic invoicing system",
         "teams": "Managed cross-functional teams and strategic technology initiatives"
@@ -183,10 +183,10 @@
     "advisor": {
       "title": "Financial Subsystem Advisor",
       "company": "Universidad Autónoma de Sinaloa (UAS)",
-      "duration": "2022 - 2024 (140K+ users)",
-      "summary": "Technical advisory for financial systems serving 140K+ users. Advanced data processing and analytics using SQL Server",
+      "duration": "2022 - 2024 (100K+ users)",
+      "summary": "Technical advisory for financial systems serving 100K+ users. Advanced data processing and analytics using SQL Server",
       "achievements": {
-        "advisory": "Provided technical advisory for financial systems serving 140K+ users",
+        "advisory": "Provided technical advisory for financial systems serving 100K+ users",
         "analytics": "Performed advanced data processing, presentation and interpretation of accounting and financial analytics using SQL Server",
         "compliance": "Led technical consulting for systems in compliance with government budget and accounting standards."
       }
@@ -207,11 +207,11 @@
       }
     },
     "student": {
-      "title": "Master's Student & VR Entrepreneur",
+      "title": "Master's Student",
       "company": "UPC BarcelonaTech & Independent Research",
-      "summary": "Developing VR solutions while specializing in agentic AI systems and manufacturing intelligence",
+      "summary": "Specializing in agentic AI systems and manufacturing intelligence",
       "achievements": {
-        "vr": "Developing VR platform for cultural and entertainment applications while pursuing Master's degree",
+        "vr": "Developing VR platform for cultural and entertainment applications",
         "specialization": "Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions",
         "transition": "International transition from Mexico to Spain for advanced studies in AI and computer engineering",
         "research": "Research focus on autonomous agent-based MRP system with predictive analytics for Master's thesis",
@@ -306,7 +306,7 @@
   "impact": {
     "title": "Impact Metrics",
     "academic": {
-      "value": "4+ AI/ML academic projects completed",
+      "value": "3 AI/ML academic projects completed",
       "label": "AI/ML Projects"
     },
     "experience": {
@@ -314,7 +314,7 @@
       "label": "Years Experience"
     },
     "users": {
-      "value": "140K+ users served through financial systems",
+      "value": "100K+ users served through financial systems",
       "label": "Users Served"
     },
     "graduation": {
@@ -324,8 +324,8 @@
     "languages": "13+ languages supported in open source contributions"
   },
   "opportunities": {
-    "title": "🏭 SEEKING INTERNSHIP IN AI FOR BUSINESS / INDUSTRY 4.0",
-    "text": "Seeking internships in AI for Business or Systems Architecture that leverage academic research and business experience. 20 hours/week in Barcelona.",
+    "title": "🏭 SEEKING INTERNSHIP: AI FOR BUSINESS / INDUSTRY 4.0",
+    "text": "Seeking an internship in Barcelona to implement AI-driven automation, autonomous systems, predictive analytics, or manufacturing intelligence to solve real production challenges.",
     "contact": "Contact Me",
     "projects": "View All Projects", 
     "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",
