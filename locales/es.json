@@ -135,6 +135,12 @@
       "description": "Plataforma empresarial de streaming de video con separación de microservicios. Incluye encriptación AES-256 para seguridad de archivos de video, autenticación JWT, streaming HTTP range, integración con YouTube con soporte de video embebido, y despliegue listo para producción.",
       "impact": "Impacto: Aplicación Java empresarial con capacidades de seguridad y streaming"
     },
+    "cityPulse": {
+      "title": "CityPulse-Serverless",
+      "category": "Arquitectura Cloud",
+      "description": "Plataforma de analítica urbana basada en la nube que proporciona información en tiempo real sobre confort ambiental para ciudades españolas. Incluye arquitectura de microservicios serverless con Lambda orquestador coordinando tres funciones especializadas de obtención de datos, caché inteligente de 2 niveles en DynamoDB con TTL de 10 minutos, cálculo de Índice de Confort Urbano (UCS) combinando datos de clima, calidad del aire y accesibilidad, y calentamiento automático de caché mediante EventBridge para 20 ciudades diariamente.",
+      "impact": "Impacto: Analítica urbana serverless con tiempos de respuesta en caché de ~10-20ms y degradación controlada ante fallos de APIs externas"
+    },
     "museoVirtualAr": {
       "title": "MuseoVirtualAR",
       "category": "AR Experience",

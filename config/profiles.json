@@ -14,7 +14,7 @@
       { "id": "opportunities", "enabled": true, "order": 9, "config": { "showCTA": true } }
     ],
     "projects": {
-      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis", "misvids"] },
+      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis", "misvids", "citypulse-serverless"] },
       "creative": { "enabled": ["museo-virtual-ar", "calabozo-vr", "audio-splitter"] },
       "enterprise": { "enabled": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"] }
     }
@@ -132,7 +132,7 @@
       { "id": "creative", "enabled": false }
     ],
     "projects": {
-      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis"] },
+      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "citypulse-serverless", "himalayan-datavis"] },
       "creative": { "enabled": [] },
       "enterprise": { "enabled": [] }
     }
@@ -185,7 +185,7 @@
     "description": "Research and academic projects for academic applications",
     "sections": [
       { "id": "research", "enabled": true, "order": 1, "config": { "showCurrentBadge": true } },
-      { "id": "projects", "enabled": true, "order": 2, "config": { "limit": 4, "showAcademic": true, "showCreative": false } },
+      { "id": "projects", "enabled": true, "order": 2, "config": { "limit": 5, "showAcademic": true, "showCreative": false } },
       { "id": "summary", "enabled": true, "order": 3, "config": { "showStats": true } },
       { "id": "techStack", "enabled": true, "order": 4, "config": { "showLearning": true, "showAI": true } },
       { "id": "languages", "enabled": true, "order": 5, "config": { "showProficiency": true } },
@@ -195,7 +195,7 @@
       { "id": "creative", "enabled": false }
     ],
     "projects": {
-      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis", "misvids"] },
+      "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "citypulse-serverless", "himalayan-datavis", "misvids"] },
       "creative": { "enabled": [] },
       "enterprise": { "enabled": [] }
     }

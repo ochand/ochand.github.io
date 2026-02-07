@@ -116,6 +116,36 @@
       ],
       "impact": "🎯 Impact: Enterprise Java application with comprehensive security and streaming capabilities",
       "impactI18n": "projects.misVids.impact"
+    },
+    {
+      "id": "citypulse-serverless",
+      "enabled": true,
+      "order": 5,
+      "title": "CityPulse-Serverless",
+      "titleI18n": "projects.cityPulse.title",
+      "category": "research",
+      "categoryLabel": "Cloud Architecture",
+      "categoryI18n": "projects.cityPulse.category",
+      "description": "Cloud-based urban analytics platform providing real-time environmental comfort insights for Spanish cities. Features serverless microservices architecture with orchestrator Lambda coordinating three specialized data-fetcher functions, intelligent 2-level DynamoDB caching with 10-minute TTL, Urban Comfort Score (UCS) calculation combining weather, air quality, and accessibility data, and automated EventBridge cache warming for 20 cities daily.",
+      "descriptionI18n": "projects.cityPulse.description",
+      "technologies": [
+        "Python 3.11",
+        "AWS Lambda",
+        "DynamoDB",
+        "API Gateway",
+        "React 19",
+        "TypeScript",
+        "Terraform"
+      ],
+      "links": [
+        {
+          "url": "https://github.com/UPC-MEI/CityPulse-Serverless",
+          "label": "GitHub",
+          "icon": "🔗"
+        }
+      ],
+      "impact": "🎯 Impact: Serverless urban analytics with ~10-20ms cached response times and graceful degradation despite external API failures",
+      "impactI18n": "projects.cityPulse.impact"
     }
   ],
   "creative": [
@@ -370,9 +400,9 @@
   ],
   "meta": {
     "version": "1.0.0",
-    "lastUpdated": "2025-10-04",
-    "totalProjects": 12,
-    "academicProjects": 4,
+    "lastUpdated": "2026-02-07",
+    "totalProjects": 13,
+    "academicProjects": 5,
     "creativeProjects": 3,
     "enterpriseProjects": 5
   }
