@@ -138,7 +138,7 @@
     "cityPulse": {
       "title": "CityPulse-Serverless",
       "category": "Arquitectura Cloud",
-      "description": "Plataforma de analítica urbana basada en la nube que proporciona información en tiempo real sobre confort ambiental para ciudades españolas. Incluye arquitectura de microservicios serverless con Lambda orquestador coordinando tres funciones especializadas de obtención de datos, caché inteligente de 2 niveles en DynamoDB con TTL de 10 minutos, cálculo de Índice de Confort Urbano (UCS) combinando datos de clima, calidad del aire y accesibilidad, y calentamiento automático de caché mediante EventBridge para 20 ciudades diariamente.",
+      "description": "Plataforma de analítica urbana basada en la nube sobre confort urbano. Arquitectura REST serverless con Lambda, funciones especializadas de obtención de datos, caché DynamoDB, cálculo de ICU, warm-up de caché mediante EventBridge.",
       "impact": "Impacto: Analítica urbana serverless con tiempos de respuesta en caché de ~10-20ms y degradación controlada ante fallos de APIs externas"
     },
     "museoVirtualAr": {
