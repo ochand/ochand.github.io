@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Oliver Chan Dorado - Enfoque en IA para empresas | Investigador de Sistemas MRP Autónomos",
-    "description": "Enfoque en IA para empresas con 16+ años de experiencia empresarial. Investigador de Sistemas MRP Autónomos en BarcelonaTech especializado en IA agéntica, inteligencia manufacturera y sistemas autónomos.",
+    "title": "Oliver Chan Dorado - IA para empresas | Investigador de Sistemas Multiagente y Gemelos Digitales",
+    "description": "Enfoque en IA para empresas con 16+ años de experiencia empresarial. Investigador de Sistemas Multiagente y Gemelos Digitales en BarcelonaTech especializado en sistemas de inventario autónomos.",
     "keywords": "Enfoque en IA para empresas, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
     "ogTitle": "Oliver Chan Dorado - Enfoque en IA para empresas | UPC BarcelonaTech",
     "ogDescription": "Estudiante de Máster en transición de 16+ años de sistemas empresariales hacia integración de IA de vanguardia y emprendimiento en RV"
@@ -9,8 +9,8 @@
   "header": {
     "name": "Oliver Chan Dorado",
     "title": "IA para Empresas: ML, Agentes, Gemelos Digitales",
-    "subtitle": "MRP-i y Gemelos Digitales en investigación de estudiante de máster en UPC BarcelonaTech",
-    "tagline": "16+ años desarrollando sistemas empresariales → Ahora aplicando IA para resolver problemas: decisiones reactiva, planificación manual, falta de pronósticos",
+    "subtitle": "Sistema de Inventario Multi-Agente basado en Gemelo Digital - TFM UPC BarcelonaTech",
+    "tagline": "16+ años transformando empresas a través de sistemas → IA para potenciar la transformación: decisiones proactivas, pronósticos precisos, simulación, desarrollo basado en especificaciones",
     "badges": {
       "master": "Previsto 2026:",
       "ibm": "Ingeniero IA IBM",
@@ -25,10 +25,10 @@
   },
   "summary": {
     "title": "Resumen Profesional",
-    "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas. Buscando prácticas en Barcelona para implementar automatización mediante IA, sistemas autónomos, analítica predictiva, o inteligencia de manufactura en entornos productivos.",
+    "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas multi-agente, gestión inteligente de inventarios y soluciones autónomas basadas en IA. Amplia experiencia en desarrollo full-stack para sector hostelería y educativo: inventarios, contabilidad y finanzas. Buscando prácticas o trabajo parcial en Barcelona para implementar automatizaciones.",
     "domainExpertise": {
-      "title": "Experiencia en Dominio: Manufactura y Cadena de Suministro",
-      "intro": "10+ años desarrollando e implementando POS, Gestión de Inventarios y procesos de negocio de SCM/ERP en producción",
+      "title": "Experiencia en Dominio: Hostelería",
+      "intro": "10+ años desarrollando e implementando POS, Gestión de Inventarios y procesos de negocio de SCM/ERP",
       "inventory": "Gestión de inventario, adquisiciones",
       "bom": "BOM, pronóstico de demanda, reorden manual",
       "multiLocation": "Operaciones multi-ubicación, coordinación cadena de suministro",
@@ -114,7 +114,7 @@
       "badge": "Master's Project",
       "category": "AI Systems",
       "description": "Investigación enfocada en sistema predictivo de IA para manufactura, evolucionando para convertirse en un MRP agéntico con analítica predictiva. Incluye simulación de eventos discretos para optimización, inteligencia de la cadena de suministro con decisiones automatizadas de compras y planificación de producción en tiempo real con optimización de inventario.",
-      "impact": "Los sistemas MRP tradicionales son reactivos, requieren intervención manual constante, no aprenden de datos históricos. SOLUCIÓN 🎯 Sistema multi-agente de IA: decisiones autónomas de adquisición (Agente IA), pronóstico predictivo (ML), optimización de inventario, planificación basada en simulación."
+      "impact": "Los sistemas MRP tradicionales son reactivos, requieren intervención manual constante, no aprenden de datos históricos. SOLUCIÓN Sistema multi-agente de IA: decisiones autónomas de adquisición (Agente IA), pronóstico predictivo (ML), optimización de inventario, planificación basada en simulación."
     },
     "llmChatRag": {
       "title": "LLM-Chat-RAG",
@@ -190,7 +190,7 @@
       "title": "Asesor de Subsistema Financiero",
       "company": "Universidad Autónoma de Sinaloa (UAS)",
       "duration": "2022 - 2024 (100K+ usuarios)",
-      "summary": "Asesoría técnica para sistemas financieros sirviendo 100K+ usuarios. Procesamiento avanzado de datos y analítica usando SQL Server",
+      "summary": "Asesoría técnica para sistemas financieros y contables sirviendo 100K+ usuarios. Procesamiento avanzado de datos y analítica usando SQL Server",
       "achievements": {
         "advisory": "Proporcioné asesoría técnica para sistemas financieros sirviendo 100K+ usuarios",
         "analytics": "Realicé procesamiento avanzado de datos, presentación e interpretación de analítica contable y financiera usando SQL Server",
@@ -215,12 +215,12 @@
     "student": {
       "title": "Estudiante de Máster",
       "company": "UPC BarcelonaTech e Investigación Independiente",
-      "summary": "Especializándome en sistemas de IA agéntica e inteligencia de fabricación",
+      "summary": "Especializándome en sistemas multi-agente e inteligencia para manufactura",
       "achievements": {
         "vr": "Desarrollo plataforma de VR para aplicaciones culturales y de entretenimiento.",
         "specialization": "Especializándome en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas",
         "transition": "Transición internacional de México a España para estudios avanzados en IA e ingeniería informática",
-        "research": "Enfoque de investigación en sistema MRP basado en agentes autónomos con analítica predictiva para tesis de Máster",
+        "research": "Enfoque de investigación en sistema de inventario multi-agente con analítica predictiva para tesis de Máster",
         "certification": "Actualmente inscrito en el programa de Certificado Profesional de Ingeniería IA de IBM"
       }
     },
@@ -330,11 +330,11 @@
     "languages": "13+ idiomas soportados en contribuciones de código abierto"
   },
   "opportunities": {
-    "title": "🏭 BUSCANDO PRÁCTICAS: IA PARA EMPRESAS / INDUSTRIA 4.0",
-    "text": " Buscando prácticas en Barcelona para implementar automatización mediante IA, sistemas autónomos, analítica predictiva, o inteligencia de manufactura en entornos productivos.",
+    "title": "🏭 BUSCANDO PRÁCTICAS DE IA PARA EMPRESAS",
+    "text": " Buscando prácticas en Barcelona para implementar automatizaciones en sistemas de información, analíticas o inteligencia empresarial usando IA.",
     "contact": "Contáctame",
     "projects": "Ver Todos los Proyectos",
-    "quote": "Integrando 16+ años de experiencia en sistemas empresariales e investigación en IA para crear soluciones de inteligencia empresarial autónomos",
+    "quote": "Integrando 16+ años de experiencia en sistemas empresariales e investigación en IA para crear soluciones de inteligencia empresarial autónomas",
     "interests": "Desarrollo de sistemas de IA agéntica\nSoluciones de inteligencia manufacturera\nIntegración empresarial de IA\nRoles técnicos impulsados por investigación",
     "location": "Ubicación: Barcelona, España (Abierto a remoto/híbrido)",
     "languages": "Idiomas: Español (Nativo), Inglés (Profesional - TOEFL ITP 560), Alemán (Principiante)",

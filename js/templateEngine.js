@@ -756,7 +756,7 @@ class TemplateEngine {
                             <span class="skill-level" data-i18n="techStack.levels.basic">Basic</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Google Workspace</span>
+                            <span class="skill-name">Notion</span>
                             <span class="skill-level" data-i18n="techStack.levels.advanced">Advanced</span>
                         </div>
                     </div>
@@ -1293,7 +1293,7 @@ class TemplateEngine {
                     </div>
                     <div class="skill-category-compact">
                         <strong>🛠️ DevTools & DevOps:</strong>
-                        <span>Git, Postman, CI/CD Pipelines, Google Workspace</span>
+                        <span>Git, Postman, CI/CD Pipelines, Notion</span>
                     </div>
                     <div class="skill-category-compact">
                         <strong>🎵 Creative Tech:</strong>
