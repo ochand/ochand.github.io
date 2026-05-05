@@ -6,7 +6,7 @@
 // === CONSTANTES PARA MODO RESUME ===
 // Límites de contenido para garantizar que cabe en una página A4
 const RESUME_LIMITS = {
-    education: 3,           // Máximo # títulos académicos
+    education: 4,           // Máximo # títulos académicos
     projects: 10,            // Máximo # proyectos
     experience: 10,          // Máximo 2 roles profesionales
     skillCategories: 10,     // Máximo 5 categorías de skills
@@ -1152,22 +1152,22 @@ class TemplateEngine {
                 badgeText: null
             },
             {
-                title: 'research.exchange.title',
-                titleText: 'International Exchange Program',
-                institution: 'research.exchange.institution',
-                institutionText: 'University College of Borås, Sweden',
-                year: 'research.exchange.year',
-                yearText: '2007',
-                badge: null,
-                badgeText: null
-            },
-            {
                 title: 'research.bachelor.title',
                 titleText: "Bachelor's in Information Systems Engineering",
                 institution: 'research.bachelor.institution',
                 institutionText: 'Tecnológico de Monterrey, Culiacán, Mexico',
                 year: 'research.bachelor.year',
                 yearText: '2003 - 2008',
+                badge: null,
+                badgeText: null
+            },
+            {
+                title: 'research.exchange.title',
+                titleText: 'International Exchange Program',
+                institution: 'research.exchange.institution',
+                institutionText: 'University College of Borås, Sweden',
+                year: 'research.exchange.year',
+                yearText: '2007',
                 badge: null,
                 badgeText: null
             }
@@ -1266,7 +1266,7 @@ class TemplateEngine {
                     ${showAI ? `
                     <div class="skill-category-compact">
                         <strong data-i18n="techStack.ai.title">🤖 AI & ML (Current Focus):</strong>
-                        <span>Agentic AI Systems, Agentic Coding, RAG Implementation, LLM Integration, Computer Vision, Manufacturing Intelligence</span>
+                        <span>Agentic AI Systems, Agentic Coding, RAG Implementation, LLM Integration</span>
                     </div>
                     ` : ''}
                     ${showLearning ? `
