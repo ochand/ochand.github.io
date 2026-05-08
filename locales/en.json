@@ -2,7 +2,7 @@
   "meta": {
     "title": "Oliver Chan Dorado - AI for Business | Multi-Agent Systems and Digital Twin Researcher",
     "description": "Manufacturing AI Specialist with 16+ years enterprise experience. Multi-agent Systems and Digital Twin Researcher at BarcelonaTech specializing in autonomous inventory systems.",
-    "keywords": "AI for Business focus, Master's Student, Agentic AI, Manufacturing Intelligence, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
+    "keywords": "AI for Business focus, Master's Student, Agentic AI, Intelligent Systems, RAG Systems, Computer Vision, UPC BarcelonaTech, Machine Learning",
     "ogTitle": "Oliver Chan Dorado - AI for Business focus | UPC BarcelonaTech",
     "ogDescription": "Master's Student transitioning from 16+ years enterprise systems to cutting-edge AI integration"
   },
@@ -25,7 +25,7 @@
   },
   "summary": {
     "title": "Professional Summary",
-    "text": "AI for Business focus with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Informatics Engineering at UPC BarcelonaTech and IBM AI Engineer certification (expected in 2026). Specialized in multi-agent systems, intelligent inventory management, and AI-powered autonomous solutions. Extensive experience in full-stack development for the hospitality and education sectors: inventory, accounting, and finance. Seeking an internship or part-time position in Barcelona to implement automations. ",
+    "text": "AI for Business focus with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Informatics Engineering at UPC BarcelonaTech and IBM AI Engineer specialization (expected in 2026). Multi-agent systems, intelligent inventory management, and AI-powered autonomous solutions. Extensive experience in full-stack development for the hospitality and education sectors: inventory, accounting, and finance. Seeking positions in Barcelona to implement automations.",
     "domainExpertise": {
       "title": "Domain Expertise: Hospitality",
       "intro": "10+ years developing and implementing POS, Inventory Management, and SCM/ERP business processes",
@@ -215,10 +215,10 @@
     "student": {
       "title": "Master's Student",
       "company": "UPC BarcelonaTech & Independent Research",
-      "summary": "Specializing in multi-agent systems and manufacturing intelligence",
+      "summary": "Specializing in multi-agent systems and intelligent systems",
       "achievements": {
         "vr": "Developing VR platform for cultural and entertainment applications",
-        "specialization": "Specializing in agentic AI systems, manufacturing intelligence, and autonomous business solutions",
+        "specialization": "Specializing in agentic AI systems, intelligent systems, and autonomous business solutions",
         "transition": "International transition from Mexico to Spain for advanced studies in AI and computer engineering",
         "research": "Research focus on autonomous multi-agent inventory system with predictive analytics for Master's thesis",
         "certification": "Currently enrolled in IBM AI Engineering Professional Certificate program"
@@ -330,8 +330,8 @@
     "languages": "13+ languages supported in open source contributions"
   },
   "opportunities": {
-    "title": "🏭 SEEKING AI FOR BUSINESS INTERNSHIP",
-    "text": "Looking for internships in Barcelona to implement information systems automations, predictive analytics, or business intelligence using AI.",
+    "title": "🔍 AI JOBS FOR COMPANIES",
+    "text": "Looking for positions in Barcelona to implement information systems automations, predictive analytics, or business intelligence using AI.",
     "contact": "Contact Me",
     "projects": "View All Projects", 
     "quote": "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions",

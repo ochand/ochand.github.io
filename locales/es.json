@@ -2,7 +2,7 @@
   "meta": {
     "title": "Oliver Chan Dorado - IA para empresas | Investigador de Sistemas Multiagente y Gemelos Digitales",
     "description": "Enfoque en IA para empresas con 16+ años de experiencia empresarial. Investigador de Sistemas Multiagente y Gemelos Digitales en BarcelonaTech especializado en sistemas de inventario autónomos.",
-    "keywords": "Enfoque en IA para empresas, Estudiante de Máster, IA Agéntica, Inteligencia Manufacturera, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
+    "keywords": "Enfoque en IA para empresas, Estudiante de Máster, IA Agéntica, Sistemas de Inteligentes, Sistemas RAG, Visión por Computador, UPC BarcelonaTech, Machine Learning",
     "ogTitle": "Oliver Chan Dorado - Enfoque en IA para empresas | UPC BarcelonaTech",
     "ogDescription": "Estudiante de Máster en transición de 16+ años de sistemas empresariales hacia integración de IA de vanguardia y emprendimiento en RV"
   },
@@ -25,7 +25,7 @@
   },
   "summary": {
     "title": "Resumen Profesional",
-    "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y certificación profesional como Ingeniero de IA de IBM (previstos para 2026). Especializado en sistemas multi-agente, gestión inteligente de inventarios y soluciones autónomas basadas en IA. Amplia experiencia en desarrollo full-stack para sector hostelería y educativo: inventarios, contabilidad y finanzas. Buscando prácticas o trabajo parcial en Barcelona para implementar automatizaciones.",
+    "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y especialización como Ingeniero de IA por IBM (previstos para 2026). Sistemas multi-agente, gestión inteligente de inventarios y soluciones autónomas basadas en IA. Amplia experiencia en desarrollo full-stack para sector hostelería y educativo: inventarios, contabilidad y finanzas. Buscando posiciones en Barcelona para implementar automatizaciones.",
     "domainExpertise": {
       "title": "Experiencia en Dominio: Hostelería",
       "intro": "10+ años desarrollando e implementando POS, Gestión de Inventarios y procesos de negocio de SCM/ERP",
@@ -215,10 +215,10 @@
     "student": {
       "title": "Estudiante de Máster",
       "company": "UPC BarcelonaTech e Investigación Independiente",
-      "summary": "Especializándome en sistemas multi-agente e inteligencia para manufactura",
+      "summary": "Especializándome en sistemas multi-agente y sistemas inteligentes",
       "achievements": {
         "vr": "Desarrollando plataforma de VR para aplicaciones culturales y de entretenimiento.",
-        "specialization": "Especializándome en sistemas de IA agéntica, inteligencia de manufactura y soluciones empresariales autónomas",
+        "specialization": "Especializándome en sistemas de IA agéntica, sistemas inteligentes y soluciones empresariales autónomas",
         "transition": "Transición internacional de México a España para estudios avanzados en IA e ingeniería informática",
         "research": "Enfoque de investigación en sistema de inventario multi-agente con analítica predictiva para tesis de Máster",
         "certification": "Actualmente inscrito en el programa de Certificado Profesional de Ingeniería IA de IBM"
@@ -330,12 +330,12 @@
     "languages": "13+ idiomas soportados en contribuciones de código abierto"
   },
   "opportunities": {
-    "title": "🏭 BUSCANDO PRÁCTICAS DE IA PARA EMPRESAS",
-    "text": " Buscando prácticas en Barcelona para implementar automatizaciones en sistemas de información, analítica predictiva o inteligencia empresarial usando IA.",
+    "title": "🔍 POSICIONES DE IA PARA EMPRESAS",
+    "text": " Buscando posiciones en Barcelona para implementar automatizaciones en sistemas de información, analítica predictiva o inteligencia empresarial usando IA.",
     "contact": "Contáctame",
     "projects": "Ver Todos los Proyectos",
     "quote": "Integrando 16+ años de experiencia en sistemas empresariales e investigación en IA para crear soluciones de inteligencia empresarial autónomas",
-    "interests": "Desarrollo de sistemas de IA agéntica\nSoluciones de inteligencia manufacturera\nIntegración empresarial de IA\nRoles técnicos impulsados por investigación",
+    "interests": "Desarrollo de sistemas de IA agéntica\nSoluciones de inteligencia para manufactura\nIntegración empresarial de IA\nRoles técnicos impulsados por investigación",
     "location": "Ubicación: Barcelona, España (Abierto a remoto/híbrido)",
     "languages": "Idiomas: Español (Nativo), Inglés (Profesional - TOEFL ITP 560), Alemán (Principiante)",
     "manufacturingInternship": {
@@ -343,7 +343,7 @@
       "text": "Buscando prácticas de 20h/semana en IA para Empresas, Industria 4.0 o Inteligencia de Cadena de Suministro para validar mi proyecto de tesis de Máster con datos industriales reales",
       "idealFit": "Ajuste Ideal",
       "options": [
-        "Empresa manufacturera en transformación digital",
+        "Empresa de manufactura en transformación digital",
         "Consultoría con clientes industriales (Accenture, Deloitte, Capgemini)",
         "Startup de Industria 4.0 desarrollando soluciones IA",
         "Centro de investigación con partnerships industriales (eurecat, CIM UPC)"
@@ -443,6 +443,6 @@
     "qr": {
       "label": "PORTAFOLIO"
     },
-    "powerStatement": "Uniendo 16+ años de experiencia en sistemas empresariales con investigación de vanguardia en IA | Especializado en IA Agéntica, Inteligencia de Manufactura y Soluciones de Negocio Autónomas"
+    "powerStatement": "Uniendo 16+ años de experiencia en sistemas empresariales con investigación de vanguardia en IA | Especializado en IA Agéntica, Sistemas Inteligentes y Soluciones de Negocio Autónomas"
   }
 }
