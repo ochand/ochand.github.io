@@ -710,7 +710,7 @@ class TemplateEngine {
                     </div>
 
                     <div class="skill-category">
-                        <h3>🗄️ Database Management Systems</h3>
+                        <h3>🗄️ Database Management Systems & BI</h3>
                         <div class="skill-item">
                             <span class="skill-name">Oracle MySQL</span>
                             <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
@@ -718,6 +718,10 @@ class TemplateEngine {
                         <div class="skill-item">
                             <span class="skill-name">MS SQL Server</span>
                             <span class="skill-level" data-i18n="techStack.levels.expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI</span>
+                            <span class="skill-level" data-i18n="techStack.levels.intermediate">Intermediate</span>
                         </div>
                     </div>
 
@@ -1284,8 +1288,8 @@ class TemplateEngine {
                         <span>Python/FastAPI, Java/Spring, PHP/Laravel, JavaScript/Angular, Bootstrap</span>
                     </div>
                     <div class="skill-category-compact">
-                        <strong>🗄️ Database:</strong>
-                        <span>Oracle MySQL, MS SQL Server</span>
+                        <strong>🗄️ Database & BI:</strong>
+                        <span>Oracle MySQL, MS SQL Server, Power BI</span>
                     </div>
                     <div class="skill-category-compact">
                         <strong>☁️ Infrastructure:</strong>
