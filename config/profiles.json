@@ -17,6 +17,9 @@
       "academic": { "enabled": ["agentic-mrp", "llm-chat-rag", "himalayan-datavis", "misvids", "citypulse-serverless"] },
       "creative": { "enabled": ["museo-virtual-ar", "calabozo-vr", "audio-splitter"] },
       "enterprise": { "enabled": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"] }
+    },
+    "resume": {
+      "limits": { "projects": 4, "education": 4 }
     }
   },
 
@@ -114,6 +117,17 @@
         "enabled": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"],
         "order": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"]
       }
+    },
+    "resume": {
+      "tagline": "header.taglineManufacturing",
+      "summaryOverride": "summary.manufacturing",
+      "footerPitch": {
+        "title": "opportunities.manufacturingInternship.title",
+        "text": "opportunities.manufacturingInternship.text",
+        "quote": "opportunities.manufacturingInternship.quote"
+      },
+      "keywords": ["MRP/ERP", "Digital Twin", "Multi-Agent AI", "Supply Chain", "Industry 4.0", "Demand Forecasting", "Inventory Optimization", "Python", "RAG/LLM"],
+      "limits": { "projects": 4, "experience": 2, "skillCategories": 5 }
     }
   },
 
