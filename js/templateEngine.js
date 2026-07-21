@@ -5,12 +5,14 @@
 
 // === CONSTANTES PARA MODO RESUME ===
 // Límites de contenido para garantizar que cabe en una página A4
+// Defaults; a profile may override any of these via profile.resume.limits
 const RESUME_LIMITS = {
-    education: 4,           // Máximo # títulos académicos
-    projects: 10,            // Máximo # proyectos
-    experience: 10,          // Máximo 2 roles profesionales
-    skillCategories: 10,     // Máximo 5 categorías de skills
-    summaryMaxWords: 800     // Máximo 80 palabras en summary
+    education: 4,            // Máximo # títulos académicos
+    projects: 10,           // Máximo # proyectos (académicos/creativos)
+    enterprise: 10,         // Máximo # proyectos enterprise en la sección Projects
+    experience: 10,         // Máximo # roles profesionales
+    skillCategories: 10,    // Máximo # categorías de skills
+    summaryMaxWords: 800    // Máximo # palabras en summary
 };
 
 // Dimensiones exactas de página A4
@@ -25,7 +27,8 @@ class TemplateEngine {
         this.config = null;
         this.projectsData = null;
         this.profilesData = null;
-        this.currentProfile = null;
+        this.currentProfile = null;     // profile name (string)
+        this.activeProfile = null;      // full profile object (for resume overrides)
         this.renderMode = 'full';       // 'full' | 'resume'
         this.resumeLimits = RESUME_LIMITS;
     }
@@ -60,10 +63,31 @@ class TemplateEngine {
     }
 
     /**
-     * Get resume limits configuration
+     * Get resume limits configuration.
+     * Merges the active profile's resume.limits over the RESUME_LIMITS defaults.
      */
     getResumeLimits() {
-        return this.resumeLimits;
+        const profileLimits = this.activeProfile?.resume?.limits || {};
+        return { ...this.resumeLimits, ...profileLimits };
+    }
+
+    /**
+     * Get the active profile's resume-specific overrides (tagline, summary,
+     * footer pitch, keywords, qr, limits). Returns {} when the profile has none.
+     */
+    getResumeConfig() {
+        return this.activeProfile?.resume || {};
+    }
+
+    /**
+     * Resolve a profile string that may be either an i18n key
+     * (e.g. "summary.manufacturing") or literal text.
+     * Returns { i18nKey, text } — exactly one is set.
+     */
+    resolveI18nOrText(value) {
+        if (!value) return null;
+        const looksLikeKey = /^[A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+$/.test(value);
+        return looksLikeKey ? { i18nKey: value } : { text: value };
     }
 
     /**
@@ -102,6 +126,7 @@ class TemplateEngine {
 
         const profile = this.profilesData[profileName] || this.profilesData.default;
         this.currentProfile = profileName;
+        this.activeProfile = profile;
 
         // Store selected profile
         localStorage.setItem('selected-profile', profileName);
@@ -255,6 +280,23 @@ class TemplateEngine {
 
         // Filter by profile's enabled list
         return projects.filter(p => enabledIds.includes(p.id) && p.enabled !== false);
+    }
+
+    /**
+     * Sort projects following the active profile's `order` array for that type
+     * (e.g. ["citypulse-serverless", "agentic-mrp"]) when present; otherwise
+     * fall back to each project's global `order` field from projects.json.
+     */
+    sortByProfileOrder(projects, type) {
+        const orderArr = this.profileProjectFilters?.[type]?.order;
+        if (Array.isArray(orderArr) && orderArr.length) {
+            const rank = id => {
+                const i = orderArr.indexOf(id);
+                return i === -1 ? 999 : i;
+            };
+            return [...projects].sort((a, b) => rank(a.id) - rank(b.id));
+        }
+        return [...projects].sort((a, b) => (a.order || 999) - (b.order || 999));
     }
 
     /**
@@ -1095,12 +1137,18 @@ class TemplateEngine {
     renderSummaryCompact(sectionConfig) {
         const showStats = sectionConfig.config?.showStats !== false;
 
+        // Profile may override the summary paragraph (i18n key or literal text).
+        // Falls back to the default summary.text translation.
+        const override = this.resolveI18nOrText(this.getResumeConfig().summaryOverride);
+        const summaryI18n = override?.i18nKey || 'summary.text';
+        const summaryText = override?.text || 'AI Systems Architect in Training with 16+ years enterprise experience, transitioning from enterprise leadership to AI systems development. Currently pursuing Master\'s in Informatics Engineering at UPC BarcelonaTech, specializing in agentic AI systems and manufacturing intelligence.';
+        // When a literal override is given, don't attach data-i18n (would get overwritten by translatePage).
+        const summaryAttr = override?.text ? '' : `data-i18n="${summaryI18n}"`;
+
         return `
             <section class="section compact-section" data-section-id="summary">
                 <h2 class="section-title compact" data-i18n="summary.title">Professional Summary</h2>
-                <p class="summary-text compact" data-i18n="summary.text">
-                    AI Systems Architect in Training with 16+ years enterprise experience, transitioning from enterprise leadership to AI systems development. Currently pursuing Master's in Informatics Engineering at UPC BarcelonaTech, specializing in agentic AI systems and manufacturing intelligence.
-                </p>
+                <p class="summary-text compact" ${summaryAttr}>${summaryText}</p>
                 ${showStats ? `
                 <div class="metrics-inline">
                     <span><strong>2026</strong> <span data-i18n="impact.graduation.label">Expected Graduation</span></span> |
@@ -1121,7 +1169,7 @@ class TemplateEngine {
      * Render Education in compact format (condensed list)
      */
     renderResearchCompact(sectionConfig) {
-        const limit = RESUME_LIMITS.education;
+        const limit = this.getResumeLimits().education;
 
         // Array de todas las entradas de educación (5 total)
         const educationEntries = [
@@ -1206,25 +1254,35 @@ class TemplateEngine {
     renderProjectsCompact(sectionConfig) {
         const showAcademic = sectionConfig.config?.showAcademic !== false;
         const showCreative = sectionConfig.config?.showCreative !== false;
-        const limit = RESUME_LIMITS.projects;
+        const showEnterprise = sectionConfig.config?.showEnterprise === true;
+        const limit = this.getResumeLimits().projects;
+        const enterpriseLimit = this.getResumeLimits().enterprise;
 
         let academicProjects = [];
         let creativeProjects = [];
+        let enterpriseProjects = [];
 
         if (showAcademic && this.projectsData?.academic) {
-            academicProjects = this.filterProjectsByProfile(this.projectsData.academic, 'academic')
-                .sort((a, b) => (a.order || 999) - (b.order || 999));
+            academicProjects = this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.academic, 'academic'), 'academic');
         }
 
         if (showCreative && this.projectsData?.creative) {
-            creativeProjects = this.filterProjectsByProfile(this.projectsData.creative, 'creative')
-                .sort((a, b) => (a.order || 999) - (b.order || 999));
+            creativeProjects = this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.creative, 'creative'), 'creative');
         }
 
-        // Aplicar límite total
+        if (showEnterprise && this.projectsData?.enterprise) {
+            enterpriseProjects = this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise'), 'enterprise');
+        }
+
+        // Aplicar límite total (académicos/creativos comparten el límite `projects`;
+        // los enterprise usan su propio límite `enterprise`)
         const totalLimit = limit;
         let limitedAcademic = academicProjects.slice(0, totalLimit);
         let limitedCreative = creativeProjects.slice(0, Math.max(0, totalLimit - limitedAcademic.length));
+        let limitedEnterprise = enterpriseProjects.slice(0, enterpriseLimit);
 
         const renderProject = (project) => `
             <div class="project-compact">
@@ -1239,9 +1297,14 @@ class TemplateEngine {
 
         const academicHTML = limitedAcademic.map(renderProject).join('');
         const creativeHTML = limitedCreative.map(renderProject).join('');
+        const enterpriseHTML = limitedEnterprise.map(renderProject).join('');
 
         const separator = (limitedAcademic.length > 0 && limitedCreative.length > 0)
             ? '<div class="projects-separator"><span data-i18n="projects.creative.separator">Creative Projects</span></div>'
+            : '';
+
+        const enterpriseSeparator = (limitedEnterprise.length > 0 && (limitedAcademic.length > 0 || limitedCreative.length > 0))
+            ? '<div class="projects-separator"><span data-i18n="projects.enterprise.separator">Enterprise Projects</span></div>'
             : '';
 
         return `
@@ -1251,6 +1314,8 @@ class TemplateEngine {
                     ${academicHTML}
                     ${separator}
                     ${creativeHTML}
+                    ${enterpriseSeparator}
+                    ${enterpriseHTML}
                 </div>
             </section>
         `;
@@ -1312,7 +1377,7 @@ class TemplateEngine {
      * Render Experience in compact format (dynamic roles + enterprise projects)
      */
     renderExperienceCompact(sectionConfig) {
-        const limit = RESUME_LIMITS.experience;
+        const limit = this.getResumeLimits().experience;
 
         // Array de 4 roles profesionales con i18n
         const professionalRoles = [
@@ -1371,14 +1436,22 @@ class TemplateEngine {
 
         // Cargar enterprise projects dinámicamente
         let enterpriseProjects = this.projectsData?.enterprise
-            ? this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise')
-                .sort((a, b) => (a.order || 999) - (b.order || 999))
+            ? this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise'), 'enterprise')
             : [];
 
+        // Evitar duplicación: si la sección Projects ya muestra los enterprise
+        // como tarjetas (showEnterprise), no repetir la lista de nombres aquí.
+        const projectsSection = this.activeProfile?.sections?.find(s => s.id === 'projects');
+        const enterpriseShownAsCards = projectsSection && projectsSection.enabled !== false
+            && projectsSection.config?.showEnterprise === true;
+
         // Generar lista de proyectos enterprise
-        const projectNames = enterpriseProjects
-            .map(p => p.title)
-            .join(', ');
+        const projectNames = enterpriseShownAsCards
+            ? ''
+            : enterpriseProjects
+                .map(p => p.title)
+                .join(', ');
 
         return `
             <section class="section compact-section" data-section-id="experience">

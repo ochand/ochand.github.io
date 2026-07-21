@@ -262,6 +262,26 @@
             padding-bottom: 1px;
         }
 
+        /* === Keywords / ATS strip === */
+        .keywords-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin: 6px 0 8px;
+        }
+
+        .keywords-compact .keyword-tag {
+            font-size: 8.5px;
+            font-weight: 600;
+            color: #2b6cb0;
+            background: #ebf4ff;
+            border: 1px solid #bee3f8;
+            border-radius: 3px;
+            padding: 1px 6px;
+            line-height: 1.5;
+            white-space: nowrap;
+        }
+
         /* === Summary === */
         .summary-text.compact {
             font-size: 10px;
@@ -552,10 +572,13 @@
             </div>
 
             <!-- Power Statement -->
-            <div class="power-statement" data-i18n="header.tagline">
+            <div id="resume-tagline" class="power-statement" data-i18n="header.tagline">
                 Transitioning from 16+ years enterprise systems to cutting-edge AI integration and VR entrepreneurship
             </div>
         </div>
+
+        <!-- Keywords / ATS strip (poblado desde profile.resume.keywords; oculto si no hay) -->
+        <div id="resume-keywords" class="keywords-compact" style="display: none;"></div>
 
         <!-- Contenido dinámico -->
         <div id="content">
@@ -565,14 +588,14 @@
         <!-- Footer -->
         <div class="footer">
             <div style="margin-bottom: 6px;">
-                <strong style="color: #2b6cb0; font-size: 12px;" data-i18n="opportunities.title">🚀 Open to AI Engineering Opportunities</strong>
+                <strong id="footer-pitch-title" style="color: #2b6cb0; font-size: 12px;" data-i18n="opportunities.title">🚀 Open to AI Engineering Opportunities</strong>
             </div>
 
-            <div style="font-size: 10px; color: #4a5568; margin-bottom: 6px;" data-i18n="opportunities.text">
+            <div id="footer-pitch-text" style="font-size: 10px; color: #4a5568; margin-bottom: 6px;" data-i18n="opportunities.text">
                 Seeking AI Engineering and Systems Architecture positions that leverage both academic research and enterprise experience
             </div>
 
-            <div style="font-size: 9px; color: #718096; font-style: italic;" data-i18n="opportunities.quote">
+            <div id="footer-pitch-quote" style="font-size: 9px; color: #718096; font-style: italic;" data-i18n="opportunities.quote">
                 "Bridging 16+ years of enterprise systems expertise with cutting-edge AI research to create autonomous business intelligence solutions"
             </div>
         </div>
@@ -603,18 +626,26 @@
 
         // === FUNCIONES DE UTILIDAD ===
 
+        // QR por defecto (perfil default); usado como fallback cuando el
+        // perfil activo no define resume.qr
+        const DEFAULT_QR = {
+            es: '/assets/rebrand.ly.lf7t3ih-default_profile-es.svg',
+            en: '/assets/rebrand.ly.fqbx15t-default_profile-en.svg'
+        };
+
         /**
-         * Actualiza el QR code según el idioma seleccionado
+         * Actualiza el QR code según el idioma seleccionado.
+         * Prefiere activeProfile.resume.qr[lang] si existe; si no, usa DEFAULT_QR.
          */
         function updateQRCode(lang) {
             const qrImage = document.getElementById('qr-image');
-            if (qrImage) {
-                const qrPath = lang === 'es'
-                    ? '/assets/rebrand.ly.lf7t3ih-default_profile-es.svg'
-                    : '/assets/rebrand.ly.fqbx15t-default_profile-en.svg';
-                qrImage.src = qrPath;
-                console.log(`📱 QR actualizado: ${lang.toUpperCase()} (${qrPath})`);
-            }
+            if (!qrImage) return;
+            const profileQR = (typeof templateEngine !== 'undefined' && templateEngine.getResumeConfig)
+                ? (templateEngine.getResumeConfig().qr || {})
+                : {};
+            const qrPath = profileQR[lang] || DEFAULT_QR[lang] || DEFAULT_QR.en;
+            qrImage.src = qrPath;
+            console.log(`📱 QR actualizado: ${lang.toUpperCase()} (${qrPath})`);
         }
 
         // === FUNCIONES DE VALIDACIÓN ===
@@ -826,7 +857,12 @@
         console.log(`🌐 Idioma inicializado: URL param="${lang}", Detectado="${detectedLang}"`);
         document.getElementById('lang-text').textContent = detectedLang.toUpperCase();
 
-        // Inicializa QR code con idioma correcto
+        // Inicializa template engine en modo RESUME (antes del QR para que
+        // updateQRCode pueda consultar el perfil activo sin caer en TDZ)
+        const templateEngine = new TemplateEngine();
+        templateEngine.setRenderMode('resume');
+
+        // Inicializa QR code con idioma correcto (perfil aún no cargado → fallback default)
         updateQRCode(detectedLang);
 
         // Función para actualizar marca de agua
@@ -840,14 +876,68 @@
         // Actualiza marca de agua inicial
         updateWatermark(profileName, detectedLang);
 
-        // Inicializa template engine en modo RESUME
-        const templateEngine = new TemplateEngine();
-        templateEngine.setRenderMode('resume');
+        /**
+         * Aplica overrides del bloque profile.resume (tagline + footer) sobre
+         * los elementos estáticos del header/footer. Los valores pueden ser una
+         * clave i18n o texto literal. Si el perfil no define resume, no hace nada.
+         */
+        function applyResumeOverrides() {
+            const resume = typeof templateEngine.getResumeConfig === 'function'
+                ? templateEngine.getResumeConfig()
+                : {};
+
+            const setOverride = (el, value) => {
+                if (!el || !value) return;
+                const resolved = templateEngine.resolveI18nOrText(value);
+                if (!resolved) return;
+                if (resolved.i18nKey) {
+                    el.setAttribute('data-i18n', resolved.i18nKey);
+                } else {
+                    el.removeAttribute('data-i18n');
+                    el.textContent = resolved.text;
+                }
+            };
+
+            setOverride(document.getElementById('resume-tagline'), resume.tagline);
+            const fp = resume.footerPitch || {};
+            setOverride(document.getElementById('footer-pitch-title'), fp.title);
+            setOverride(document.getElementById('footer-pitch-text'), fp.text);
+            setOverride(document.getElementById('footer-pitch-quote'), fp.quote);
+
+            // Keywords / ATS strip: se muestra solo si el perfil define keywords
+            const keywordsEl = document.getElementById('resume-keywords');
+            if (keywordsEl) {
+                const keywords = Array.isArray(resume.keywords) ? resume.keywords : [];
+                if (keywords.length) {
+                    keywordsEl.innerHTML = keywords
+                        .map(k => `<span class="keyword-tag"></span>`)
+                        .join('');
+                    // Asigna texto vía textContent para evitar inyección de HTML
+                    keywordsEl.querySelectorAll('.keyword-tag').forEach((tag, i) => {
+                        tag.textContent = keywords[i];
+                    });
+                    keywordsEl.style.display = 'flex';
+                } else {
+                    keywordsEl.innerHTML = '';
+                    keywordsEl.style.display = 'none';
+                }
+            }
+
+            // QR ahora puede reflejar el perfil activo (ya cargado)
+            updateQRCode(window.i18n?.currentLang || detectedLang);
+
+            // Re-traduce para resolver las claves i18n recién asignadas
+            if (window.i18n && typeof window.i18n.translatePage === 'function') {
+                window.i18n.translatePage();
+            }
+        }
 
         // Carga perfil y valida después de renderizar
         let initialCheckDone = false;
         templateEngine.loadProfile(profileName).then(() => {
-            templateEngine.applyConfiguration();
+            return templateEngine.applyConfiguration();
+        }).then(() => {
+            applyResumeOverrides();
 
             // Espera a que DOM se actualice y valida UNA SOLA VEZ
             if (!initialCheckDone) {

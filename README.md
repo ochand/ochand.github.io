@@ -7,7 +7,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ochand)
 [![Email](https://img.shields.io/badge/Email-ochand%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:ochand@gmail.com)
 
-[![Version](https://img.shields.io/badge/Version-2.2.1-green?style=flat-square)](https://github.com/ochand/ochand.github.io)
+[![Version](https://img.shields.io/badge/Version-2.3.0-green?style=flat-square)](https://github.com/ochand/ochand.github.io)
 [![Profiles](https://img.shields.io/badge/Profiles-6-orange?style=flat-square)](https://ochand.github.io?profile=ai-engineer)
 [![Languages](https://img.shields.io/badge/Languages-EN%20%7C%20ES-blue?style=flat-square)](https://ochand.github.io?lang=es)
 [![PDF Resume](https://img.shields.io/badge/PDF-Resume%20Generator-red?style=flat-square)](https://ochand.github.io/one_page_resume.html)
@@ -31,6 +31,7 @@ This portfolio features a **sophisticated dynamic rendering system** built from 
 - 🔀 **6 Configurable Profiles** - Tailored views for different audiences ([AI Engineer](https://ochand.github.io?profile=ai-engineer), [Manufacturing AI Internship](https://ochand.github.io?profile=manufacturing-ai-internship), [Full-Stack](https://ochand.github.io?profile=fullstack), [Minimal](https://ochand.github.io?profile=minimal), [Academic](https://ochand.github.io?profile=academic))
 - 🌍 **Bilingual i18n System** - Complete EN/ES translation with URL-based switching (`?lang=es`)
 - 📄 **Dynamic PDF Resume** - One-page A4 resume generator with profile inheritance ([Try it](https://ochand.github.io/one_page_resume.html?profile=minimal&lang=en))
+- 🎯 **Per-Job Resume Tailoring** - Optional per-profile `resume` block adapts tagline, summary, footer, keywords, and item limits to a specific job posting — JSON only, no code changes
 - 📱 **Smart QR Codes** - Language-specific tracking with automatic switching
 - 🏷️ **PDF Watermarking** - Each export tagged with profile + language
 - ⚙️ **Zero-Code Customization** - All via JSON configuration
@@ -207,4 +208,4 @@ Seeking **AI Engineering and Systems Architecture** positions that leverage both
 ### 🏗️ **Built With**
 HTML5 • CSS3 • JavaScript (ES6+) • i18n System • Dynamic Rendering • JSON Profiles • PDF Export (html2canvas + jsPDF) • GitHub Pages • Responsive Design
 
-**Version**: 2.2.2 | **Portfolio Profiles**: 6 | **Languages**: EN/ES | **Updated**: 2025-10-31
+**Version**: 2.3.0 | **Portfolio Profiles**: 6 | **Languages**: EN/ES | **Updated**: 2026-07-06

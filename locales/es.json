@@ -11,6 +11,8 @@
     "title": "IA para Empresas: ML, Agentes, Gemelos Digitales",
     "subtitle": "Sistema de Inventario Multi-Agente basado en Gemelo Digital - TFM UPC BarcelonaTech",
     "tagline": "16+ años transformando empresas a través de sistemas → IA para potenciar la transformación: decisiones proactivas, pronósticos precisos, simulación, desarrollo basado en especificaciones",
+    "taglineManufacturing": "10+ años desarrollando e implementando ERP/SCM → IA para inteligencia de manufactura, Industria 4.0 y optimización de cadena de suministro",
+    "taglineFullstack": "Desarrollador full-stack (Python · React · AWS serverless) — 16+ años construyendo sistemas empresariales con experiencia en inventario, aprovisionamiento y SCM/ERP en operaciones multi-sede de retail y hostelería",
     "badges": {
       "master": "Previsto 2026:",
       "ibm": "Ingeniero IA IBM",
@@ -26,6 +28,8 @@
   "summary": {
     "title": "Resumen Profesional",
     "text": "Enfoque en IA para empresas con 16+ años de experiencia en sistemas empresariales, actualmente cursando Máster en Ingeniería Informática en la UPC BarcelonaTech y especialización como Ingeniero de IA por IBM (previstos para 2026). Sistemas multi-agente, gestión inteligente de inventarios y soluciones autónomas basadas en IA. Amplia experiencia en desarrollo full-stack para sector hostelería y educativo: inventarios, contabilidad y finanzas. Buscando posiciones en Barcelona para implementar automatizaciones e impulsar transformaciones empresariales.",
+    "manufacturing": "Tecnólogo de Manufactura y Cadena de Suministro con 10+ años desarrollando e implementando sistemas MRP/ERP (inventario, BOM, aprovisionamiento, pronóstico) que ahora aplica IA a la Industria 4.0. Máster en Ingeniería Informática en la UPC BarcelonaTech con tesis sobre un MRP inteligente basado en Gemelos Digitales y Arquitectura Multi-Agente. Busco prácticas en IA para Empresas en Barcelona para validar la inteligencia de manufactura agéntica con datos industriales reales.",
+    "fullstack": "Desarrollador de software full-stack con 16+ años construyendo sistemas empresariales de extremo a extremo — backends en Python, frontends en React/Angular y arquitecturas serverless orientadas a eventos en AWS (Lambda, DynamoDB, API Gateway, EventBridge, Terraform) con Docker y CI/CD. Experiencia práctica de dominio en gestión de inventario, aprovisionamiento, pronóstico de demanda y procesos SCM/ERP en operaciones multi-sede de retail y hostelería. Máster en Ingeniería Informática en la UPC BarcelonaTech. Radicado en Barcelona y listo para diseñar y escalar plataformas cloud-native de alto rendimiento.",
     "domainExpertise": {
       "title": "Experiencia en Dominio: Hostelería",
       "intro": "10+ años desarrollando e implementando POS, Gestión de Inventarios y procesos de negocio de SCM/ERP",
@@ -162,6 +166,9 @@
     },
     "creative": {
       "separator": "Proyectos Creativos"
+    },
+    "enterprise": {
+      "separator": "Proyectos Empresariales Profesionales"
     }
   },
   "experience": {
@@ -355,7 +362,13 @@
         "Productividad inmediata (ya he construido estos sistemas)",
         "Disponibilidad parcial permite contribuciones enfocadas de alto impacto"
       ],
-      "goal": "Objetivo: Validar Agentic-MRP con datos industriales reales mientras contribuyo a sus iniciativas de transformación digital/IA"
+      "goal": "Objetivo: Validar Agentic-MRP con datos industriales reales mientras contribuyo a sus iniciativas de transformación digital/IA",
+      "quote": "Aportando 16+ años de experiencia práctica en MRP/ERP a la Industria 4.0 — convirtiendo la experiencia empresarial en inteligencia de manufactura agéntica"
+    },
+    "softwareDeveloper": {
+      "title": "🚀 Desarrollador de Software — Full-Stack y AWS Serverless",
+      "text": "Busco un puesto de Desarrollador de Software full-stack en Barcelona para construir funcionalidades cloud-native orientadas a eventos con Python, React y AWS serverless (Lambda, DynamoDB, API Gateway, Terraform).",
+      "quote": "Combinando ingeniería full-stack con experiencia práctica en inventario, aprovisionamiento y sistemas empresariales para construir automatización que respalda operaciones del mundo real"
     }
   },
   "connect": {
