@@ -12,6 +12,7 @@
     "subtitle": "Multi-Agent Inventory System based on Digital Twin - Master Thesis at UPC BarcelonaTech",
     "tagline": "16+ years transforming enterprises through systems → AI to power transformation: proactive decisions, accurate forecasts, simulation, spec-driven development",
     "taglineManufacturing": "10+ years developing & implementing ERP/SCM → AI for manufacturing intelligence, Industry 4.0 and supply chain optimization",
+    "taglineFullstack": "Full-stack developer (Python · React · AWS serverless) — 16+ years building enterprise systems with inventory, procurement & SCM/ERP experience across multi-location retail & hospitality",
     "badges": {
       "master": "Expected 2026:",
       "ibm": "IBM AI Engineer",
@@ -28,6 +29,7 @@
     "title": "Professional Summary",
     "text": "AI for Business focus with 16+ years of experience in enterprise systems, currently pursuing a Master's degree in Informatics Engineering at UPC BarcelonaTech and IBM AI Engineer specialization (expected in 2026). Multi-agent systems, intelligent inventory management, and AI-powered autonomous solutions. Extensive experience in full-stack development for the hospitality and education sectors: inventory, accounting, and finance. Seeking positions in Barcelona to implement automations and drive enterprise transformations.",
     "manufacturing": "Manufacturing & Supply Chain technologist with 10+ years developing and implementing MRP/ERP systems (inventory, BOM, procurement, forecasting) now applying AI to Industry 4.0. Master's in Informatics Engineering at UPC BarcelonaTech with a thesis on an intelligent MRP based on Digital Twins and Multi-Agent Architecture. Seeking an AI for Business internship in Barcelona to validate agentic manufacturing intelligence with real industrial data.",
+    "fullstack": "Full-stack software developer with 16+ years building enterprise systems end-to-end — Python backends, React/Angular frontends, and event-driven AWS serverless architectures (Lambda, DynamoDB, API Gateway, EventBridge, Terraform) with Docker and CI/CD. Hands-on domain expertise in inventory management, procurement, demand forecasting and SCM/ERP processes across multi-location retail and hospitality operations. Master's in Informatics Engineering at UPC BarcelonaTech. Based in Barcelona and ready to design and scale cloud-native, high-throughput platforms.",
     "domainExpertise": {
       "title": "Domain Expertise: Hospitality",
       "intro": "10+ years developing and implementing POS, Inventory Management, and SCM/ERP business processes",
@@ -164,6 +166,9 @@
     },
     "creative": {
       "separator": "Creative Projects"
+    },
+    "enterprise": {
+      "separator": "Professional Enterprise Projects"
     }
   },
   "experience": {
@@ -359,6 +364,11 @@
       ],
       "goal": "Goal: Validate Agentic-MRP with real industrial data while contributing to your AI/digital transformation initiatives",
       "quote": "Bringing 16+ years of hands-on MRP/ERP expertise to Industry 4.0 — turning enterprise experience into agentic manufacturing intelligence"
+    },
+    "softwareDeveloper": {
+      "title": "🚀 Software Developer — Full-Stack & AWS Serverless",
+      "text": "Seeking a full-stack Software Developer role in Barcelona to build event-driven, cloud-native features with Python, React and AWS serverless (Lambda, DynamoDB, API Gateway, Terraform).",
+      "quote": "Combining full-stack engineering with hands-on inventory, procurement and enterprise-systems experience to build automation that supports real-world operations"
     }
   },
   "connect": {

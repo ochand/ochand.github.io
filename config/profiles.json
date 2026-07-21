@@ -154,22 +154,39 @@
 
   "fullstack": {
     "name": "Full-Stack Developer",
-    "description": "Enterprise systems and full-stack development emphasis",
+    "description": "Full-stack + AWS serverless / event-driven emphasis, tailored for logistics-platform Software Developer roles",
     "sections": [
       { "id": "summary", "enabled": true, "order": 1, "config": { "showStats": true } },
-      { "id": "experience", "enabled": true, "order": 2, "config": { "showEnterpriseProjects": true, "showProfessionalHistory": true } },
-      { "id": "techStack", "enabled": true, "order": 3, "config": { "showLearning": false, "showAI": false } },
-      { "id": "projects", "enabled": true, "order": 4, "config": { "limit": null, "showAcademic": false, "showCreative": false } },
+      { "id": "projects", "enabled": true, "order": 2, "config": { "limit": null, "showAcademic": true, "showCreative": false, "showEnterprise": true } },
+      { "id": "experience", "enabled": true, "order": 3, "config": { "showEnterpriseProjects": true, "showProfessionalHistory": true } },
+      { "id": "techStack", "enabled": true, "order": 4, "config": { "showLearning": false, "showAI": true } },
       { "id": "research", "enabled": true, "order": 5, "config": { "showCurrentBadge": false } },
       { "id": "languages", "enabled": true, "order": 6, "config": { "showProficiency": true } },
-      { "id": "opportunities", "enabled": true, "order": 7, "config": { "showCTA": true } },
+      { "id": "opportunities", "enabled": true, "order": 7, "config": { "showCTA": true, "customMessage": "software-developer" } },
       { "id": "community", "enabled": false },
       { "id": "creative", "enabled": false }
     ],
     "projects": {
-      "academic": { "enabled": [] },
+      "academic": {
+        "enabled": ["citypulse-serverless", "agentic-mrp"],
+        "order": ["citypulse-serverless", "agentic-mrp"]
+      },
       "creative": { "enabled": [] },
-      "enterprise": { "enabled": ["erp2", "cfdi", "unicenta", "node-pos", "webescpos"] }
+      "enterprise": {
+        "enabled": ["erp2", "node-pos", "cfdi", "unicenta", "webescpos"],
+        "order": ["erp2", "node-pos", "cfdi", "unicenta", "webescpos"]
+      }
+    },
+    "resume": {
+      "tagline": "header.taglineFullstack",
+      "summaryOverride": "summary.fullstack",
+      "footerPitch": {
+        "title": "opportunities.softwareDeveloper.title",
+        "text": "opportunities.softwareDeveloper.text",
+        "quote": "opportunities.softwareDeveloper.quote"
+      },
+      "keywords": ["Python", "React", "TypeScript", "AWS Lambda", "DynamoDB", "API Gateway", "Terraform", "CI/CD", "Event-Driven", "Serverless", "SCM/ERP"],
+      "limits": { "projects": 2, "enterprise": 3, "experience": 2, "education": 2, "skillCategories": 4 }
     }
   },
 

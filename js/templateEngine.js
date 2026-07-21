@@ -8,7 +8,8 @@
 // Defaults; a profile may override any of these via profile.resume.limits
 const RESUME_LIMITS = {
     education: 4,            // Máximo # títulos académicos
-    projects: 10,           // Máximo # proyectos
+    projects: 10,           // Máximo # proyectos (académicos/creativos)
+    enterprise: 10,         // Máximo # proyectos enterprise en la sección Projects
     experience: 10,         // Máximo # roles profesionales
     skillCategories: 10,    // Máximo # categorías de skills
     summaryMaxWords: 800    // Máximo # palabras en summary
@@ -279,6 +280,23 @@ class TemplateEngine {
 
         // Filter by profile's enabled list
         return projects.filter(p => enabledIds.includes(p.id) && p.enabled !== false);
+    }
+
+    /**
+     * Sort projects following the active profile's `order` array for that type
+     * (e.g. ["citypulse-serverless", "agentic-mrp"]) when present; otherwise
+     * fall back to each project's global `order` field from projects.json.
+     */
+    sortByProfileOrder(projects, type) {
+        const orderArr = this.profileProjectFilters?.[type]?.order;
+        if (Array.isArray(orderArr) && orderArr.length) {
+            const rank = id => {
+                const i = orderArr.indexOf(id);
+                return i === -1 ? 999 : i;
+            };
+            return [...projects].sort((a, b) => rank(a.id) - rank(b.id));
+        }
+        return [...projects].sort((a, b) => (a.order || 999) - (b.order || 999));
     }
 
     /**
@@ -1236,25 +1254,35 @@ class TemplateEngine {
     renderProjectsCompact(sectionConfig) {
         const showAcademic = sectionConfig.config?.showAcademic !== false;
         const showCreative = sectionConfig.config?.showCreative !== false;
+        const showEnterprise = sectionConfig.config?.showEnterprise === true;
         const limit = this.getResumeLimits().projects;
+        const enterpriseLimit = this.getResumeLimits().enterprise;
 
         let academicProjects = [];
         let creativeProjects = [];
+        let enterpriseProjects = [];
 
         if (showAcademic && this.projectsData?.academic) {
-            academicProjects = this.filterProjectsByProfile(this.projectsData.academic, 'academic')
-                .sort((a, b) => (a.order || 999) - (b.order || 999));
+            academicProjects = this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.academic, 'academic'), 'academic');
         }
 
         if (showCreative && this.projectsData?.creative) {
-            creativeProjects = this.filterProjectsByProfile(this.projectsData.creative, 'creative')
-                .sort((a, b) => (a.order || 999) - (b.order || 999));
+            creativeProjects = this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.creative, 'creative'), 'creative');
         }
 
-        // Aplicar límite total
+        if (showEnterprise && this.projectsData?.enterprise) {
+            enterpriseProjects = this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise'), 'enterprise');
+        }
+
+        // Aplicar límite total (académicos/creativos comparten el límite `projects`;
+        // los enterprise usan su propio límite `enterprise`)
         const totalLimit = limit;
         let limitedAcademic = academicProjects.slice(0, totalLimit);
         let limitedCreative = creativeProjects.slice(0, Math.max(0, totalLimit - limitedAcademic.length));
+        let limitedEnterprise = enterpriseProjects.slice(0, enterpriseLimit);
 
         const renderProject = (project) => `
             <div class="project-compact">
@@ -1269,9 +1297,14 @@ class TemplateEngine {
 
         const academicHTML = limitedAcademic.map(renderProject).join('');
         const creativeHTML = limitedCreative.map(renderProject).join('');
+        const enterpriseHTML = limitedEnterprise.map(renderProject).join('');
 
         const separator = (limitedAcademic.length > 0 && limitedCreative.length > 0)
             ? '<div class="projects-separator"><span data-i18n="projects.creative.separator">Creative Projects</span></div>'
+            : '';
+
+        const enterpriseSeparator = (limitedEnterprise.length > 0 && (limitedAcademic.length > 0 || limitedCreative.length > 0))
+            ? '<div class="projects-separator"><span data-i18n="projects.enterprise.separator">Enterprise Projects</span></div>'
             : '';
 
         return `
@@ -1281,6 +1314,8 @@ class TemplateEngine {
                     ${academicHTML}
                     ${separator}
                     ${creativeHTML}
+                    ${enterpriseSeparator}
+                    ${enterpriseHTML}
                 </div>
             </section>
         `;
@@ -1401,14 +1436,22 @@ class TemplateEngine {
 
         // Cargar enterprise projects dinámicamente
         let enterpriseProjects = this.projectsData?.enterprise
-            ? this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise')
-                .sort((a, b) => (a.order || 999) - (b.order || 999))
+            ? this.sortByProfileOrder(
+                this.filterProjectsByProfile(this.projectsData.enterprise, 'enterprise'), 'enterprise')
             : [];
 
+        // Evitar duplicación: si la sección Projects ya muestra los enterprise
+        // como tarjetas (showEnterprise), no repetir la lista de nombres aquí.
+        const projectsSection = this.activeProfile?.sections?.find(s => s.id === 'projects');
+        const enterpriseShownAsCards = projectsSection && projectsSection.enabled !== false
+            && projectsSection.config?.showEnterprise === true;
+
         // Generar lista de proyectos enterprise
-        const projectNames = enterpriseProjects
-            .map(p => p.title)
-            .join(', ');
+        const projectNames = enterpriseShownAsCards
+            ? ''
+            : enterpriseProjects
+                .map(p => p.title)
+                .join(', ');
 
         return `
             <section class="section compact-section" data-section-id="experience">
